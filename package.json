@@ -1,0 +1,27 @@
+{
+  "name": "react-qui-components",
+  "version": "0.0.1",
+  "description": "common react component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purepennons/react-qui-components.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "ui"
+  ],
+  "author": "Chiahao Lin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/purepennons/react-qui-components/issues"
+  },
+  "homepage": "https://github.com/purepennons/react-qui-components#readme",
+  "devDependencies": {
+    "lerna": "^2.5.1"
+  }
+}

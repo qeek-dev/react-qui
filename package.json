@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/purepennons/react-qui-components#readme",
   "devDependencies": {
-    "lerna": "^2.5.1"
+    "lerna": "^2.5.1",
+    "lerna-changelog": "^0.7.0"
   }
 }

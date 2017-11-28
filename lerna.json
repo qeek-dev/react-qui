@@ -3,5 +3,14 @@
   "packages": [
     "packages/*"
   ],
+  "changelog": {
+    "labels": {
+      "enhancement": "Enhancement",
+      "bug": "Bug Fix",
+      "feature": "Feature",
+      "component": "New Component"
+    },
+    "cacheDir": ".changelog"
+  },
   "version": "independent"
 }

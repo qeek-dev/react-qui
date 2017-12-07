@@ -1,1 +1,3 @@
-export { default as Example } from './components/Example/Example';
+import 'normalize.css'
+
+export { default as Loader } from './components/Loader/Loader';

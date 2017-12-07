@@ -16,6 +16,8 @@ class App extends Component {
     }
   ]
 
+  renderTimeout = () => <div>timeout!!!</div>
+
   render() {
     return (
       <div className="App">
@@ -27,7 +29,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div className="content">
-          <Loader phases={this.phases} visible />
+          <Loader phases={this.phases} renderTimeout={this.renderTimeout} timeout={10000} visible />
         </div>
       </div>
     );

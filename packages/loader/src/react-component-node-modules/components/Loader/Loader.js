@@ -9,6 +9,9 @@ import 'rxjs/add/observable/zip'
 class Loader extends Component {
   static propTypes = {
     visible: PropTypes.bool,
+    timeout: PropTypes.number,
+    onTimeout: PropTypes.func,
+    renderTimeout: PropTypes.func,
     phases: PropTypes.arrayOf(
       PropTypes.shape({
         render: PropTypes.func.isRequired,
@@ -19,6 +22,7 @@ class Loader extends Component {
 
   static defaultProps = {
     visible: false,
+    timeout: 15000,
   }
 
   constructor(props) {
@@ -29,9 +33,11 @@ class Loader extends Component {
     this.state = {
       renderQueue,
       currentRender: renderQueue[0],
+      isTimeout: false,
     }
 
-    this.timer = null
+    this.timerSub = null
+    this.timeoutID = undefined
   }
 
   componentDidMount() {
@@ -40,7 +46,8 @@ class Loader extends Component {
   }
 
   componentWillUnmount() {
-    if (this.timer) this.timer.unsubscribe()
+    if (this.timerSub) this.timerSub.unsubscribe()
+    if (this.timeoutID) window.clearTimeout(this.timeoutID)
   }
 
   componentWillReceiveProps = nextProps => {
@@ -71,22 +78,42 @@ class Loader extends Component {
 
   enableLoader() {
     this.resetRenderQueue()
-    this.timer = this.getPhasesObservableSource(
+    this.timerSub = this.getPhasesObservableSource(
       this.state.renderQueue,
     ).subscribe(render => this.setState(_ => ({ currentRender: render })))
+    this.handleTimeout()
   }
 
   resetRenderQueue() {
-    if (this.timer) this.timer.unsubscribe()
-    this.setState(prevState => ({ currentRender: prevState.renderQueue[0] }))
+    if (this.timerSub) this.timerSub.unsubscribe()
+    this.setState(prevState => ({
+      currentRender: prevState.renderQueue[0],
+      isTimeout: false,
+    }))
+  }
+
+  handleTimeout = () => {
+    const { timeout, onTimeout } = this.props
+    if (this.timeoutID) window.clearTimeout(this.timeoutID)
+    this.timeoutID = window.setTimeout(() => {
+      if (onTimeout) onTimeout()
+      this.setState(_ => ({ isTimeout: true }))
+    }, timeout)
   }
 
   render() {
-    const { visible } = this.props
+    const { visible, renderTimeout } = this.props
+    const { isTimeout } = this.state
     const style = {
-      visibility: visible? 'visible': 'hidden'
+      visibility: visible ? 'visible' : 'hidden',
     }
-    return <div style={style} >{this.state.currentRender()}</div>
+    const isRenderTimeout = isTimeout && renderTimeout
+
+    return isRenderTimeout ? (
+      <div style={style}>{renderTimeout()}</div>
+    ) : (
+      <div style={style}>{this.state.currentRender()}</div>
+    )
   }
 }
 

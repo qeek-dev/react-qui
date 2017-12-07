@@ -12,7 +12,9 @@ const phases = [
   }
 ];
 
-<Loader phases={phases} visible />
+renderTimeout = () => <div>timeout!!!</div>;
+
+<Loader phases={phases} renderTimeout={this.renderTimeout} timeout={10000} visible />
 ```
 
 

@@ -1,0 +1,38 @@
+$min-width: 80px;
+$height: 30px;
+$outline-width: 1px;
+$border-radius: 8px;
+$font-size: 14px;
+$background-color: #fff;
+
+@mixin line-color($color) {
+  outline-color: $color;
+}
+
+@mixin text-color($color) {
+  font: $color;
+}
+
+.qbtn {
+  min-width: $min-width;
+  height: $height;
+  font-size: $font-size;
+  text-align: center;
+  background-color: $background-color;
+  outline-width: 1px;
+
+  @include line-color(#707070);
+  @include text-color(#2f2f2f);
+
+  &:hover {
+    @include line-color(#2f2f2f);
+  }
+}
+
+.rounded {
+  border-radius: $border-radius;
+}
+
+.sqaure {
+  border-radius: 0;
+}

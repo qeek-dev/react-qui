@@ -1,0 +1,53 @@
+$min-width: 80px;
+$height: 30px;
+$border-width: 1px;
+$border-radius: 8px;
+$font-size: 14px;
+$background-color: #fff;
+
+@mixin btn-size($min-w, $h) {
+  min-width: $min-w;
+  height: $h;
+}
+
+@mixin yes-button() {
+  &:hover {
+    font: #707070;
+    border-color: #707070;
+  }
+
+  &:active {
+    font: #2f2f2f;
+    border-color: #2f2f2f;
+    border-width: 2px;
+  }
+
+  &:disabled {
+    font: #aeaeae;
+    border-color: #aeaeae;
+  }
+}
+
+.light {
+  font: #2f2f2f;
+  border-color: #707070;
+
+  @include yes-button();
+}
+
+.qbtn {
+  @include btn-size(80px, 30px);
+
+  font-size: $font-size;
+  text-align: center;
+  border-width: $border-width;
+  outline: none;
+}
+
+.rounded {
+  border-radius: $border-radius;
+}
+
+.sqaure {
+  border-radius: 0;
+}

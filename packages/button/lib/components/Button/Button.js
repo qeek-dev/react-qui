@@ -1,17 +1,32 @@
 'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _react = require('react');var _react2 = _interopRequireDefault(_react);
 var _bind = require('classnames/bind');var _bind2 = _interopRequireDefault(_bind);
-var _Button = require('./Button.scss');var _Button2 = _interopRequireDefault(_Button);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}
+var _Button = require('./Button.scss');var _Button2 = _interopRequireDefault(_Button);
+var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(_propTypes);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}
 
 var cx = _bind2.default.bind(_Button2.default);var
 
-Button = function (_Component) {_inherits(Button, _Component);function Button() {_classCallCheck(this, Button);return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));}_createClass(Button, [{ key: 'render', value: function render()
-    {
-      var type = this.props.type;
-      var className = cx({
-        qbtn: true,
-        rounded: type === 'rounded',
-        square: type === 'square' });
+
+Button = function (_PureComponent) {_inherits(Button, _PureComponent);function Button() {_classCallCheck(this, Button);return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));}_createClass(Button, [{ key: 'render', value: function render()
 
 
-      return _react2.default.createElement('button', { className: className }, this.props.text);
-    } }]);return Button;}(_react.Component);exports.default = Button;
+
+
+
+
+
+
+
+
+
+    {var _props =
+      this.props,shape = _props.shape,theme = _props.theme,className = _props.className,disabled = _props.disabled;
+
+      return _react2.default.createElement('button', { disabled: true, className: cx(['qbtn', shape, theme, className]) }, this.props.children);
+    } }]);return Button;}(_react.PureComponent);Button.propTypes = { theme: _propTypes2.default.string, shape: _propTypes2.default.string, className: _propTypes2.default.string };Button.defaultProps = { theme: 'light', shape: 'square' };exports.default = Button;
+
+
+Button.propTypes = {
+  shape: _propTypes2.default.string,
+  theme: _propTypes2.default.string,
+  className: _propTypes2.default.string,
+  children: _propTypes2.default.string };

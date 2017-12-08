@@ -1,8 +1,11 @@
+@import 'reset-css/reset.css';
+
 $min-width: 80px;
 $height: 30px;
 $border-width: 1px;
 $border-radius: 8px;
-$font-size: 14px;
+$font-size-square: 14px;
+$font-size-rounded: 12px;
 $background-color: #fff;
 
 @mixin btn-size($min-w, $h) {
@@ -10,44 +13,81 @@ $background-color: #fff;
   height: $h;
 }
 
-@mixin yes-button() {
+@mixin light-button() {
   &:hover {
-    font: #707070;
+    color: #707070;
     border-color: #707070;
   }
 
   &:active {
-    font: #2f2f2f;
+    color: #2f2f2f;
     border-color: #2f2f2f;
-    border-width: 2px;
+    box-shadow: inset 0 0 0 1px;
   }
 
   &:disabled {
-    font: #aeaeae;
+    color: #aeaeae;
+    cursor: not-allowed;
     border-color: #aeaeae;
   }
 }
 
+@mixin dark-button() {
+  &:hover {
+    color: rbga(255, 255, 255, 0.7);
+    border-color: rbga(255, 255, 255, 0.7);
+  }
+
+  &:active {
+    color: #fff;
+    border-color: #fff;
+    box-shadow: inset 0 0 0 1px;
+  }
+
+  &:disabled {
+    color: rbga(255, 255, 255, 0.5);
+    cursor: not-allowed;
+    border-color: rbga(255, 255, 255, 0.5);
+  }
+}
+
 .light {
-  font: #2f2f2f;
+  color: #2f2f2f;
   border-color: #707070;
 
-  @include yes-button();
+  @include light-button();
+}
+
+.dark {
+  color: #fff;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.7);
+
+  @include dark-button();
 }
 
 .qbtn {
-  @include btn-size(80px, 30px);
+  @include btn-size($min-width, 30px);
 
-  font-size: $font-size;
+  padding: 0 22px;
+  font-size: $font-size-square;
   text-align: center;
+  cursor: pointer;
   border-width: $border-width;
   outline: none;
 }
 
 .rounded {
+  @include btn-size($min-width, 22px);
+
+  font-size: $font-size-rounded;
   border-radius: $border-radius;
 }
 
 .sqaure {
+  @include btn-size($min-width, 30px);
+
+  font-size: $font-size-square;
   border-radius: 0;
 }
+

@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Button type="light" shape="rounded" text="button-test" />
+          <Button theme="light" shape="rounded">Button</Button>
       </div>
     );
   }

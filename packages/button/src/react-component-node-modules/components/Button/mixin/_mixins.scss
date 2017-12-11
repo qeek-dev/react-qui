@@ -1,0 +1,45 @@
+@mixin btn-size($min-w, $h) {
+  min-width: $min-w;
+  height: $h;
+}
+
+@mixin light-button() {
+  &:hover {
+    color: #707070;
+    border-color: #707070;
+  }
+
+  &:active {
+    color: #2f2f2f;
+    border-color: #2f2f2f;
+    box-shadow: inset 0 0 0 1px;
+  }
+
+  &:disabled {
+    color: #aeaeae;
+    cursor: not-allowed;
+    border-color: #aeaeae;
+  }
+}
+
+@mixin dark-button() {
+  &:hover {
+    color: #fff;
+    border-color: #fff;
+    opacity: 0.7;
+  }
+
+  &:active {
+    color: #fff;
+    border-color: #fff;
+    box-shadow: inset 0 0 0 1px;
+    opacity: 1;
+  }
+
+  &:disabled {
+    color: #fff;
+    cursor: not-allowed;
+    border-color: #fff;
+    opacity: 0.5;
+  }
+}

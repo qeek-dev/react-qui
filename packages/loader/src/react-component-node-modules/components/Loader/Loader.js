@@ -110,9 +110,9 @@ class Loader extends Component {
     const isRenderTimeout = isTimeout && renderTimeout
 
     return isRenderTimeout ? (
-      <div style={style}>{renderTimeout()}</div>
+      <div style={style}>{renderTimeout(this.props, this.state)}</div>
     ) : (
-      <div style={style}>{this.state.currentRender()}</div>
+      <div style={style}>{this.state.currentRender(this.props, this.state)}</div>
     )
   }
 }

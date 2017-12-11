@@ -108,44 +108,55 @@ $width: 80px;
 }
 
 // normal
+@keyframes logo-spinner {
+  100% {
+    background-position-y: -240px;
+  }
+}
+
 .logo {
   width: 30px;
   height: 30px;
   background: url('../../assets/loading_30.svg') 0 0;
-  animation: logo-spinner 1.6s steps(1, end) infinite;
+  animation: logo-spinner 1.6s steps(8) infinite;
 }
 
-@keyframes logo-spinner {
-  0%,
-  100% {
-    background-position-y: 0;
-  }
-
-  12.5% {
-    background-position-y: -30px;
-  }
-
-  25% {
-    background-position-y: -60px;
-  }
-
-  37.5% {
-    background-position-y: -90px;
-  }
-
-  50% {
-    background-position-y: -120px;
-  }
-
-  62.5% {
-    background-position-y: -150px;
-  }
-
-  75% {
-    background-position-y: -180px;
-  }
-
-  87.5% {
-    background-position-y: -210px;
-  }
+.no-svg .logo {
+  background: url('../../assets/loading_30.png') 0 0;
+  animation: logo-spinner 1.6s steps(8) infinite;
 }
+
+// @keyframes logo-spinner {
+//   0%,
+//   100% {
+//     background-position-y: 0;
+//   }
+
+//   12.5% {
+//     background-position-y: -30px;
+//   }
+
+//   25% {
+//     background-position-y: -60px;
+//   }
+
+//   37.5% {
+//     background-position-y: -90px;
+//   }
+
+//   50% {
+//     background-position-y: -120px;
+//   }
+
+//   62.5% {
+//     background-position-y: -150px;
+//   }
+
+//   75% {
+//     background-position-y: -180px;
+//   }
+
+//   87.5% {
+//     background-position-y: -210px;
+//   }
+// }

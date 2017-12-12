@@ -12,5 +12,6 @@
     },
     "cacheDir": ".changelog"
   },
+  "npmClient": "yarn",
   "version": "independent"
 }

@@ -1,0 +1,46 @@
+@import 'reset-css/reset.css';
+@import 'mixin/colors';
+@import 'mixin/default';
+@import 'mixin/mixins';
+
+.light {
+  color: $light-button-normal-color;
+  border-color: #707070;
+
+  @include light-button();
+}
+
+.dark {
+  color: $dark-button-color;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.7);
+
+  @include dark-button();
+}
+
+.qbtn {
+  @include btn-size($min-width, 30px);
+
+  display: inline-block;
+  padding: 0 22px;
+  margin-right: 8px;
+  font-size: $font-size-square;
+  text-align: center;
+  cursor: pointer;
+  border-width: $border-width;
+  outline: none;
+}
+
+.rounded {
+  @include btn-size($min-width, 22px);
+
+  font-size: $font-size-rounded;
+  border-radius: $border-radius;
+}
+
+.square {
+  @include btn-size($min-width, 30px);
+
+  font-size: $font-size-square;
+  border-radius: 0;
+}

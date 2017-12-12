@@ -24,6 +24,7 @@
   display: inline-block;
   padding: 0 22px;
   margin-right: 8px;
+  font-family: Roboto, Helvetica, Airal, Sans-serif, Verdana, Tahoma;
   font-size: $font-size-square;
   text-align: center;
   cursor: pointer;
@@ -35,6 +36,7 @@
   @include btn-size($min-width, 22px);
 
   font-size: $font-size-rounded;
+  line-height: $font-size-rounded * 1.25;
   border-radius: $border-radius;
 }
 
@@ -42,5 +44,6 @@
   @include btn-size($min-width, 30px);
 
   font-size: $font-size-square;
+  line-height: $font-size-square * 1.25;
   border-radius: 0;
 }

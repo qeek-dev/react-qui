@@ -20,13 +20,13 @@ export default class Button extends PureComponent {
       PropTypes.element,
     ]),
     /** State of the button. Make button to be in disable state */
-    disabled: PropTypes.string,
+    disabled: PropTypes.bool
   }
 
   static defaultProps = {
     theme: 'light',
     shape: 'square',
-    disabled: '',
+    disabled: false,
   }
 
   render() {
@@ -52,5 +52,5 @@ Button.propTypes = {
     PropTypes.number,
     PropTypes.element,
   ]),
-  disabled: PropTypes.string,
+  disabled: PropTypes.bool,
 }

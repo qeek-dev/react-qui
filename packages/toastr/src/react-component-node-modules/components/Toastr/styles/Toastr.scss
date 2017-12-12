@@ -1,0 +1,34 @@
+@import 'colors';
+@import 'mixins';
+
+.toastr {
+  padding: 24px;
+  font-family: Roboto, Helvetica, Arial, Sans-serif, Verdana, Tahoma;
+  font-size: 16px;
+  line-height: 20px;
+  color: $toastr-font-color;
+}
+
+.qts {
+  background-color: $qts-default-color;
+}
+
+.photo-st {
+  background-color: $photo-station-color;
+}
+
+.music-st {
+  background-color: $music-station-color;
+}
+
+.file-st {
+  background-color: $file-station-color;
+}
+
+.download-st {
+  background-color: $download-station-color;
+}
+
+.video-st {
+  background-color: $video-station-color;
+}

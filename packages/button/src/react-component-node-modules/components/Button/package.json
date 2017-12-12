@@ -1,5 +1,4 @@
 {
-  "private": true,
-  "name": "@react-qui/button",
+  "name": "react-qui-button",
   "main": "./Button.js"
 }

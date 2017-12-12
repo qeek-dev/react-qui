@@ -1,26 +1,29 @@
 {
-  "name": "react-qui-components",
+  "name": "react-qui",
   "version": "0.0.1",
-  "description": "common react component",
+  "description": "common react components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/purepennons/react-qui-components.git"
+    "url": "git+https://github.com/qeek-dev/react-qui.git"
   },
   "keywords": [
     "react",
     "component",
     "ui"
   ],
-  "author": "Chiahao Lin",
+  "author": "Chiahao Lin <chiahao.node@gmail.com>",
+  "contributors": [
+    "Chun-Lin <wulin40063@gmail.com>"
+  ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/purepennons/react-qui-components/issues"
+    "url": "https://github.com/qeek-dev/react-qui/issues"
   },
-  "homepage": "https://github.com/purepennons/react-qui-components#readme",
+  "homepage": "https://github.com/qeek-dev/react-qui#readme",
   "devDependencies": {
     "lerna": "^2.5.1",
     "lerna-changelog": "^0.7.0"

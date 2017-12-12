@@ -45,7 +45,7 @@ const renderIcon = () => (
 
 const renderPercentage = percent => (
   <div className={cx('percentage')}>
-    <span className={cx('num')}>{percent}</span>
+    <span className={cx('num')}>{percent.toString()}</span>
     <span className={cx('percent')}>%</span>
   </div>
 )
@@ -63,7 +63,7 @@ const Spinner = props => {
 
 Spinner.propTypes = {
   type: PropTypes.oneOf(['normal', 'progress']),
-  percent: PropTypes.number,
+  percent: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 
 Spinner.defaultProps = {

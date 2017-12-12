@@ -13,29 +13,31 @@ export default class Button extends PureComponent {
     shape: PropTypes.oneOf(['square', 'rounded']),
     /** Add addition className for button element */
     className: PropTypes.string,
-    /** Content of button. Can be a string, number, or a react component.  */
+    /** Content of the button. Can be a string, number, or a react component.  */
     children: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
       PropTypes.element,
     ]),
+    /** State of the button. Make button to be in disable state */
+    disabled: PropTypes.string,
   }
 
   static defaultProps = {
     theme: 'light',
     shape: 'square',
+    disabled: '',
   }
 
   render() {
-    const { shape, theme, className, disabled } = this.props
+    const { shape, theme, className, disabled, children } = this.props
 
-    return disabled ? (
-      <button disabled className={cx(['qbtn', shape, theme, className])}>
-        {this.props.children}
-      </button>
-    ) : (
-      <button className={cx(['qbtn', shape, theme, className])}>
-        {this.props.children}
+    return (
+      <button
+        disabled={disabled}
+        className={cx(['qbtn', shape, theme, className])}
+      >
+        {children}
       </button>
     )
   }
@@ -50,4 +52,5 @@ Button.propTypes = {
     PropTypes.number,
     PropTypes.element,
   ]),
+  disabled: PropTypes.string,
 }

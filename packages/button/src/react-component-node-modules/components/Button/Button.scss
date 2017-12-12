@@ -1,16 +1,17 @@
 @import 'reset-css/reset.css';
+@import 'mixin/colors';
 @import 'mixin/default';
 @import 'mixin/mixins';
 
 .light {
-  color: #2f2f2f;
+  color: $light-button-normal-color;
   border-color: #707070;
 
   @include light-button();
 }
 
 .dark {
-  color: #fff;
+  color: $dark-button-color;
   background-color: transparent;
   border-color: rgba(255, 255, 255, 0.7);
 

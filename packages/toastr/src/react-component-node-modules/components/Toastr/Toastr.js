@@ -21,6 +21,8 @@ export default class Toastr extends PureComponent {
       PropTypes.element,
     ]),
     className: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number
   }
 
   static defaultProps = {
@@ -28,10 +30,10 @@ export default class Toastr extends PureComponent {
   }
 
   render() {
-    const { btnStyle, children, className } = this.props
+    const { btnStyle, children, className, width, height } = this.props
 
     return (
-      <div className={cx(['toastr', btnStyle, className])}> {children} </div>
+      <div style={{ width: `${width}px`, height: `${height}px` }} className={cx(['toastr', btnStyle, className])}> {children} </div>
     )
   }
 }
@@ -44,4 +46,6 @@ Toastr.PropTypes = {
     PropTypes.element,
   ]),
   className: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number
 }

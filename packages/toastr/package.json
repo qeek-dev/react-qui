@@ -1,7 +1,7 @@
 {
-  "name": "toastr",
+  "name": "react-qui-toastr",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "files": [
     "lib",
     "build",
@@ -27,7 +27,7 @@
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "akiya-react-component-scripts": "1.2.1",
+    "akiya-react-component-scripts": "1.2.6",
     "classnames": "^2.2.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

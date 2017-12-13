@@ -27,7 +27,7 @@
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "akiya-react-component-scripts": "1.2.1",
+    "akiya-react-component-scripts": "1.2.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "reset-css": "^2.2.1"

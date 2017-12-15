@@ -10,7 +10,7 @@
   line-height: 20px;
   color: $toastr-font-color;
   text-align: center;
-  animation-delay: 5s;
+  animation: fade-out 5s ease-in-out;
 }
 
 .qts {

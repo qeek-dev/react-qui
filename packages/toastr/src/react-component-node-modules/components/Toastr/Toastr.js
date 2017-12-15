@@ -22,18 +22,41 @@ export default class Toastr extends PureComponent {
     ]),
     className: PropTypes.string,
     width: PropTypes.number,
-    height: PropTypes.number
+    height: PropTypes.number,
   }
 
   static defaultProps = {
     btnStyle: 'qts',
   }
 
+  componentDidMount() {
+    this.getContainerStyle(this.props)
+  }
+
+  getContainerStyle = () => {
+    const { width, height, duration } = this.props
+
+    return {
+      width: `${width}px`,
+      height: `${height}px`,
+      animationDelay: `${duration}s`,
+    }
+  }
+
   render() {
-    const { btnStyle, children, className } = this.props
+    const {
+      btnStyle,
+      children,
+      className,
+    } = this.props
 
     return (
-      <div className={cx(['toastr', btnStyle, className])}> {children} </div>
+      <div
+        style={this.getContainerStyle()}
+        className={cx(['toastr', btnStyle, className])}
+      >
+        {children}
+      </div>
     )
   }
 }
@@ -47,5 +70,5 @@ Toastr.PropTypes = {
   ]),
   className: PropTypes.string,
   width: PropTypes.number,
-  height: PropTypes.number
+  height: PropTypes.number,
 }

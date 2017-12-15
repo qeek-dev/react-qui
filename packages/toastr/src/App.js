@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Toastr } from './react-component-node-modules/';
+import { Toastr, ToastrContainer } from './react-component-node-modules/';
 
 class App extends Component {
   render() {

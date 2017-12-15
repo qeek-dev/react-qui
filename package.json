@@ -4,7 +4,11 @@
   "description": "common react components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lerna:install": "./node_modules/lerna/bin/lerna.js bootstrap",
+    "lerna:test": "CI=true ./node_modules/lerna/bin/lerna.js run test",
+    "lerna:publish": "./node_modules/lerna/bin/lerna.js publish --conventional-commits --cd-version=minor --yes --independent",
+    "test": "npm run lerna:test",
+    "publish-all": "npm run lerna:publish"
   },
   "repository": {
     "type": "git",

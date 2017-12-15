@@ -30,10 +30,11 @@ export default class Button extends PureComponent {
   }
 
   render() {
-    const { shape, theme, className, disabled, children } = this.props
+    const { shape, theme, className, disabled, children, ...restProps } = this.props
 
     return (
       <button
+        {...restProps}
         disabled={disabled}
         className={cx(['qbtn', shape, theme, className])}
       >

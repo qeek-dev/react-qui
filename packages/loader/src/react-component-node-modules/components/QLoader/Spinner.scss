@@ -1,5 +1,4 @@
-$blue: #00ffff;
-$white: #ffffff;
+@import './color';
 
 $width: 80px;
 
@@ -114,11 +113,13 @@ $width: 80px;
   }
 }
 
-.logo {
-  width: 30px;
-  height: 30px;
-  background: url('../../assets/loading_30.svg') 0 0;
-  animation: logo-spinner 1.6s steps(8) infinite;
+.icon-spinner {
+  .logo {
+    width: 30px;
+    height: 30px;
+    background: url('../../assets/loading_30.svg') 0 0;
+    animation: logo-spinner 1.6s steps(8) infinite;
+  }
 }
 
 .no-svg .logo {

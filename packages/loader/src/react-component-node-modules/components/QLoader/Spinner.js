@@ -1,11 +1,10 @@
-import React from 'react'
-import classnames from 'classnames/bind'
-import PropTypes from 'prop-types'
+import React from 'react';
+import classnames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
-import styles from './Spinner.scss'
-import logo from '../../assets/loading_30.svg'
+import styles from './Spinner.scss';
 
-const cx = classnames.bind(styles)
+const cx = classnames.bind(styles);
 
 const Circle = props => {
   return (
@@ -32,43 +31,45 @@ const Circle = props => {
           strokeMiterlimit="10"
         />
       </svg>
-      <div className={cx('content')}>{props.children}</div>
+      <div>{props.children}</div>
     </div>
-  )
-}
+  );
+};
 
 const renderIcon = () => (
   <div className={cx('icon-spinner')}>
     <div className={cx('logo')} />
   </div>
-)
+);
 
 const renderPercentage = percent => (
   <div className={cx('percentage')}>
     <span className={cx('num')}>{percent.toString()}</span>
     <span className={cx('percent')}>%</span>
   </div>
-)
+);
 
 const Spinner = props => {
-  const { type, percent } = props
+  const { type, percent, className } = props;
   return (
-    <div className={cx('spinner')}>
+    <div className={cx('spinner', className)}>
       <Circle>
-        {type === 'normal'? renderIcon(): renderPercentage(percent)}
+        {type === 'normal' ? renderIcon() : renderPercentage(percent)}
       </Circle>
     </div>
-  )
-}
+  );
+};
 
 Spinner.propTypes = {
+  className: PropTypes.string,
   type: PropTypes.oneOf(['normal', 'progress']),
   percent: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-}
+};
 
 Spinner.defaultProps = {
+  className: '',
   type: 'normal',
   percent: 0,
-}
+};
 
-export default Spinner
+export default Spinner;

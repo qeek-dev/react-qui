@@ -122,11 +122,11 @@ class QLoader extends PureComponent {
       phases: [
         {
           render: this.renderPhase1Component,
-          duration: 8,
+          duration: 8000,
         },
         {
           render: this.renderPhase2Component,
-          duration: 15,
+          duration: 7000,
         },
       ],
     }

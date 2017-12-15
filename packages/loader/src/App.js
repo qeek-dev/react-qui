@@ -9,11 +9,11 @@ class App extends Component {
   phases = [
     {
       render: () => <div>loading...</div>,
-      duration: 3,
+      duration: 3000,
     },
     {
       render: () => <div>still loading...</div>,
-      duration: 5,
+      duration: 5000,
     },
   ]
 

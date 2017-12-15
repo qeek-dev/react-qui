@@ -9,7 +9,7 @@ const phases = [
         <p>isTimeout: {state.isTimeout.toString()}</p>
       </div>
     ),
-    duration: 3
+    duration: 3000
   },
   {
     render: (props, state) => (
@@ -18,7 +18,7 @@ const phases = [
         <p>isTimeout: {state.isTimeout.toString()}</p>
       </div>
     ),
-    duration: 5
+    duration: 5000
   }
 ];
 

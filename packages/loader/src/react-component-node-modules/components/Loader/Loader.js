@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { flatten, repeat, map, compose } from 'ramda'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/observable/timer'
 import 'rxjs/add/observable/from'
 import 'rxjs/add/observable/zip'
+import 'rxjs/add/operator/mergeMap'
+import 'rxjs/add/operator/repeat'
 
 class Loader extends Component {
   static propTypes = {
     visible: PropTypes.bool,
     timeout: PropTypes.number,
+    timeInterval: PropTypes.number,
     onTimeout: PropTypes.func,
     renderTimeout: PropTypes.func,
     phases: PropTypes.arrayOf(
@@ -23,19 +25,22 @@ class Loader extends Component {
   static defaultProps = {
     visible: false,
     timeout: 15000,
+    timeInterval: 500,
   }
 
   constructor(props) {
     super(props)
 
     const { phases } = props
-    const renderQueue = this.getRenderQueue(phases)
+    if (phases.length < 1)
+      throw new Error('phases prop must has at least one element')
+
     this.state = {
-      renderQueue,
-      currentRender: renderQueue[0],
+      currentRender: phases[0]['render'],
       isTimeout: false,
     }
 
+    this.timer$ = null
     this.timerSub = null
     this.timeoutID = undefined
   }
@@ -57,37 +62,37 @@ class Loader extends Component {
     }
   }
 
-  _getRenderQueue = compose(
-    flatten,
-    map(({ render, duration }) => repeat(render, duration)),
-  )
+  getPhasesObservableSource = () => {
+    const { phases, timeInterval } = this.props
+    const source$ = Observable.from(phases)
 
-  getRenderQueue(phases) {
-    if (phases.length < 1)
-      throw new Error('phases prop must has at least one element')
-    return this._getRenderQueue(phases)
-  }
+    this.timer$ = Observable.timer(0, timeInterval)
 
-  getPhasesObservableSource = queue => {
     return Observable.zip(
-      Observable.timer(0, 1000),
-      Observable.from(queue),
+      this.timer$,
+      source$.mergeMap(phase =>
+        Observable.from([phase.render]).repeat(parseInt(phase.duration / timeInterval, 10)),
+      ),
       (time, v) => v,
     )
   }
 
   enableLoader() {
-    this.resetRenderQueue()
+    this.resetState()
     this.timerSub = this.getPhasesObservableSource(
       this.state.renderQueue,
     ).subscribe(render => this.setState(_ => ({ currentRender: render })))
     this.handleTimeout()
   }
 
-  resetRenderQueue() {
+  resetState() {
+    const { phases } = this.props
     if (this.timerSub) this.timerSub.unsubscribe()
-    this.setState(prevState => ({
-      currentRender: prevState.renderQueue[0],
+    if (phases.length < 1)
+      throw new Error('phases prop must has at least one element')
+
+    this.setState(_ => ({
+      currentRender: phases[0]['render'],
       isTimeout: false,
     }))
   }
@@ -112,7 +117,9 @@ class Loader extends Component {
     return isRenderTimeout ? (
       <div style={style}>{renderTimeout(this.props, this.state)}</div>
     ) : (
-      <div style={style}>{this.state.currentRender(this.props, this.state)}</div>
+      <div style={style}>
+        {this.state.currentRender(this.props, this.state)}
+      </div>
     )
   }
 }

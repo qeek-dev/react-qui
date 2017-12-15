@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/qeek-dev/react-qui/compare/react-qui-button@1.0.2...react-qui-button@1.0.3) (2017-12-15)
+
+
+### Bug Fixes
+
+* add restProps to props ([#25](https://github.com/qeek-dev/react-qui/issues/25)) ([cfe0e57](https://github.com/qeek-dev/react-qui/commit/cfe0e57))
+
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/qeek-dev/react-qui/compare/react-qui-button@1.0.1...react-qui-button@1.0.2) (2017-12-15)
 

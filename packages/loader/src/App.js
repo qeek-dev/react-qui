@@ -3,7 +3,7 @@ import logo from './logo.svg'
 import 'normalize.css'
 import './App.css'
 
-import { Loader, QLoader } from './react-component-node-modules/'
+import { Loader, QLoader, QSpinner } from './react-component-node-modules/'
 
 class App extends Component {
   phases = [
@@ -73,7 +73,12 @@ class App extends Component {
             visible
           />
         </div>
-        <QLoader percent={this.state.percent} {...this.qloaderOps} />
+        <div className="content spinner">
+          <QSpinner />
+        </div>
+        <div className="content">
+          <QLoader percent={this.state.percent} {...this.qloaderOps} />
+        </div>
       </div>
     )
   }

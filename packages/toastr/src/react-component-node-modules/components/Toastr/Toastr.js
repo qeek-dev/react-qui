@@ -30,10 +30,10 @@ export default class Toastr extends PureComponent {
   }
 
   render() {
-    const { btnStyle, children, className, width, height } = this.props
+    const { btnStyle, children, className } = this.props
 
     return (
-      <div style={{ width: `${width}px`, height: `${height}px` }} className={cx(['toastr', btnStyle, className])}> {children} </div>
+      <div className={cx(['toastr', btnStyle, className])}> {children} </div>
     )
   }
 }

@@ -11,7 +11,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "react-scripts build",
-    "precommit": "npm run lint && npm run stylelint && npm run flow-status",
+    "husky:precommit": "npm run lint && npm run stylelint && npm run flow-status",
     "eject": "react-scripts eject",
     "flow-coverage": "flow coverage",
     "flow-start": "flow start",

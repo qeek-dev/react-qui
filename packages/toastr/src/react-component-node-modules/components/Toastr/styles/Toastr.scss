@@ -10,7 +10,6 @@
   line-height: 20px;
   color: $toastr-font-color;
   text-align: center;
-  animation: fade-out 5s ease-in-out;
   animation-delay: 5s;
 }
 
@@ -39,7 +38,7 @@
 }
 
 @keyframes fade-out {
-  50% {
+  0% {
     opacity: 1;
   }
 

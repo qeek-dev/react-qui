@@ -13,5 +13,10 @@
     "cacheDir": ".changelog"
   },
   "npmClient": "yarn",
-  "version": "independent"
+  "version": "independent",
+  "command": {
+    "publish": {
+      "message": "publish npm packages by lerna [ci skip]"
+    }
+  }
 }

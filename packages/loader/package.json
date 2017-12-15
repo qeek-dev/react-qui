@@ -29,7 +29,6 @@
   "dependencies": {
     "akiya-react-component-scripts": "3.2.0",
     "normalize.css": "^7.0.0",
-    "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-qui-button": "^1.0.3",

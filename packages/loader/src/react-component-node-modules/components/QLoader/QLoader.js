@@ -76,7 +76,11 @@ class QLoader extends PureComponent {
     return (
       <div className={cx('icon-loader', 'loader-container')}>
         {showProgress ? (
-          <Spinner className={cx('spinner')} type="progress" percent={percent} />
+          <Spinner
+            className={cx('spinner')}
+            type="progress"
+            percent={percent}
+          />
         ) : (
           <Spinner className={cx('spinner')} type="normal" />
         )}
@@ -110,7 +114,7 @@ class QLoader extends PureComponent {
     this.renderLoader(this.props.descriptionPhase2, this.props.detailPhase2)
 
   render() {
-    const { visible, timeout, onTimeout, renderTimeout } = this.props
+    const { visible, timeout, onTimeout, renderTimeout, ...rest } = this.props
     const loaderOps = {
       visible,
       timeout,
@@ -131,7 +135,7 @@ class QLoader extends PureComponent {
       ],
     }
 
-    return <Loader {...loaderOps} />
+    return <Loader {...rest} {...loaderOps} />
   }
 }
 

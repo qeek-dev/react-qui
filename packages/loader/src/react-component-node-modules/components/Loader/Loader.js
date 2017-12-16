@@ -71,7 +71,9 @@ class Loader extends Component {
     return Observable.zip(
       this.timer$,
       source$.mergeMap(phase =>
-        Observable.from([phase.render]).repeat(parseInt(phase.duration / timeInterval, 10)),
+        Observable.from([phase.render]).repeat(
+          parseInt(phase.duration / timeInterval, 10),
+        ),
       ),
       (time, v) => v,
     )
@@ -107,18 +109,18 @@ class Loader extends Component {
   }
 
   render() {
-    const { visible, renderTimeout } = this.props
+    const { visible, renderTimeout, ...rest } = this.props
     const { isTimeout } = this.state
     const style = {
       visibility: visible ? 'visible' : 'hidden',
     }
     const isRenderTimeout = isTimeout && renderTimeout
 
-    return isRenderTimeout ? (
-      <div style={style}>{renderTimeout(this.props, this.state)}</div>
-    ) : (
-      <div style={style}>
-        {this.state.currentRender(this.props, this.state)}
+    return (
+      <div {...rest} style={style}>
+        {isRenderTimeout
+          ? renderTimeout(this.props, this.state)
+          : this.state.currentRender(this.props, this.state)}
       </div>
     )
   }

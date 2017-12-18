@@ -47,16 +47,3 @@ export default class Button extends PureComponent {
   }
 }
 
-Button.propTypes = {
-  shape: PropTypes.string,
-  theme: PropTypes.string,
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.element,
-  ]),
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
-  onDoubleClick: PropTypes.func
-}

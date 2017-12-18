@@ -31,10 +31,3 @@ export default class ToastrContainer extends Component {
     )
   }
 }
-
-ToastrContainer.PropTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  duration: PropTypes.number,
-  position: PropTypes.string,
-}

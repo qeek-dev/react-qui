@@ -58,15 +58,3 @@ export default class Toastr extends PureComponent {
     )
   }
 }
-
-Toastr.PropTypes = {
-  btnStyle: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.element,
-  ]),
-  className: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
-}

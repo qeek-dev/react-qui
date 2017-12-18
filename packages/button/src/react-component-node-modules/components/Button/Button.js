@@ -20,7 +20,9 @@ export default class Button extends PureComponent {
       PropTypes.element,
     ]),
     /** State of the button. Make button to be in disable state */
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func,
+    onDoubleClick: PropTypes.func
   }
 
   static defaultProps = {
@@ -30,11 +32,12 @@ export default class Button extends PureComponent {
   }
 
   render() {
-    const { shape, theme, className, disabled, children, ...restProps } = this.props
+    const { shape, theme, className, disabled, children, onClick, onDoubleClick } = this.props
 
     return (
       <button
-        {...restProps}
+        onClick={onClick}
+        onDoubleClick={onDoubleClick}
         disabled={disabled}
         className={cx(['qbtn', shape, theme, className])}
       >
@@ -54,4 +57,6 @@ Button.propTypes = {
     PropTypes.element,
   ]),
   disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  onDoubleClick: PropTypes.func
 }

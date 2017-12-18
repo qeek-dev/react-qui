@@ -35,20 +35,18 @@ export default class Toastr extends PureComponent {
 
   getContainerStyle = () => {
     const { width, height, duration } = this.props
+    const widthWithoutPadding = width - 48
+    const heightWithoutPadding = height - 48
 
     return {
-      width: `${width}px`,
-      height: `${height}px`,
+      width: `${widthWithoutPadding}px`,
+      height: `${heightWithoutPadding}px`,
       animationDelay: `${duration}s`,
     }
   }
 
   render() {
-    const {
-      btnStyle,
-      children,
-      className,
-    } = this.props
+    const { btnStyle, children, className } = this.props
 
     return (
       <div

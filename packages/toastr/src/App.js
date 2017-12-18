@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-import { Toastr, ToastrContainer } from './react-component-node-modules/';
+import { Toastr, ToastrContainer } from './react-component-node-modules/'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Component Demo Page</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div className="content">
-          <Toastr name="My first react component" />
-        </div>
+      <div>
+        <ToastrContainer duration={5} position="top-left">
+          <Toastr btnStyle="qts">
+            已複製到剪貼簿。hfaspoighoipewhjgiopasehjgposjeo
+          </Toastr>
+          <Toastr btnStyle="photo-st">PhotoStation</Toastr>
+          <Toastr btnStyle="music-st">MusicStation</Toastr>
+          <Toastr btnStyle="file-st">FileStation</Toastr>
+          <Toastr btnStyle="download-st">DownloadStation</Toastr>
+          <Toastr btnStyle="video-st">VideoStation</Toastr>
+        </ToastrContainer>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

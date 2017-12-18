@@ -2,8 +2,8 @@
 
 ```js
 <div>
-  <ToastrContainer width={150} height={100} duration={5}>
-    <Toastr btnStyle="qts">已複製到剪貼簿。</Toastr>
+  <ToastrContainer   duration={5} position="top-right">
+    <Toastr btnStyle="qts">已複製到剪貼簿。hfaspoighoipewhjgiopasehjgposjeo</Toastr>
   </ToastrContainer>
 </div>
 ```

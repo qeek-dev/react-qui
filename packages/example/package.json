@@ -1,7 +1,10 @@
 {
-  "name": "react-qui-example",
-  "version": "1.0.1",
+  "name": "@react-qui/example",
+  "version": "1.0.5",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "lib",
     "build",

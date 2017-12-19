@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/observable/timer'
-import 'rxjs/add/observable/from'
-import 'rxjs/add/observable/zip'
-import 'rxjs/add/operator/mergeMap'
-import 'rxjs/add/operator/repeat'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import invariant from 'invariant'
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
+import 'rxjs/add/observable/from';
+import 'rxjs/add/observable/zip';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/repeat';
 
+const EMPTY_PHASES_ERROR = 'phases prop must has at least one element'
 class Loader extends Component {
   static propTypes = {
     visible: PropTypes.bool,
@@ -20,53 +22,52 @@ class Loader extends Component {
         duration: PropTypes.number.isRequired,
       }),
     ).isRequired,
-  }
+  };
 
   static defaultProps = {
     visible: false,
     timeout: 15000,
     timeInterval: 500,
-  }
+  };
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    const { phases } = props
-    if (phases.length < 1)
-      throw new Error('phases prop must has at least one element')
+    const { phases } = props;
+    invariant(phases.length > 1, EMPTY_PHASES_ERROR)
 
     this.state = {
       currentRender: phases[0]['render'],
       isTimeout: false,
-    }
+    };
 
-    this.timer$ = null
-    this.timerSub = null
-    this.timeoutID = undefined
+    this.timer$ = null;
+    this.timerSub = null;
+    this.timeoutID = undefined;
   }
 
   componentDidMount() {
-    const { visible } = this.props
-    if (visible) this.enableLoader()
+    const { visible } = this.props;
+    if (visible) this.enableLoader();
   }
 
   componentWillUnmount() {
-    if (this.timerSub) this.timerSub.unsubscribe()
-    if (this.timeoutID) window.clearTimeout(this.timeoutID)
+    if (this.timerSub) this.timerSub.unsubscribe();
+    if (this.timeoutID) window.clearTimeout(this.timeoutID);
   }
 
   componentWillReceiveProps = nextProps => {
-    const { visible } = nextProps
+    const { visible } = nextProps;
     if (visible && !this.props.visible) {
-      this.enableLoader()
+      this.enableLoader();
     }
-  }
+  };
 
   getPhasesObservableSource = () => {
-    const { phases, timeInterval } = this.props
-    const source$ = Observable.from(phases)
+    const { phases, timeInterval } = this.props;
+    const source$ = Observable.from(phases);
 
-    this.timer$ = Observable.timer(0, timeInterval)
+    this.timer$ = Observable.timer(0, timeInterval);
 
     return Observable.zip(
       this.timer$,
@@ -76,54 +77,53 @@ class Loader extends Component {
         ),
       ),
       (time, v) => v,
-    )
-  }
+    );
+  };
 
   enableLoader() {
-    this.resetState()
-    this.timerSub = this.getPhasesObservableSource(
-      this.state.renderQueue,
-    ).subscribe(render => this.setState(_ => ({ currentRender: render })))
-    this.handleTimeout()
+    this.resetState();
+    this.timerSub = this.getPhasesObservableSource().subscribe(render =>
+      this.setState(_ => ({ currentRender: render })),
+    );
+    this.handleTimeout();
   }
 
   resetState() {
-    const { phases } = this.props
-    if (this.timerSub) this.timerSub.unsubscribe()
-    if (phases.length < 1)
-      throw new Error('phases prop must has at least one element')
+    const { phases } = this.props;
+    if (this.timerSub) this.timerSub.unsubscribe();
+    invariant(phases.length > 1, EMPTY_PHASES_ERROR)
 
     this.setState(_ => ({
       currentRender: phases[0]['render'],
       isTimeout: false,
-    }))
+    }));
   }
 
   handleTimeout = () => {
-    const { timeout, onTimeout } = this.props
-    if (this.timeoutID) window.clearTimeout(this.timeoutID)
+    const { timeout, onTimeout } = this.props;
+    if (this.timeoutID) window.clearTimeout(this.timeoutID);
     this.timeoutID = window.setTimeout(() => {
-      if (onTimeout) onTimeout()
-      this.setState(_ => ({ isTimeout: true }))
-    }, timeout)
-  }
+      if (onTimeout) onTimeout();
+      this.setState(_ => ({ isTimeout: true }));
+    }, timeout);
+  };
 
   render() {
-    const { visible, renderTimeout, ...rest } = this.props
-    const { isTimeout } = this.state
+    const { visible, renderTimeout } = this.props;
+    const { isTimeout } = this.state;
     const style = {
       visibility: visible ? 'visible' : 'hidden',
-    }
-    const isRenderTimeout = isTimeout && renderTimeout
+    };
+    const isRenderTimeout = isTimeout && renderTimeout;
 
     return (
-      <div {...rest} style={style}>
+      <div style={style}>
         {isRenderTimeout
           ? renderTimeout(this.props, this.state)
           : this.state.currentRender(this.props, this.state)}
       </div>
-    )
+    );
   }
 }
 
-export default Loader
+export default Loader;

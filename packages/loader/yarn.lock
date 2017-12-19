@@ -54,6 +54,15 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@react-qui/button@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@react-qui/button/-/button-1.0.12.tgz#6915f00c98785dbaf546d629ae8d7e37460ea6f5"
+  dependencies:
+    akiya-react-component-scripts "3.2.0"
+    react "^16.2.0"
+    react-dom "^16.2.0"
+    reset-css "^2.2.1"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -6510,15 +6519,6 @@ react-icons@^2.2.7:
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-2.2.7.tgz#d7860826b258557510dac10680abea5ca23cf650"
   dependencies:
     react-icon-base "2.1.0"
-
-react-qui-button@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-qui-button/-/react-qui-button-1.0.3.tgz#8e2b5cd667d9ab92cd4aa8f6bbb43da59f98660b"
-  dependencies:
-    akiya-react-component-scripts "3.2.0"
-    react "^16.2.0"
-    react-dom "^16.2.0"
-    reset-css "^2.2.1"
 
 react-styleguidist@^6.0.33:
   version "6.0.33"

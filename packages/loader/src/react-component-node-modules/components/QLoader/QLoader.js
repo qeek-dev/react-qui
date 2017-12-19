@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames/bind'
-import { Button } from 'react-qui-button'
+import { Button } from '@react-qui/button'
 
 import Spinner from './Spinner'
 import Loader from '../Loader/Loader'
@@ -114,7 +114,7 @@ class QLoader extends PureComponent {
     this.renderLoader(this.props.descriptionPhase2, this.props.detailPhase2)
 
   render() {
-    const { visible, timeout, onTimeout, renderTimeout, ...rest } = this.props
+    const { visible, timeout, onTimeout, renderTimeout } = this.props
     const loaderOps = {
       visible,
       timeout,
@@ -135,7 +135,7 @@ class QLoader extends PureComponent {
       ],
     }
 
-    return <Loader {...rest} {...loaderOps} />
+    return <Loader {...loaderOps} />
   }
 }
 

@@ -1,14 +1,17 @@
 {
-  "name": "react-qui-button",
+  "name": "@react-qui/button",
   "version": "1.0.11",
-  "main": "lib/index.js",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "lib",
     "build",
     "css",
     "assets"
   ],
+  "main": "lib/index.js",
   "scripts": {
     "build": "react-scripts build",
     "husky:precommit": "npm run lint && npm run stylelint && npm run flow-status",

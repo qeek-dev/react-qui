@@ -1,6 +1,6 @@
 {
   "name": "@react-qui/button",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "private": false,
   "publishConfig": {
     "access": "public"

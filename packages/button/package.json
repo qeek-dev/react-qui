@@ -1,6 +1,7 @@
 {
   "name": "react-qui-button",
-  "version": "1.0.4",
+  "version": "1.0.10",
+  "main": "lib/index.js",
   "private": false,
   "files": [
     "lib",
@@ -8,7 +9,6 @@
     "css",
     "assets"
   ],
-  "main": "lib/index.js",
   "scripts": {
     "build": "react-scripts build",
     "husky:precommit": "npm run lint && npm run stylelint && npm run flow-status",

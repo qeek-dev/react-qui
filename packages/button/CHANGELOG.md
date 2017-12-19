@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.11"></a>
+## [1.0.11](https://github.com/qeek-dev/react-qui/compare/react-qui-button@1.0.4...react-qui-button@1.0.11) (2017-12-19)
+
+
+
+
+**Note:** Version bump only for package react-qui-button
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/qeek-dev/react-qui/compare/react-qui-button@1.0.3...react-qui-button@1.0.4) (2017-12-18)
 

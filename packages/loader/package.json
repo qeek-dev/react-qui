@@ -1,0 +1,45 @@
+{
+  "name": "@react-qui/loader",
+  "version": "0.1.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "build",
+    "css",
+    "assets"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "react-scripts build",
+    "husky:precommit": "npm run lint && npm run stylelint && npm run flow-status",
+    "eject": "react-scripts eject",
+    "flow-coverage": "flow coverage",
+    "flow-start": "flow start",
+    "flow-status": "flow status",
+    "flow-stop": "flow stop",
+    "lib": "NODE_ENV=production babel src/react-component-node-modules --out-dir lib --copy-files",
+    "lint": "./node_modules/eslint/bin/eslint.js ./src/**/*.{js,jsx}",
+    "prepublish": "npm run build && npm run lib",
+    "start": "react-scripts start",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
+    "stylelint": "./node_modules/stylelint/bin/stylelint.js ./src/**/*.{scss,sass}",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "dependencies": {
+    "@react-qui/button": "^1.0.12",
+    "akiya-react-component-scripts": "3.2.0",
+    "invariant": "^2.2.2",
+    "normalize.css": "^7.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rxjs": "^5.5.2"
+  },
+  "peerDependencies": {
+    "react": "15.x"
+  },
+  "flow": "flow"
+}

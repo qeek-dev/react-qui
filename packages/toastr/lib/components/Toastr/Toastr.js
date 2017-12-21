@@ -5,7 +5,7 @@ var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(
 
 var cx = _bind2.default.bind(_Toastr2.default);var
 
-Toastr = function (_PureComponent) {_inherits(Toastr, _PureComponent);function Toastr() {_classCallCheck(this, Toastr);return _possibleConstructorReturn(this, (Toastr.__proto__ || Object.getPrototypeOf(Toastr)).apply(this, arguments));}_createClass(Toastr, [{ key: 'render', value: function render()
+Toastr = function (_PureComponent) {_inherits(Toastr, _PureComponent);function Toastr() {var _ref;var _temp, _this, _ret;_classCallCheck(this, Toastr);for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Toastr.__proto__ || Object.getPrototypeOf(Toastr)).call.apply(_ref, [this].concat(args))), _this), _this.
 
 
 
@@ -28,23 +28,33 @@ Toastr = function (_PureComponent) {_inherits(Toastr, _PureComponent);function T
 
 
 
+
+
+
+
+
+
+    getContainerStyle = function () {var _this$props =
+      _this.props,width = _this$props.width,height = _this$props.height;
+      var widthWithoutPadding = width - 48;
+      var heightWithoutPadding = height - 48;
+
+      return {
+        width: widthWithoutPadding + 'px',
+        height: heightWithoutPadding + 'px'
+        // animationDelay: `${duration}s`,
+      };
+    }, _temp), _possibleConstructorReturn(_this, _ret);}_createClass(Toastr, [{ key: 'componentDidMount', value: function componentDidMount() {this.getContainerStyle(this.props);} }, { key: 'render', value: function render()
 
     {var _props =
-      this.props,btnStyle = _props.btnStyle,children = _props.children,className = _props.className,width = _props.width,height = _props.height;
+      this.props,btnStyle = _props.btnStyle,children = _props.children,className = _props.className;
 
       return (
-        _react2.default.createElement('div', { style: { width: width + 'px', height: height + 'px' }, className: cx(['toastr', btnStyle, className]) }, ' ', children, ' '));
+        _react2.default.createElement('div', {
+            style: this.getContainerStyle(),
+            className: cx(['toastr', btnStyle, className]) },
 
-    } }]);return Toastr;}(_react.PureComponent);Toastr.propTypes = { btnStyle: _propTypes2.default.oneOf(['qts', 'photo-st', 'music-st', 'file-st', 'download-st', 'video-st']), children: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number, _propTypes2.default.element]), className: _propTypes2.default.string, width: _propTypes2.default.number, height: _propTypes2.default.number };Toastr.defaultProps = { btnStyle: 'qts' };exports.default = Toastr;
+          children));
 
 
-Toastr.PropTypes = {
-  btnStyle: _propTypes2.default.string,
-  children: _propTypes2.default.oneOfType([
-  _propTypes2.default.string,
-  _propTypes2.default.number,
-  _propTypes2.default.element]),
-
-  className: _propTypes2.default.string,
-  width: _propTypes2.default.number,
-  height: _propTypes2.default.number };
+    } }]);return Toastr;}(_react.PureComponent);Toastr.propTypes = { btnStyle: _propTypes2.default.oneOf(['qts', 'photo-st', 'music-st', 'file-st', 'download-st', 'video-st']), children: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number, _propTypes2.default.element]), className: _propTypes2.default.string, width: _propTypes2.default.number, height: _propTypes2.default.number, duration: _propTypes2.default.number };Toastr.defaultProps = { btnStyle: 'qts' };exports.default = Toastr;

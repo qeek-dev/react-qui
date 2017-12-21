@@ -23,6 +23,7 @@ export default class Toastr extends PureComponent {
     className: PropTypes.string,
     width: PropTypes.number,
     height: PropTypes.number,
+    duration: PropTypes.number
   }
 
   static defaultProps = {
@@ -34,14 +35,14 @@ export default class Toastr extends PureComponent {
   }
 
   getContainerStyle = () => {
-    const { width, height, duration } = this.props
+    const { width, height } = this.props
     const widthWithoutPadding = width - 48
     const heightWithoutPadding = height - 48
 
     return {
       width: `${widthWithoutPadding}px`,
       height: `${heightWithoutPadding}px`,
-      animationDelay: `${duration}s`,
+      // animationDelay: `${duration}s`,
     }
   }
 

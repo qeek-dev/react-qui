@@ -2,17 +2,18 @@
 @import 'mixins';
 
 .toastr {
-  width: 128px;
+  // width: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 64px;
   padding: 24px;
+  margin-top: 8px;
   font-family: Roboto, Helvetica, Arial, Sans-serif, Verdana, Tahoma;
   font-size: 16px;
   line-height: 20px;
   color: $toastr-font-color;
-  text-align: center;
-  vertical-align: middle;
-  animation: fade-out 5s ease-in-out;
-  animation-delay: 5s;
+  // animation: fade-out 2s ease-in-out;
 }
 
 .qts {
@@ -39,12 +40,12 @@
   background-color: $video-station-color;
 }
 
-@keyframes fade-out {
-  50% {
-    opacity: 1;
-  }
+// @keyframes fade-out {
+//   0% {
+//     opacity: 1;
+//   }
 
-  100% {
-    opacity: 0;
-  }
-}
+//   100% {
+//     opacity: 0;
+//   }
+// }

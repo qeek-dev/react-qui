@@ -1,17 +1,17 @@
-.example-enter {
+.toastranimation-enter {
   opacity: 0.01;
 }
 
-.example-enter.example-enter-active {
+.toastranimation-enter.toastranimation-enter-active {
   opacity: 1;
   transition: opacity 0.1ms ease-in;
 }
 
-.example-leave {
+.toastranimation-leave {
   opacity: 1;
 }
 
-.example-leave.example-leave-active {
+.toastranimation-leave.toastranimation-leave-active {
   opacity: 0.01;
-  transition: opacity 1000ms ease-in;
+  transition: opacity 2000ms ease-in;
 }

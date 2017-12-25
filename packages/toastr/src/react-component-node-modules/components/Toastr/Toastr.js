@@ -7,7 +7,7 @@ const cx = classnames.bind(styles)
 
 export default class Toastr extends PureComponent {
   static propTypes = {
-    btnStyle: PropTypes.oneOf([
+    toastrStyle: PropTypes.oneOf([
       'qts',
       'photo-st',
       'music-st',
@@ -23,11 +23,6 @@ export default class Toastr extends PureComponent {
     className: PropTypes.string,
     width: PropTypes.number,
     height: PropTypes.number,
-    duration: PropTypes.number
-  }
-
-  static defaultProps = {
-    btnStyle: 'qts',
   }
 
   componentDidMount() {
@@ -42,17 +37,16 @@ export default class Toastr extends PureComponent {
     return {
       width: `${widthWithoutPadding}px`,
       height: `${heightWithoutPadding}px`,
-      // animationDelay: `${duration}s`,
     }
   }
 
   render() {
-    const { btnStyle, children, className } = this.props
+    const { toastrStyle, children, className } = this.props
 
     return (
       <div
         style={this.getContainerStyle()}
-        className={cx(['toastr', btnStyle, className])}
+        className={cx(['toastr', toastrStyle, className])}
       >
         {children}
       </div>

@@ -4,6 +4,7 @@
   justify-content: flex-end;
   margin-top: 24px;
   margin-right: 24px;
+  pointer-events: none;
 }
 
 .top {
@@ -11,6 +12,7 @@
   align-items: flex-start;
   justify-content: center;
   margin-top: 24px;
+  pointer-events: none;
 }
 
 .top-left {
@@ -19,4 +21,5 @@
   justify-content: flex-start;
   margin-top: 24px;
   margin-left: 24px;
+  pointer-events: none;
 }

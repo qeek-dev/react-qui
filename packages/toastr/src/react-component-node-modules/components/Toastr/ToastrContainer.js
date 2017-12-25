@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import shortid from 'shortid'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import './styles/animation.css'
-import styled from 'styled-components'
+import { Toastr } from '../Toastr/'
 
 const cx = classnames.bind(styles)
 
@@ -17,12 +17,22 @@ export default class ToastrContainer extends Component {
     position: PropTypes.string,
     className: PropTypes.string,
     render: PropTypes.func,
+    toastrStyle: PropTypes.oneOf([
+      'qts',
+      'photo-st',
+      'music-st',
+      'file-st',
+      'download-st',
+      'video-st',
+    ]),
   }
 
   static defaultProps = {
     duration: 5,
     position: 'top-right',
+    toastrStyle: 'qts',
   }
+
   constructor(props) {
     super(props)
 
@@ -31,46 +41,41 @@ export default class ToastrContainer extends Component {
     }
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.state.queue !== nextState.queue
-  }
-
   trigger = () => {
-    const { width, height, duration } = this.props
+    const { width, height, duration, toastrStyle } = this.props
     const children = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
         width,
         height,
-        duration,
+        toastrStyle,
         key: shortid.generate(),
       })
     })
 
     if (this.state.queue.length < 0) return
     this.setState(prevState => ({
-      queue: prevState.queue.concat(children),
+      queue: [...prevState.queue, ...children]
     }))
 
-    if (this.state.queue.length < 0) return
     window.setTimeout(() => {
       let newItems = this.state.queue.slice(1)
 
       this.setState(prevState => ({
         queue: newItems,
       }))
-    }, 3000)
+    }, duration * 1000)
   }
 
   render() {
-    const { position, className, duration } = this.props
+    const { position, className } = this.props
 
     return (
       <div className={cx([position, className])}>
         <div>
           <ReactCSSTransitionGroup
-            transitionName="example"
+            transitionName="toastranimation"
             transitionEnterTimeout={0.1}
-            transitionLeaveTimeout={1000}
+            transitionLeaveTimeout={2000}
           >
             {this.state.queue}
           </ReactCSSTransitionGroup>

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import shortid from 'shortid'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import './styles/animation.css'
-import { Toastr } from '../Toastr/'
 
 const cx = classnames.bind(styles)
 

@@ -1,5 +1,5 @@
 {
-  "name": "react-qui-toastr",
+  "name": "@react-qui/toastr",
   "version": "0.1.0",
   "private": false,
   "files": [
@@ -26,15 +26,14 @@
     "stylelint": "./node_modules/stylelint/bin/stylelint.js ./src/**/*.{scss,sass}",
     "test": "react-scripts test --env=jsdom"
   },
-  "dependencies": {
+  "devDependencies": {
     "akiya-react-component-scripts": "1.2.6",
     "classnames": "^2.2.5",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.2.0",
     "reset-css": "^2.2.1",
-    "shortid": "^2.2.8",
-    "styled-components": "^2.3.3"
+    "shortid": "^2.2.8"
   },
   "peerDependencies": {
     "react": "15.x"

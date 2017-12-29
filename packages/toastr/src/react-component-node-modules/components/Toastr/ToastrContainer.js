@@ -27,7 +27,7 @@ export default class ToastrContainer extends Component {
   }
 
   static defaultProps = {
-    duration: 5,
+    duration: 5000,
     position: 'top-right',
     toastrStyle: 'qts',
   }
@@ -40,7 +40,9 @@ export default class ToastrContainer extends Component {
     }
   }
 
-  trigger = (childProps) => {
+  trigger = childProps => {
+    if (this.state.queue.length < 0) return
+
     const { width, height, duration, toastrStyle } = this.props
     const children = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
@@ -48,22 +50,24 @@ export default class ToastrContainer extends Component {
         height,
         toastrStyle,
         key: shortid.generate(),
-        ...childProps
+        ...childProps,
       })
     })
 
-    if (this.state.queue.length < 0) return
     this.setState(prevState => ({
-      queue: [...prevState.queue, ...children]
+      queue: [...prevState.queue, ...children],
     }))
 
-    window.setTimeout(() => {
-      let newItems = this.state.queue.slice(1)
-
+    this.id = window.setTimeout(() => {
       this.setState(prevState => ({
-        queue: newItems,
+        queue: prevState.queue.slice(1),
       }))
-    }, duration * 1000)
+    }, duration)
+  }
+
+  componentWillUnmount() {
+    if (!this.id) return
+    clearTimeout(this.id)
   }
 
   render() {

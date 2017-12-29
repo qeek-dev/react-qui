@@ -19,20 +19,24 @@ export default class Toastr extends PureComponent {
       PropTypes.string,
       PropTypes.number,
       PropTypes.element,
+      PropTypes.array,
     ]),
     className: PropTypes.string,
     width: PropTypes.number,
     height: PropTypes.number,
-  }
-
-  componentDidMount() {
-    this.getContainerStyle(this.props)
+    childProps: PropTypes.oneOf([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.element,
+      PropTypes.array,
+    ]),
   }
 
   getContainerStyle = () => {
     const { width, height } = this.props
-    const widthWithoutPadding = width - 48
-    const heightWithoutPadding = height - 48
+    const paddingPixel = 48
+    const widthWithoutPadding = width - paddingPixel
+    const heightWithoutPadding = height - paddingPixel
 
     return {
       width: `${widthWithoutPadding}px`,
@@ -48,7 +52,7 @@ export default class Toastr extends PureComponent {
         style={this.getContainerStyle()}
         className={cx(['toastr', toastrStyle, className])}
       >
-        {children}
+        <div>{children}</div>
       </div>
     )
   }

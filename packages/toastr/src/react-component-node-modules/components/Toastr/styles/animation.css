@@ -1,5 +1,5 @@
 .toastranimation-enter {
-  opacity: 0.01;
+  opacity: 0;
 }
 
 .toastranimation-enter.toastranimation-enter-active {
@@ -12,6 +12,6 @@
 }
 
 .toastranimation-leave.toastranimation-leave-active {
-  opacity: 0.01;
+  opacity: 0;
   transition: opacity 2000ms ease-in;
 }

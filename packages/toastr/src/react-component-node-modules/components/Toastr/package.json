@@ -1,5 +1,5 @@
 {
   "private": true,
-  "name": "react-qui/toastr",
+  "name": "@react-qui/toastr",
   "main": "./Toastr.js"
 }

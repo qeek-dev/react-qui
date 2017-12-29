@@ -115,5 +115,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# lib
+.lib
+
 
 # End of https://www.gitignore.io/api/git,node,macos

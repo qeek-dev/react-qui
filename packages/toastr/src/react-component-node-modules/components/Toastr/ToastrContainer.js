@@ -40,7 +40,7 @@ export default class ToastrContainer extends Component {
     }
   }
 
-  trigger = () => {
+  trigger = (childProps) => {
     const { width, height, duration, toastrStyle } = this.props
     const children = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
@@ -48,6 +48,7 @@ export default class ToastrContainer extends Component {
         height,
         toastrStyle,
         key: shortid.generate(),
+        ...childProps
       })
     })
 

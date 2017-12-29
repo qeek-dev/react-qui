@@ -6,7 +6,8 @@ import { Toastr, ToastrContainer } from './react-component-node-modules/'
 class App extends Component {
   handleClick = evt => {
     if (!this.toastr) return
-    this.toastr.trigger()
+    this.toastr.trigger({children: 'Hello'})
+    this.toastr.trigger({children: <div>World!</div>})
   }
 
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
         <div>
           <ToastrContainer
             ref={ref => (this.toastr = ref)}
-            position="top-right"
+            position="top"
             duration={5}
           >
             <Toastr toastrStyle="qts">已複製到剪貼簿。</Toastr>

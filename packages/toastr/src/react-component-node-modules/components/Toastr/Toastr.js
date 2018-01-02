@@ -38,12 +38,12 @@ export default class Toastr extends Component {
         ...childProps,
       })
     })
-    
+
     this.setState(prevState => ({
       queue: [...prevState.queue, ...children],
     }))
-    
-    const { duration} = this.props
+
+    const { duration } = this.props
     this.timeID = window.setTimeout(() => {
       this.setState(prevState => ({
         queue: prevState.queue.slice(1),
@@ -60,15 +60,17 @@ export default class Toastr extends Component {
     const { position, className } = this.props
 
     return (
-      <div className={cx([position, className])}>
-        <div>
-          <ReactCSSTransitionGroup
-            transitionName="toastranimation"
-            transitionEnterTimeout={0.1}
-            transitionLeaveTimeout={2000}
-          >
-            {this.state.queue}
-          </ReactCSSTransitionGroup>
+      <div className={cx([position, 'view-page'])}>
+        <div className={cx([className])}>
+          <div>
+            <ReactCSSTransitionGroup
+              transitionName="toastranimation"
+              transitionEnterTimeout={0.1}
+              transitionLeaveTimeout={2000}
+            >
+              {this.state.queue}
+            </ReactCSSTransitionGroup>
+          </div>
         </div>
       </div>
     )

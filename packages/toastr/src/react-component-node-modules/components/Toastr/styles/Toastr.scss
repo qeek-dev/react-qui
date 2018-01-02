@@ -1,34 +1,65 @@
-.top-right {
+.view-page {
+  position: fixed;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
-  margin-top: 24px;
-  margin-right: 24px;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
 }
 
 .top {
-  display: flex;
+  top: 0;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 24px;
+  margin-bottom: 24px;
+  pointer-events: none;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-right: 24px;
+  margin-bottom: 24px;
   pointer-events: none;
 }
 
 .top-left {
-  display: flex;
+  top: 0;
+  left: 0;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-top: 24px;
+  margin-bottom: 24px;
   margin-left: 24px;
   pointer-events: none;
 }
 
 .bottom {
-  display: flex;
-  flex-direction: column;
+  bottom: 0;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 24px;
+  pointer-events: none;
+}
+
+.bottom-right {
+  right: 0;
+  bottom: 0;
   align-items: flex-end;
   justify-content: flex-end;
-  margin-top: 100px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  pointer-events: none;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  margin-left: 24px;
   pointer-events: none;
 }

@@ -28,8 +28,11 @@
   },
   "dependencies": {
     "akiya-react-component-scripts": "3.2.0",
+    "classnames": "^2.2.5",
+    "normalize.css": "^7.0.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "recompose": "^0.26.0"
   },
   "peerDependencies": {
     "react": "16.x"

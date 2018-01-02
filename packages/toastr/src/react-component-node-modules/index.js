@@ -1,2 +1,2 @@
-export { default as Toastr } from './components/Toastr/Toastr';
-export { default as ToastrContainer } from './components/Toastr/ToastrContainer'
+export { default as QToastr } from './components/Toastr/QToastr';
+export { default as Toastr } from './components/Toastr/Toastr'

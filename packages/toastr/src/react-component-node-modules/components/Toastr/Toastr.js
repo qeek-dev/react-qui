@@ -1,58 +1,75 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import classnames from 'classnames/bind'
 import styles from '../Toastr/styles/Toastr.scss'
 import PropTypes from 'prop-types'
+import shortid from 'shortid'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import './styles/animation.css'
 
 const cx = classnames.bind(styles)
 
-export default class Toastr extends PureComponent {
+export default class Toastr extends Component {
   static propTypes = {
-    toastrStyle: PropTypes.oneOf([
-      'qts',
-      'photo-st',
-      'music-st',
-      'file-st',
-      'download-st',
-      'video-st',
-    ]),
-    children: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.element,
-      PropTypes.array,
-    ]),
+    duration: PropTypes.number,
+    position: PropTypes.string,
     className: PropTypes.string,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    childProps: PropTypes.oneOf([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.element,
-      PropTypes.array,
-    ]),
+    render: PropTypes.func,
   }
 
-  getContainerStyle = () => {
-    const { width, height } = this.props
-    const paddingPixel = 48
-    const widthWithoutPadding = width - paddingPixel
-    const heightWithoutPadding = height - paddingPixel
+  static defaultProps = {
+    duration: 5000,
+    position: 'top-right',
+  }
 
-    return {
-      width: `${widthWithoutPadding}px`,
-      height: `${heightWithoutPadding}px`,
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      queue: [],
     }
   }
 
+  trigger = childProps => {
+    if (this.state.queue.length < 0) return
+
+    const children = React.Children.map(this.props.children, child => {
+      return React.cloneElement(child, {
+        key: shortid.generate(),
+        ...childProps,
+      })
+    })
+    
+    this.setState(prevState => ({
+      queue: [...prevState.queue, ...children],
+    }))
+    
+    const { duration} = this.props
+    this.timeID = window.setTimeout(() => {
+      this.setState(prevState => ({
+        queue: prevState.queue.slice(1),
+      }))
+    }, duration)
+  }
+
+  componentWillUnmount() {
+    if (!this.id) return
+    window.clearTimeout(this.timeID)
+  }
+
   render() {
-    const { toastrStyle, children, className } = this.props
+    const { position, className } = this.props
 
     return (
-      <div
-        style={this.getContainerStyle()}
-        className={cx(['toastr', toastrStyle, className])}
-      >
-        <div>{children}</div>
+      <div className={cx([position, className])}>
+        <div>
+          <ReactCSSTransitionGroup
+            transitionName="toastranimation"
+            transitionEnterTimeout={0.1}
+            transitionLeaveTimeout={2000}
+          >
+            {this.state.queue}
+          </ReactCSSTransitionGroup>
+        </div>
       </div>
     )
   }

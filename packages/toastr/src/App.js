@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 
-import { Toastr, ToastrContainer } from './react-component-node-modules/'
+import { Toastr, QToastr } from './react-component-node-modules/'
 
 class App extends Component {
   handleClick = evt => {
@@ -14,13 +14,13 @@ class App extends Component {
       <div>
         <button onClick={this.handleClick}>trigger</button>
         <div>
-          <ToastrContainer
+          <Toastr
             ref={ref => (this.toastr = ref)}
-            position="top"
+            position="bottom"
             duration={5000}
           >
-            <Toastr toastrStyle="qts">Test</Toastr>
-          </ToastrContainer>
+            <QToastr toastrStyle="qts">Test</QToastr>
+          </Toastr>
         </div>
       </div>
     )

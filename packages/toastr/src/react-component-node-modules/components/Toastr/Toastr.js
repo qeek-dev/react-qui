@@ -52,7 +52,7 @@ export default class Toastr extends Component {
   }
 
   componentWillUnmount() {
-    if (!this.id) return
+    if (!this.timeID) return
     window.clearTimeout(this.timeID)
   }
 

@@ -16,12 +16,13 @@ class App extends Component {
         <div>
           <Toastr
             ref={ref => (this.toastr = ref)}
-            position="top-right"
+            position="top"
             duration={5000}
           >
             <QToastr toastrStyle="qts">Test</QToastr>
           </Toastr>
         </div>
+        <button onClick={this.handleClick}>trigger2</button>
       </div>
     )
   }

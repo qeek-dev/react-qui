@@ -1,11 +1,14 @@
 
 ```js
+let toastr;
 <div>
-  <Toastr toastrStyle="qts">已複製到剪貼簿。</Toastr>
-  <Toastr toastrStyle="photo-st">PhotoStation</Toastr>
-  <Toastr toastrStyle="music-st">MusicStation</Toastr>
-  <Toastr toastrStyle="file-st">FileStation</Toastr>
-  <Toastr toastrStyle="download-st">DownloadStation</Toastr>
-  <Toastr toastrStyle="video-st">VideoStation</Toastr>
+  <button onClick={evt => toastr.trigger({children: <span>No, changed!</span>})}>trigger</button>
+  <Toastr
+    position="top-right"
+    duration={100000}
+    ref={ref => toastr = ref}
+  >
+    <QToastr toastrStyle="qts">Default Message</QToastr>
+  </Toastr>
 </div>
 ```

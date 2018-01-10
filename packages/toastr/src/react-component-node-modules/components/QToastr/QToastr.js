@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import classnames from 'classnames/bind'
-import styles from '../Toastr/styles/QToastr.scss'
+import styles from '../QToastr/styles/QToastr.scss'
 import PropTypes from 'prop-types'
 
 const cx = classnames.bind(styles)

@@ -18,7 +18,7 @@ const Demo = withDraggable({
     }}
     data-props={props}
   >
-    <p>I can be dragged.</p>
+    I can be dragged.
   </div>
 ));
 

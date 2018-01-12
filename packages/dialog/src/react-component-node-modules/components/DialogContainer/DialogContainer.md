@@ -1,4 +1,12 @@
-Basic: 
+Basic:
+
 ```js
-<DialogContainer visible onClose={() => alert('close dialog')} />
+initialState = { visible: true }
+
+;<DialogContainer
+  visible={state.visible}
+  onClose={() => setState({ visible: false })}
+>
+  Hi, some content!
+</DialogContainer>
 ```

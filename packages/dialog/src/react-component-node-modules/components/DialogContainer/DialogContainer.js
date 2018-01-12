@@ -1,7 +1,6 @@
 import React from 'react'
 import classnames from 'classnames/bind'
 import PropTypes from 'prop-types'
-import { setPropTypes, defaultProps, compose } from 'recompose'
 
 import styles from './DialogContainer.scss'
 import closeIcon from '../../assets/delete.svg'
@@ -26,15 +25,14 @@ const DialogContainer = ({ children, visible, onClose, className }) => {
   )
 }
 
-const enhancer = compose(
-  setPropTypes({
-    className: PropTypes.string,
-    onClose: PropTypes.func,
-    visible: PropTypes.bool,
-  }),
-  defaultProps({
-    visible: false,
-  }),
-)
+DialogContainer.propTypes = {
+  className: PropTypes.string,
+  onClose: PropTypes.func,
+  visible: PropTypes.bool,
+}
 
-export default enhancer(DialogContainer)
+DialogContainer.defaultProps = {
+  visible: false,
+}
+
+export default DialogContainer

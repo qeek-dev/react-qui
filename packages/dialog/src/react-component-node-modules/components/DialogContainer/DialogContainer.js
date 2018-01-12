@@ -1,29 +1,53 @@
 import React from 'react'
-import classnames from 'classnames/bind'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { $gray01, $bgColor } from '../../styled_global/colors'
 
-import styles from './DialogContainer.scss'
 import closeIcon from '../../assets/delete.svg'
 
-const cx = classnames.bind(styles)
+const CloseIcon = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 
-const DialogContainer = ({ children, visible, onClose, className }) => {
-  const inlineStyle = {
-    display: visible ? 'block' : 'none',
+  img {
+    width: 9px;
+    height: 9px;
   }
+`
 
-  return (
-    <div style={inlineStyle} className={cx('dialog-container', className)}>
-      <div className={cx('close-icon')} onClick={onClose}>
-        <img
-          src={closeIcon}
-          alt="close"
-        />
-      </div>
-      <div className={cx('dialog-content')}>{children}</div>
-    </div>
-  )
-}
+const Container = styled.div`
+  display: ${props => (props.visible ? 'block' : 'none')};
+  position: relative;
+  box-sizing: border-box;
+  min-width: 340px;
+  max-width: 450px;
+  padding: 24px;
+  background: ${$bgColor};
+  border: 1px solid ${$gray01};
+
+  * {
+    box-sizing: border-box;
+  }
+`
+
+
+
+const DialogContainer = ({ children, visible, onClose, className }) => (
+  <Container className={className} visible={visible}>
+    <CloseIcon onClick={onClose}>
+      <img src={closeIcon} alt="close" />
+    </CloseIcon>
+    <div>{children}</div>
+  </Container>
+)
 
 DialogContainer.propTypes = {
   className: PropTypes.string,

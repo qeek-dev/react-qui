@@ -17,7 +17,7 @@ class App extends Component {
           <Toastr
             ref={ref => (this.toastr = ref)}
             position="top"
-            duration={100000}
+            duration={5000}
             zIndex={9999}
           >
             <QToastr toastrStyle="qts">Test</QToastr>

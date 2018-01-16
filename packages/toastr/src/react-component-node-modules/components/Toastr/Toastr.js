@@ -14,11 +14,13 @@ export default class Toastr extends Component {
     position: PropTypes.string,
     className: PropTypes.string,
     render: PropTypes.func,
+    zIndex: PropTypes.number
   }
 
   static defaultProps = {
     duration: 5000,
     position: 'top-right',
+    zIndex: 9999
   }
 
   constructor(props) {
@@ -57,10 +59,10 @@ export default class Toastr extends Component {
   }
 
   render() {
-    const { position, className } = this.props
+    const { position, className, zIndex } = this.props
 
     return (
-      <div className={cx([position, 'view-page'])}>
+      <div style={{zIndex:`${zIndex}`}} className={cx([position, 'view-page'])}>
         <div className={cx([className])}>
           <div>
             <ReactCSSTransitionGroup

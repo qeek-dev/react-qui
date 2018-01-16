@@ -17,12 +17,12 @@ class App extends Component {
           <Toastr
             ref={ref => (this.toastr = ref)}
             position="top"
-            duration={5000}
+            duration={100000}
+            zIndex={9999}
           >
             <QToastr toastrStyle="qts">Test</QToastr>
           </Toastr>
         </div>
-        <button onClick={this.handleClick}>trigger2</button>
       </div>
     )
   }

@@ -7,6 +7,7 @@ let toastr;
     position="top-right"
     duration={5000}
     ref={ref => toastr = ref}
+    zIndex={9999}
   >
     <QToastr toastrStyle="qts">Default Message</QToastr>
   </Toastr>

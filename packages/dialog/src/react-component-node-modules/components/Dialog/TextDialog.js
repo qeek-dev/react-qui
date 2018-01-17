@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from '@react-qui/button'
 import styled from 'styled-components'
+import { withDraggable } from '@react-qui/hoc'
 
 import DialogContainer from '../DialogContainer/DialogContainer'
 
@@ -18,6 +19,8 @@ const ButtonGroup = styled.div`
 
 const ContentBlock = styled.div`
   margin: 0;
+  width: 100%;
+  word-break: break-all;
 `
 
 const TextDialog = ({
@@ -61,4 +64,8 @@ TextDialog.defaultProps = {
   cancelText: 'Cancel',
 }
 
-export default TextDialog
+export default withDraggable({
+  position: 'fixed',
+  zIndex: '99999',
+  center: true
+})(TextDialog)

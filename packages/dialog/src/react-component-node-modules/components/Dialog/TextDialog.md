@@ -1,3 +1,5 @@
+Basic:
+
 ```js
 <TextDialog
   visible
@@ -7,6 +9,8 @@
   onConfirm={() => alert('confirm')}
   onCancel={() => alert('cancel')}
 >
-  <div>Some Content</div>
+  <p>
+    VeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongTextVeryLongText
+  </p>
 </TextDialog>
 ```

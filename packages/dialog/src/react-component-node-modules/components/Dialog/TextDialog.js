@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from '@react-qui/button'
 import styled from 'styled-components'
-import { withDraggable } from '@react-qui/hoc'
 
 import DialogContainer from '../DialogContainer/DialogContainer'
 
@@ -33,16 +32,18 @@ const TextDialog = ({
 }) => {
   return (
     <DialogContainer {...rest}>
-      <ContentBlock>
-        {children}
-      </ContentBlock>  
+      <ContentBlock>{children}</ContentBlock>
       <ButtonGroup>
-        <Button theme="light" shape="square" onClick={onConfirm}>
-          {confirmText}
-        </Button>
-        <CancelButton theme="light" shape="square" onClick={onCancel}>
-          {cancelText}
-        </CancelButton>
+        {confirmText ? (
+          <Button theme="light" shape="square" onClick={onConfirm}>
+            {confirmText}
+          </Button>
+        ) : null}
+        {cancelText ? (
+          <CancelButton theme="light" shape="square" onClick={onCancel}>
+            {cancelText}
+          </CancelButton>
+        ) : null}
       </ButtonGroup>
     </DialogContainer>
   )
@@ -60,12 +61,6 @@ TextDialog.propTypes = {
 
 TextDialog.defaultProps = {
   visible: false,
-  confirmText: 'OK',
-  cancelText: 'Cancel',
 }
 
-export default withDraggable({
-  position: 'fixed',
-  zIndex: '99999',
-  center: true
-})(TextDialog)
+export default TextDialog

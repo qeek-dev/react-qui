@@ -40,8 +40,8 @@ const Container = styled.div`
 
 
 
-const DialogContainer = ({ children, visible, onClose, className }) => (
-  <Container className={className} visible={visible}>
+const DialogContainer = ({ children, visible, onClose, ...rest }) => (
+  <Container {...rest} visible={visible}>
     <CloseIcon onClick={onClose}>
       <img src={closeIcon} alt="close" />
     </CloseIcon>

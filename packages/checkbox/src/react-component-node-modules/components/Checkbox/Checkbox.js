@@ -1,15 +1,36 @@
 import React from 'react'
-import { compose, withState, defaultProps } from 'recompose'
+import { compose, withState, defaultProps, withHandlers } from 'recompose'
 
-const container = compose(
+const withContainer = compose(
   defaultProps({ checked: false }),
-  withState({ checked: false }),
+  withState('checked', 'setChecked', props => props.checked),
+  withHandlers({
+    handleChange: ({ setChecked }) => props => {
+      if (props.disabled) return
+
+      setChecked(checked => !checked)
+    },
+  }),
 )
 
-const Checkbox = props => (
+const Checkbox = ({
+  checked,
+  disabled,
+  className,
+  onChange,
+  onClick,
+  handleChange,
+}) => (
   <div>
-    <input type="checkbox" />
+    <input
+      type="checkbox"
+      checked={checked}
+      disabled={disabled}
+      onChange={handleChange}
+      onClick={onClick}
+      className={className}
+    />
   </div>
 )
 
-export default Checkbox
+export default withContainer(Checkbox)

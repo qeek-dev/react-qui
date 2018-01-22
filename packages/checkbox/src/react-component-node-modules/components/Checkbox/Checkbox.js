@@ -7,7 +7,7 @@ const withContainer = compose(
   withHandlers({
     handleChange: ({ setChecked }) => props => {
       if (props.disabled) return
-      
+
       setChecked(checked => !checked)
     },
   }),
@@ -20,7 +20,9 @@ const Checkbox = ({
   onChange,
   onClick,
   handleChange,
+  children
 }) => (
+  <label>
     <input
       type="checkbox"
       checked={checked}
@@ -29,6 +31,8 @@ const Checkbox = ({
       onClick={onClick}
       className={className}
     />
+    {children}
+  </label>
 )
 
 export default withContainer(Checkbox)

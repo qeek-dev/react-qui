@@ -17,6 +17,7 @@ const Input = styled.input`
 
 const Span = styled.span`
   vertical-align: middle;
+  color: ${props => (props.disabled ? '#aeaeae' : null)};
 `
 
 const withContainer = compose(
@@ -60,7 +61,7 @@ const Checkbox = ({
       className={className}
       value="true"
     />
-    <Span>{children}</Span>
+    <Span disabled={disabled}>{children}</Span>
   </label>
 )
 

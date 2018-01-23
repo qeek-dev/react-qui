@@ -8,21 +8,25 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Checkbox onChange={() => alert('hello')}>Test normal</Checkbox>
+          <Checkbox onChange={() => {
+            while(1){
+            console.log('11111111')
+            }
+          }}>normal</Checkbox>
         </div>
         <div>
-          <Checkbox disabled onChange={() => alert('hello')}>
-            Test disabled
+          <Checkbox disabled onChange={() => console.log('hello')}>
+            disabled
           </Checkbox>
         </div>
         <div>
           <Checkbox checked onChange={() => alert('hello')}>
-            Test checked
+            checked
           </Checkbox>
         </div>
         <div>
-          <Checkbox checked disabled onChange={() => alert('hello')}>
-            Test checked disabled
+          <Checkbox checked disabled onChange={() => console.log('hello')}>
+            checked disabled
           </Checkbox>
         </div>
       </div>

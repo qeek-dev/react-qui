@@ -16,14 +16,19 @@ const checkboxIcons = importAllFiles(
 
 console.log(checkboxIcons)
 
-const Input = styled.input`
+const Label = styled.label`
+  display: inline-block;
+`
+const Img = styled.img`
   margin-right: 10px;
   vertical-align: middle;
-  outline: none;
+`
+
+const Input = styled.input`
+  display: none;
 `
 
 const Span = styled.span`
-  vertical-align: middle;
   color: ${props => (props.disabled ? '#aeaeae' : null)};
 `
 
@@ -51,21 +56,6 @@ const withContainer = compose(
       setValue(value => !value)
     },
   }),
-  lifecycle({
-    shouldComponentUpdate(nextProps, nextState) {
-      console.log(`shouldComponentUpdate`)
-      return true
-    },
-    componentWillUpdate(nextProps, nextState) {
-      console.log(`componentWillUpdate`)
-    },
-    componentDidUpdate(prevProps, prevState) {
-      if (prevProps.value !== this.props.value) {
-        prevProps.onChange()
-      }
-      console.log(`componentDidupdate`)
-    },
-  }),
 )
 
 const Checkbox = ({
@@ -77,12 +67,9 @@ const Checkbox = ({
   onClick,
   handleClick,
   children,
-}) => {
-  console.log(`disable: ${disabled}`)
-  return (
-  <label>
-    <Input
-      type="image"
+}) => (
+  <Label htmlFor={children}>
+    <Img
       src={
         disabled
           ? checked
@@ -93,15 +80,19 @@ const Checkbox = ({
             : checkboxIcons.svg.btn_checkbox
       }
       alt="Src Error"
+    />
+    <Input
+      type="checkbox"
+      id={children}
       checked={checked}
       disabled={disabled}
       onChange={onChange}
       onClick={handleClick}
       className={className}
-      defaultValue={checked}
+      value={checked}
     />
     <Span disabled={disabled}>{children}</Span>
-  </label>
-)}
+  </Label>
+)
 
 export default withContainer(Checkbox)

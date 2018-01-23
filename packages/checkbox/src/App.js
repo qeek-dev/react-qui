@@ -8,11 +8,7 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Checkbox onChange={() => {
-            while(1){
-            console.log('11111111')
-            }
-          }}>normal</Checkbox>
+          <Checkbox onChange={() => alert('hello')}>normal</Checkbox>
         </div>
         <div>
           <Checkbox disabled onChange={() => console.log('hello')}>

@@ -28,17 +28,20 @@ const Input = styled.input`
 `
 
 const Span = styled.span`
-  color: ${props => (props.disabled ? '#aeaeae' : null)}
-`  
+  color: ${props => (props.disabled ? '#aeaeae' : null)};
+  margin-right: ${props => props.span}px;
+`
 
 const withContainer = compose(
-  defaultProps({ checked: false, disabled: false }),
+  defaultProps({ checked: false, disabled: false, theme: 'light' }),
   mapProps(props => ({
     onChange: props.onChange,
     children: props.children,
     disabled: props.disabled,
     checked: props.checked,
     className: props.className,
+    span: props.span,
+    theme: props.theme,
   })),
   withState('checked', 'setChecked', props => props.checked),
   withHandlers({
@@ -58,19 +61,28 @@ const Checkbox = ({
   onClick,
   handleClick,
   children,
+  span,
+  theme,
 }) => {
-  console.log(`checked: ${checked}, disabled: ${disabled}`)
   return (
     <Label htmlFor={children}>
       <Img
         src={
-          disabled
-            ? checked
-              ? checkboxIcons.svg.btn_checkbox_presseddisable
-              : checkboxIcons.svg.btn_checkbox_disable
-            : checked
-              ? checkboxIcons.svg.btn_checkbox_pressed
-              : checkboxIcons.svg.btn_checkbox
+          theme === 'light'
+            ? disabled
+              ? checked
+                ? checkboxIcons.svg.btn_checkbox_presseddisable
+                : checkboxIcons.svg.btn_checkbox_disable
+              : checked
+                ? checkboxIcons.svg.btn_checkbox_pressed
+                : checkboxIcons.svg.btn_checkbox
+            : disabled
+              ? checked
+                ? checkboxIcons.svg.btn_checkbox_presseddisable_black
+                : checkboxIcons.svg.btn_checkbox_disable_black
+              : checked
+                ? checkboxIcons.svg.btn_checkbox_pressed_black
+                : checkboxIcons.svg.btn_checkbox_black
         }
         alt="Src Error"
       />
@@ -83,7 +95,9 @@ const Checkbox = ({
         onClick={handleClick}
         className={className}
       />
-      <Span disabled={disabled}>{children}</Span>
+      <Span disabled={disabled} span={span}>
+        {children}
+      </Span>
     </Label>
   )
 }

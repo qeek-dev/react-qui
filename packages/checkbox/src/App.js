@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Checkbox onChange={() => alert('hello')}>normal</Checkbox>
+          <Checkbox onChange={() => console.log('hello')}>normal</Checkbox>
         </div>
         <div>
           <Checkbox disabled onChange={() => console.log('hello')}>
@@ -16,7 +16,7 @@ class App extends Component {
           </Checkbox>
         </div>
         <div>
-          <Checkbox checked onChange={() => alert('hello')}>
+          <Checkbox checked onChange={() => console.log('hello')}>
             checked
           </Checkbox>
         </div>

@@ -5,7 +5,6 @@ import {
   defaultProps,
   withHandlers,
   mapProps,
-  lifecycle,
 } from 'recompose'
 import styled from 'styled-components'
 import { importAllFiles } from './utils/utils'
@@ -14,7 +13,7 @@ const checkboxIcons = importAllFiles(
   require.context('./assets/', true, /\.(png|jpe?g|svg)$/),
 )
 
-console.log(checkboxIcons)
+// console.log(checkboxIcons)
 
 const Label = styled.label`
   display: inline-block;
@@ -29,31 +28,24 @@ const Input = styled.input`
 `
 
 const Span = styled.span`
-  color: ${props => (props.disabled ? '#aeaeae' : null)};
-`
+  color: ${props => (props.disabled ? '#aeaeae' : null)}
+`  
 
 const withContainer = compose(
-  defaultProps({ checked: false, value: false }),
+  defaultProps({ checked: false, disabled: false }),
   mapProps(props => ({
     onChange: props.onChange,
     children: props.children,
     disabled: props.disabled,
-    value: props.value,
+    checked: props.checked,
+    className: props.className,
   })),
   withState('checked', 'setChecked', props => props.checked),
-  withState('value', 'setValue', props => props.value),
   withHandlers({
-    handleClick: ({
-      setChecked,
-      setValue,
-      children,
-      onChange,
-      disabled,
-    }) => props => {
+    handleClick: ({ setChecked, children, onChange, disabled }) => props => {
       if (disabled) return
 
       setChecked(checked => !checked)
-      setValue(value => !value)
     },
   }),
 )
@@ -61,38 +53,39 @@ const withContainer = compose(
 const Checkbox = ({
   checked,
   disabled,
-  value,
   className,
   onChange,
   onClick,
   handleClick,
   children,
-}) => (
-  <Label htmlFor={children}>
-    <Img
-      src={
-        disabled
-          ? checked
-            ? checkboxIcons.svg.btn_checkbox_presseddisable
-            : checkboxIcons.svg.btn_checkbox_disable
-          : checked
-            ? checkboxIcons.svg.btn_checkbox_pressed
-            : checkboxIcons.svg.btn_checkbox
-      }
-      alt="Src Error"
-    />
-    <Input
-      type="checkbox"
-      id={children}
-      checked={checked}
-      disabled={disabled}
-      onChange={onChange}
-      onClick={handleClick}
-      className={className}
-      value={checked}
-    />
-    <Span disabled={disabled}>{children}</Span>
-  </Label>
-)
+}) => {
+  console.log(`checked: ${checked}, disabled: ${disabled}`)
+  return (
+    <Label htmlFor={children}>
+      <Img
+        src={
+          disabled
+            ? checked
+              ? checkboxIcons.svg.btn_checkbox_presseddisable
+              : checkboxIcons.svg.btn_checkbox_disable
+            : checked
+              ? checkboxIcons.svg.btn_checkbox_pressed
+              : checkboxIcons.svg.btn_checkbox
+        }
+        alt="Src Error"
+      />
+      <Input
+        type="checkbox"
+        id={children}
+        defaultChecked={checked}
+        disabled={disabled}
+        onChange={onChange}
+        onClick={handleClick}
+        className={className}
+      />
+      <Span disabled={disabled}>{children}</Span>
+    </Label>
+  )
+}
 
 export default withContainer(Checkbox)

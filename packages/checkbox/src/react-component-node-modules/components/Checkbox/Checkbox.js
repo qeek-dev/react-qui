@@ -17,6 +17,7 @@ const checkboxIcons = importAllFiles(
 
 const Label = styled.label`
   display: inline-block;
+  cursor: ${props => (props.disabled ? 'not-allowed': 'pointer')};
 `
 const Img = styled.img`
   margin-right: 10px;
@@ -65,7 +66,7 @@ const Checkbox = ({
   theme,
 }) => {
   return (
-    <Label htmlFor={children}>
+    <Label htmlFor={children} disabled={disabled}>
       <Img
         src={
           theme === 'light'

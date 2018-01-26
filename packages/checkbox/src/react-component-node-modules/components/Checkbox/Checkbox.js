@@ -17,7 +17,7 @@ const checkboxIcons = importAllFiles(
 
 const Label = styled.label`
   display: inline-block;
-  cursor: ${props => (props.disabled ? 'not-allowed': 'pointer')};
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
 `
 const Img = styled.img`
   margin-right: 10px;
@@ -32,6 +32,24 @@ const Span = styled.span`
   color: ${props => (props.disabled ? '#aeaeae' : null)};
   margin-right: ${props => props.span}px;
 `
+
+const imgSrc = (theme, disabled, checked) => {
+  return theme === 'light'
+    ? disabled
+      ? checked
+        ? checkboxIcons.svg.btn_checkbox_presseddisable
+        : checkboxIcons.svg.btn_checkbox_disable
+      : checked
+        ? checkboxIcons.svg.btn_checkbox_pressed
+        : checkboxIcons.svg.btn_checkbox
+    : disabled
+      ? checked
+        ? checkboxIcons.svg.btn_checkbox_presseddisable_black
+        : checkboxIcons.svg.btn_checkbox_disable_black
+      : checked
+        ? checkboxIcons.svg.btn_checkbox_pressed_black
+        : checkboxIcons.svg.btn_checkbox_black
+}
 
 const withContainer = compose(
   defaultProps({ checked: false, disabled: false, theme: 'light' }),
@@ -65,28 +83,11 @@ const Checkbox = ({
   span,
   theme,
 }) => {
+  const img = imgSrc(theme, disabled, checked)
+  console.log(`img: ${img}`)
   return (
     <Label htmlFor={children} disabled={disabled}>
-      <Img
-        src={
-          theme === 'light'
-            ? disabled
-              ? checked
-                ? checkboxIcons.svg.btn_checkbox_presseddisable
-                : checkboxIcons.svg.btn_checkbox_disable
-              : checked
-                ? checkboxIcons.svg.btn_checkbox_pressed
-                : checkboxIcons.svg.btn_checkbox
-            : disabled
-              ? checked
-                ? checkboxIcons.svg.btn_checkbox_presseddisable_black
-                : checkboxIcons.svg.btn_checkbox_disable_black
-              : checked
-                ? checkboxIcons.svg.btn_checkbox_pressed_black
-                : checkboxIcons.svg.btn_checkbox_black
-        }
-        alt="Src Error"
-      />
+      <Img src={img} alt="Src Error" />
       <Input
         type="checkbox"
         id={children}

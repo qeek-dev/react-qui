@@ -13,44 +13,44 @@ const checkboxIcons = importAllFiles(
   require.context('./assets/', true, /\.(png|jpe?g|svg)$/),
 )
 
-// console.log(checkboxIcons)
-
 const Label = styled.label`
-  display: inline-block;
+  color: ${props => (props.disabled ? '#aeaeae' : null)};
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   margin-bottom: ${props => props.span}px;
 `
-const Img = styled.img`
+
+const Img = styled.img.attrs({
+  src: ({ theme, disabled, checked }) =>
+    theme === 'light'
+      ? disabled
+        ? checked
+          ? checkboxIcons.svg.btn_checkbox_presseddisable
+          : checkboxIcons.svg.btn_checkbox_disable
+        : checked
+          ? checkboxIcons.svg.btn_checkbox_pressed
+          : checkboxIcons.svg.btn_checkbox
+      : disabled
+        ? checked
+          ? checkboxIcons.svg.btn_checkbox_presseddisable_black
+          : checkboxIcons.svg.btn_checkbox_disable_black
+        : checked
+          ? checkboxIcons.svg.btn_checkbox_pressed_black
+          : checkboxIcons.svg.btn_checkbox_black,
+  alt: 'Src Error',
+})`
   margin-right: 10px;
   vertical-align: middle;
 `
 
-const Input = styled.input`
+const Input = styled.input.attrs({
+  type: 'checkbox',
+})`
   display: none;
 `
 
 const Span = styled.span`
-  color: ${props => (props.disabled ? '#aeaeae' : null)};
   margin-right: ${props => props.span}px;
 `
-
-const imgSrc = (theme, disabled, checked) => {
-  return theme === 'light'
-    ? disabled
-      ? checked
-        ? checkboxIcons.svg.btn_checkbox_presseddisable
-        : checkboxIcons.svg.btn_checkbox_disable
-      : checked
-        ? checkboxIcons.svg.btn_checkbox_pressed
-        : checkboxIcons.svg.btn_checkbox
-    : disabled
-      ? checked
-        ? checkboxIcons.svg.btn_checkbox_presseddisable_black
-        : checkboxIcons.svg.btn_checkbox_disable_black
-      : checked
-        ? checkboxIcons.svg.btn_checkbox_pressed_black
-        : checkboxIcons.svg.btn_checkbox_black
-}
 
 const withContainer = compose(
   defaultProps({ checked: false, disabled: false, theme: 'light' }),
@@ -84,13 +84,10 @@ const Checkbox = ({
   span,
   theme,
 }) => {
-  const img = imgSrc(theme, disabled, checked)
-  console.log(`img: ${img}`)
   return (
     <Label htmlFor={children} disabled={disabled} span={span}>
-      <Img src={img} alt="Src Error" />
+      <Img theme={theme} disabled={disabled} checked={checked} />
       <Input
-        type="checkbox"
         id={children}
         defaultChecked={checked}
         disabled={disabled}
@@ -98,9 +95,7 @@ const Checkbox = ({
         onClick={handleClick}
         className={className}
       />
-      <Span disabled={disabled} span={span}>
-        {children}
-      </Span>
+      <Span span={span}>{children}</Span>
     </Label>
   )
 }

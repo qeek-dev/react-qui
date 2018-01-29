@@ -16,7 +16,11 @@ const checkboxIcons = importAllFiles(
 const Label = styled.label`
   color: ${props => (props.disabled ? '#aeaeae' : null)};
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
-  margin-bottom: ${props => props.span}px;
+  margin-bottom: ${props =>
+    props.direction === 'column' || props.direction === 'col'
+      ? props.span
+      : null}px;
+  margin-right: ${props => (props.direction === 'row' ? props.span : null)}px;
 `
 
 const Img = styled.img.attrs({
@@ -48,10 +52,6 @@ const Input = styled.input.attrs({
   display: none;
 `
 
-const Span = styled.span`
-  margin-right: ${props => props.span}px;
-`
-
 const withContainer = compose(
   defaultProps({ checked: false, disabled: false, theme: 'light' }),
   mapProps(props => ({
@@ -62,10 +62,11 @@ const withContainer = compose(
     className: props.className,
     span: props.span,
     theme: props.theme,
+    direction: props.direction,
   })),
   withState('checked', 'setChecked', props => props.checked),
   withHandlers({
-    handleClick: ({ setChecked, children, onChange, disabled }) => props => {
+    handleClick: ({ setChecked, disabled }) => props => {
       if (disabled) return
 
       setChecked(checked => !checked)
@@ -83,9 +84,15 @@ const Checkbox = ({
   children,
   span,
   theme,
+  direction,
 }) => {
   return (
-    <Label htmlFor={children} disabled={disabled} span={span}>
+    <Label
+      htmlFor={children}
+      disabled={disabled}
+      span={span}
+      direction={direction}
+    >
       <Img theme={theme} disabled={disabled} checked={checked} />
       <Input
         id={children}
@@ -95,7 +102,7 @@ const Checkbox = ({
         onClick={handleClick}
         className={className}
       />
-      <Span span={span}>{children}</Span>
+      <span>{children}</span>
     </Label>
   )
 }

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Checkbox from '../Checkbox/Checkbox'
 
 const CheckboxGroup = props => {
-  const { options, span, theme, direction} = props
+  const { options, span, theme, direction } = props
 
   const children = options.map(option => {
     console.log(`option: ${option}`)
@@ -17,7 +17,10 @@ const CheckboxGroup = props => {
 
   const Direction = styled.div`
     display: flex;
-    flex-flow: ${direction} wrap;
+    flex-flow: ${direction === 'column' || direction === 'col'
+        ? 'column'
+        : null}
+      wrap;
   `
 
   return <Direction>{children}</Direction>

@@ -14,7 +14,7 @@
     options={['Bitcoin', 'Ripple', 'Ethereum']}
     span={30}
     theme="light"
-    direction="column"
+    direction="col"
   />
 </div>
 ```

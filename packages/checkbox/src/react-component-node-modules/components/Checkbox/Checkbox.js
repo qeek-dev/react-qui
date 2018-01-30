@@ -14,7 +14,10 @@ const checkboxIcons = importAllFiles(
 )
 
 const Label = styled.label`
-  color: ${props => (props.disabled ? '#aeaeae' : null)};
+  color: ${props =>
+    props.theme === 'light'
+      ? props.disabled ? '#aeaeae' : null
+      : props.disabled ? '#aeaeae' : '#ffffff'};
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   margin-bottom: ${props =>
     props.direction === 'column' || props.direction === 'col'
@@ -89,6 +92,7 @@ const Checkbox = ({
   return (
     <Label
       htmlFor={children}
+      theme={theme}
       disabled={disabled}
       span={span}
       direction={direction}

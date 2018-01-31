@@ -1,10 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   compose,
   withState,
   defaultProps,
   withHandlers,
   mapProps,
+  setPropTypes,
 } from 'recompose'
 import styled from 'styled-components'
 import { importAllFiles } from './utils/utils'
@@ -56,6 +58,23 @@ const Input = styled.input.attrs({
 `
 
 const withContainer = compose(
+  setPropTypes({
+    checked: PropTypes.bool,
+    disabled: PropTypes.bool,
+    className: PropTypes.string,
+    onChange: PropTypes.func,
+    onClick: PropTypes.func,
+    handleClick: PropTypes.func,
+    children: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.element,
+      PropTypes.array,
+    ]),
+    span: PropTypes.number,
+    theme: PropTypes.string,
+    direction: PropTypes.string,
+  }),
   defaultProps({ checked: false, disabled: false, theme: 'light' }),
   mapProps(props => ({
     onChange: props.onChange,

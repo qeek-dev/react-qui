@@ -24,7 +24,8 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "stylelint": "./node_modules/stylelint/bin/stylelint.js ./src/**/*.{scss,sass}",
-    "test": "react-scripts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill"
+    "test": "react-scripts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill",
+    "coverage": "yarn run test --coverage"
   },
   "dependencies": {
     "akiya-react-component-scripts": "3.2.0",

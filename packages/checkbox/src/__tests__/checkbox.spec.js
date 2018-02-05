@@ -93,5 +93,6 @@ it('render CheckboxGroup correctly', () => {
       direction="row"
     />,
   )
+  expect(checkboxGroup.find('span').length).toEqual(3)
   expect(checkboxGroup.children().text()).toEqual('AppleBananaCat')
 })

@@ -3,11 +3,18 @@ import styled from 'styled-components'
 import Checkbox from '../Checkbox/Checkbox'
 
 const CheckboxGroup = props => {
-  const { options, span, theme, direction } = props
+  const { options, span, theme, direction, checked, disabled } = props
 
   const children = options.map(option => {
     return (
-      <Checkbox key={option} span={span} theme={theme} direction={direction}>
+      <Checkbox
+        key={option}
+        span={span}
+        theme={theme}
+        direction={direction}
+        checked={checked}
+        disabled={disabled}
+      >
         {option}
       </Checkbox>
     )

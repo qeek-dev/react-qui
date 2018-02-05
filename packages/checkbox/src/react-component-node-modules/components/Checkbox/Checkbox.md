@@ -1,3 +1,4 @@
+### Light Theme
 ```js
 <div>
   <div>
@@ -21,6 +22,7 @@
 </div>
 ```
 
+### Dark Theme
 ```js
 <div style={{ backgroundColor: 'black', padding: '10px' }}>
   <div>

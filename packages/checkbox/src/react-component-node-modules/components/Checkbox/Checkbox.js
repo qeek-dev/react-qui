@@ -9,7 +9,6 @@ import {
   setPropTypes,
 } from 'recompose'
 import styled from 'styled-components'
-import { importAllFiles } from './utils/utils'
 import btn_checkbox_presseddisable from './assets/checkbox_light_transparent/btn_checkbox_presseddisable.svg'
 import btn_checkbox_disable from './assets/checkbox_light_transparent/btn_checkbox_disable.svg'
 import btn_checkbox_pressed from './assets/checkbox_light_transparent/btn_checkbox_pressed.svg'
@@ -18,9 +17,6 @@ import btn_checkbox_presseddisable_black from './assets/checkbox_dark/btn_checkb
 import btn_checkbox_disable_black from './assets/checkbox_dark/btn_checkbox_disable_black.svg'
 import btn_checkbox_pressed_black from './assets/checkbox_dark/btn_checkbox_pressed_black.svg'
 import btn_checkbox_black from './assets/checkbox_dark/btn_checkbox_black.svg'
-
-// const checkboxIcons = importAllFiles()
-// require.context('./assets/', true, /\.(png|jpe?g|svg)$/),
 
 const Label = styled.label`
   color: ${props =>

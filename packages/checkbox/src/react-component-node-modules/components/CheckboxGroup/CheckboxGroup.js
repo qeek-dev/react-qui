@@ -6,8 +6,6 @@ const CheckboxGroup = props => {
   const { options, span, theme, direction } = props
 
   const children = options.map(option => {
-    console.log({option})
-
     return (
       <Checkbox key={option} span={span} theme={theme} direction={direction}>
         {option}

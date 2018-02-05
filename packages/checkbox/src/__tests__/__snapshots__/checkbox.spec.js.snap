@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render <Checkbox> component 1`] = `
+<mapProps(withState(withHandlers(Checkbox)))
+  checked={false}
+  disabled={false}
+  theme="light"
+>
+  normal
+</mapProps(withState(withHandlers(Checkbox)))>
+`;
+
+exports[`render <Checkbox> component 2`] = `
+<mapProps(withState(withHandlers(Checkbox)))
+  checked={false}
+  disabled={true}
+  theme="light"
+>
+  disabled
+</mapProps(withState(withHandlers(Checkbox)))>
+`;
+
+exports[`render <Checkbox> component 3`] = `
+<mapProps(withState(withHandlers(Checkbox)))
+  checked={true}
+  disabled={false}
+  theme="light"
+>
+  checked
+</mapProps(withState(withHandlers(Checkbox)))>
+`;
+
+exports[`render <Checkbox> component 4`] = `
+<mapProps(withState(withHandlers(Checkbox)))
+  checked={true}
+  disabled={true}
+  theme="light"
+>
+  checked disabled
+</mapProps(withState(withHandlers(Checkbox)))>
+`;
+
+exports[`render <CheckboxGroup> component 1`] = `
+<styled.div>
+  <defaultProps(mapProps(withState(withHandlers(Checkbox))))
+    checked={false}
+    direction="row"
+    disabled={false}
+    key="Apple"
+    span={30}
+    theme="light"
+  >
+    Apple
+  </defaultProps(mapProps(withState(withHandlers(Checkbox))))>
+  <defaultProps(mapProps(withState(withHandlers(Checkbox))))
+    checked={false}
+    direction="row"
+    disabled={false}
+    key="Banana"
+    span={30}
+    theme="light"
+  >
+    Banana
+  </defaultProps(mapProps(withState(withHandlers(Checkbox))))>
+  <defaultProps(mapProps(withState(withHandlers(Checkbox))))
+    checked={false}
+    direction="row"
+    disabled={false}
+    key="Cat"
+    span={30}
+    theme="light"
+  >
+    Cat
+  </defaultProps(mapProps(withState(withHandlers(Checkbox))))>
+</styled.div>
+`;

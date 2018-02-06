@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render <CheckboxGroup> component 1`] = `
+<styled.div>
+  <mapProps(withState(withHandlers(Checkbox)))
+    checked={false}
+    direction="row"
+    disabled={false}
+    key="Apple"
+    span={30}
+    theme="light"
+  >
+    Apple
+  </mapProps(withState(withHandlers(Checkbox)))>
+  <mapProps(withState(withHandlers(Checkbox)))
+    checked={false}
+    direction="row"
+    disabled={false}
+    key="Banana"
+    span={30}
+    theme="light"
+  >
+    Banana
+  </mapProps(withState(withHandlers(Checkbox)))>
+  <mapProps(withState(withHandlers(Checkbox)))
+    checked={false}
+    direction="row"
+    disabled={false}
+    key="Cat"
+    span={30}
+    theme="light"
+  >
+    Cat
+  </mapProps(withState(withHandlers(Checkbox)))>
+</styled.div>
+`;

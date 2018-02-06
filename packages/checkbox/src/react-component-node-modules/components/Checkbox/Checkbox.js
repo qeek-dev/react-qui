@@ -1,13 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  compose,
-  withState,
-  defaultProps,
-  withHandlers,
-  mapProps,
-  setPropTypes,
-} from 'recompose'
+import { compose, withState, withHandlers, mapProps } from 'recompose'
 import styled from 'styled-components'
 import btn_checkbox_presseddisable from './assets/checkbox_light_transparent/btn_checkbox_presseddisable.svg'
 import btn_checkbox_disable from './assets/checkbox_light_transparent/btn_checkbox_disable.svg'
@@ -55,24 +48,6 @@ const Input = styled.input.attrs({
 `
 
 const withContainer = compose(
-  setPropTypes({
-    checked: PropTypes.bool,
-    disabled: PropTypes.bool,
-    className: PropTypes.string,
-    onChange: PropTypes.func,
-    onClick: PropTypes.func,
-    handleClick: PropTypes.func,
-    children: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.element,
-      PropTypes.array,
-    ]),
-    span: PropTypes.number,
-    theme: PropTypes.string,
-    direction: PropTypes.string,
-  }),
-  defaultProps({ checked: false, disabled: false, theme: 'light' }),
   mapProps(props => ({
     onChange: props.onChange,
     children: props.children,
@@ -125,6 +100,38 @@ const Checkbox = ({
       <span>{children}</span>
     </Label>
   )
+}
+
+Checkbox.propTypes = {
+  /** Checkbox checked or not */
+  checked: PropTypes.bool,
+  /** Checkbox disabled or not */
+  disabled: PropTypes.bool,
+  /** Handle the function after triggering click event */
+  handleClick: PropTypes.func,
+  /** Content of the checkbox. Can be a string, number, array or a react component.  */
+  /** The margin pixels between Checkboxes  */
+  span: PropTypes.number,
+  /** The theme of Checkbox */
+  theme: PropTypes.string,
+  /** The driection of Checkboxes. Can be Row or Column */
+  direction: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.element,
+    PropTypes.array,
+  ]),
+  /** Add addition className for Checkbox element */
+  className: PropTypes.string,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+}
+
+Checkbox.defaultProps = {
+  checked: false,
+  disabled: false,
+  theme: 'light',
 }
 
 export default withContainer(Checkbox)

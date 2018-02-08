@@ -1,1 +1,1 @@
-export { default as Example } from './components/Example/Example';
+export { default as Input } from './components/Input/Input';

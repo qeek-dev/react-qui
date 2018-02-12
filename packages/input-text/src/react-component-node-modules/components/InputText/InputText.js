@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const Input = styled.input.attrs({
   type: 'text',
-  placeholder: '123',
+  // placeholder: '123',
 })`
   outline: none;
   border: 1px solid #848484;
@@ -49,7 +49,7 @@ const Title = styled.div`
   max-width: ${props => props.titleMaxWidth}px;
 `
 
-const InputText = ({ className, onChange, onClick, children }) => {
+const InputText = ({ className, onChange, onClick, children, placeholder }) => {
   return (
     <div>
       <Title titleMaxWidth={200}>
@@ -57,7 +57,12 @@ const InputText = ({ className, onChange, onClick, children }) => {
           Test
         </Label>
       </Title>
-      <Input id={children} onChange={onChange} className={className} />
+      <Input
+        id={children}
+        placeholder={placeholder}
+        onChange={onChange}
+        className={className}
+      />
     </div>
   )
 }
@@ -67,7 +72,7 @@ InputText.propTypes = {
   disabled: PropTypes.bool,
   titleSpanR: PropTypes.number,
   titleSpanL: PropTypes.number,
-  titleMaxWidth: PropTypes.number
+  titleMaxWidth: PropTypes.number,
 }
 
 InputText.defaultProps = {

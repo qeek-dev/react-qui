@@ -4,12 +4,11 @@ import PropTypes from 'prop-types'
 
 const Input = styled.input.attrs({
   type: 'text',
-  // placeholder: '123',
 })`
   outline: none;
   border: 1px solid #848484;
   padding: 0px;
-  height: 24px;
+  min-height: 24px;
   padding: 0 10px;
   &:focus {
     font-size: 12px;
@@ -49,25 +48,49 @@ const Title = styled.div`
   max-width: ${props => props.titleMaxWidth}px;
 `
 
-const InputText = ({ className, onChange, onClick, children, placeholder }) => {
+const InputText = ({
+  className,
+  onChange,
+  onClick,
+  children,
+  placeholder,
+  value,
+  disabled,
+  titleSpanR,
+  titleSpanL,
+  titleMaxWidth,
+  ...restProps
+}) => {
   return (
     <div>
-      <Title titleMaxWidth={200}>
-        <Label htmlFor={children} titleSpanL={0} titleSpanR={150}>
-          Test
+      <Title titleMaxWidth={titleMaxWidth}>
+        <Label
+          htmlFor={children}
+          titleSpanL={titleSpanL}
+          titleSpanR={titleSpanR}
+        >
+          {children}
         </Label>
       </Title>
       <Input
         id={children}
         placeholder={placeholder}
+        value={value}
         onChange={onChange}
         className={className}
+        disabled={disabled}
+        {...restProps}
       />
     </div>
   )
 }
 
 InputText.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  onChange: PropTypes.func,
+  children: PropTypes.string,
+  placeholder: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
   titleSpanR: PropTypes.number,

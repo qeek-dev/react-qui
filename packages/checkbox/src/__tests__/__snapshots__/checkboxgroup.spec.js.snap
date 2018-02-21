@@ -2,7 +2,7 @@
 
 exports[`render <CheckboxGroup> component 1`] = `
 <styled.div>
-  <mapProps(withState(withHandlers(Checkbox)))
+  <withStateHandlers(Checkbox)
     checked={false}
     direction="row"
     disabled={false}
@@ -11,8 +11,8 @@ exports[`render <CheckboxGroup> component 1`] = `
     theme="light"
   >
     Apple
-  </mapProps(withState(withHandlers(Checkbox)))>
-  <mapProps(withState(withHandlers(Checkbox)))
+  </withStateHandlers(Checkbox)>
+  <withStateHandlers(Checkbox)
     checked={false}
     direction="row"
     disabled={false}
@@ -21,8 +21,8 @@ exports[`render <CheckboxGroup> component 1`] = `
     theme="light"
   >
     Banana
-  </mapProps(withState(withHandlers(Checkbox)))>
-  <mapProps(withState(withHandlers(Checkbox)))
+  </withStateHandlers(Checkbox)>
+  <withStateHandlers(Checkbox)
     checked={false}
     direction="row"
     disabled={false}
@@ -31,6 +31,6 @@ exports[`render <CheckboxGroup> component 1`] = `
     theme="light"
   >
     Cat
-  </mapProps(withState(withHandlers(Checkbox)))>
+  </withStateHandlers(Checkbox)>
 </styled.div>
 `;

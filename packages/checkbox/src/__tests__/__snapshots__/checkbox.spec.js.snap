@@ -1,32 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render <Checkbox> component 1`] = `
-<withState(withHandlers(Checkbox))>
+<Checkbox
+  checked={false}
+  disabled={false}
+  handleClick={[Function]}
+  theme="light"
+>
   normal
-</withState(withHandlers(Checkbox))>
+</Checkbox>
 `;
 
 exports[`render <Checkbox> component 2`] = `
-<withState(withHandlers(Checkbox))
+<Checkbox
+  checked={false}
   disabled={true}
+  handleClick={[Function]}
+  theme="light"
 >
   disabled
-</withState(withHandlers(Checkbox))>
+</Checkbox>
 `;
 
 exports[`render <Checkbox> component 3`] = `
-<withState(withHandlers(Checkbox))
+<Checkbox
   checked={true}
+  disabled={false}
+  handleClick={[Function]}
+  theme="light"
 >
   checked
-</withState(withHandlers(Checkbox))>
+</Checkbox>
 `;
 
 exports[`render <Checkbox> component 4`] = `
-<withState(withHandlers(Checkbox))
+<Checkbox
   checked={true}
   disabled={true}
+  handleClick={[Function]}
+  theme="light"
 >
   checked disabled
-</withState(withHandlers(Checkbox))>
+</Checkbox>
 `;

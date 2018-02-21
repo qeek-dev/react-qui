@@ -22,6 +22,7 @@ const Label = styled.label`
       ? props.span
       : null}px;
   margin-right: ${props => (props.direction === 'row' ? props.span : null)}px;
+  line-height: 0px;
 `
 
 const Img = styled.img.attrs({
@@ -47,6 +48,11 @@ const Img = styled.img.attrs({
         : checked ? 'btn_checkbox_pressed_black' : 'btn_checkbox_black',
 })`
   margin-right: 10px;
+  vertical-align: middle;
+`
+
+const Span = styled.span`
+  display: inline-block;
   vertical-align: middle;
 `
 
@@ -96,7 +102,7 @@ const Checkbox = ({
         onClick={handleClick}
         className={className}
       />
-      <span>{children}</span>
+      <Span>{children}</Span>
     </Label>
   )
 }

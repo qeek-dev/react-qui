@@ -5,7 +5,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["lib", "build", "css", "assets"],
+  "files": [
+    "lib",
+    "build",
+    "css",
+    "assets"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "build": "react-scripts build",
@@ -14,42 +19,41 @@
     "flow-start": "flow start",
     "flow-status": "flow status",
     "flow-stop": "flow stop",
-    "husky:precommit":
-      "npm run lint && npm run stylelint && npm run flow-status",
-    "lib":
-      "NODE_ENV=production babel src/react-component-node-modules --out-dir lib --copy-files",
+    "husky:precommit": "npm run lint && npm run stylelint && npm run flow-status",
+    "lib": "NODE_ENV=production babel src/react-component-node-modules --out-dir lib --copy-files",
     "lint": "./node_modules/eslint/bin/eslint.js ./src/**/*.{js,jsx}",
     "prepublish": "npm run build && npm run lib",
     "start": "react-scripts start",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "stylelint":
-      "./node_modules/stylelint/bin/stylelint.js ./src/**/*.{scss,sass}",
-    "test":
-      "react-scripts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill",
+    "stylelint": "./node_modules/stylelint/bin/stylelint.js ./src/**/*.{scss,sass}",
+    "test": "react-scripts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill",
     "coverage": "yarn run test --coverage"
   },
   "dependencies": {
-    "recompose": "^0.26.0"
+    "recompose": "^0.26.0",
+    "shortid": "^2.2.8"
   },
   "peerDependencies": {
+    "lodash": "^4.17.5",
     "react": "16.x",
     "react-dom": "^16.2.0",
-    "styled-components": "^3.1.0",
-    "lodash": "^4.17.5"
+    "styled-components": "^3.1.0"
   },
   "devDependencies": {
     "akiya-react-component-scripts": "3.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.1",
+    "lodash": "^4.17.5",
     "raf": "^3.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "styled-components": "^3.1.0",
-    "lodash": "^4.17.5"
+    "styled-components": "^3.1.0"
   },
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

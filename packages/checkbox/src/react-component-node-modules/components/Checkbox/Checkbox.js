@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { compose, withStateHandlers } from 'recompose'
 import styled from 'styled-components'
 import noop from 'lodash/fp/noop'
+import shortid from 'shortid'
 import btn_checkbox_presseddisable from './assets/checkbox_light_transparent/btn_checkbox_presseddisable.svg'
 import btn_checkbox_disable from './assets/checkbox_light_transparent/btn_checkbox_disable.svg'
 import btn_checkbox_pressed from './assets/checkbox_light_transparent/btn_checkbox_pressed.svg'
@@ -15,14 +16,14 @@ import btn_checkbox_black from './assets/checkbox_dark/btn_checkbox_black.svg'
 const Label = styled.label`
   color: ${props =>
     props.theme === 'light'
-      ? props.disabled ? '#aeaeae' : null
+      ? props.disabled ? '#aeaeae' : '#000000'
       : props.disabled ? '#aeaeae' : '#ffffff'};
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   margin-bottom: ${props =>
     props.direction === 'column' || props.direction === 'col'
       ? props.span
-      : null}px;
-  margin-right: ${props => (props.direction === 'row' ? props.span : null)}px;
+      : 0}px;
+  margin-right: ${props => (props.direction === 'row' ? props.span : 0)}px;
   line-height: 0px;
 `
 
@@ -91,16 +92,10 @@ const Checkbox = ({
   direction,
 }) => {
   return (
-    <Label
-      htmlFor={children}
-      theme={theme}
-      disabled={disabled}
-      span={span}
-      direction={direction}
-    >
+    <Label theme={theme} disabled={disabled} span={span} direction={direction}>
       <Img theme={theme} disabled={disabled} checked={checked} />
       <Input
-        id={children}
+        id={shortid.generate()}
         defaultChecked={checked}
         disabled={disabled}
         onChange={onChange}

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { compose, withStateHandlers } from 'recompose'
 import styled from 'styled-components'
+import noop from 'lodash/fp/noop'
 import btn_checkbox_presseddisable from './assets/checkbox_light_transparent/btn_checkbox_presseddisable.svg'
 import btn_checkbox_disable from './assets/checkbox_light_transparent/btn_checkbox_disable.svg'
 import btn_checkbox_pressed from './assets/checkbox_light_transparent/btn_checkbox_pressed.svg'
@@ -81,8 +82,8 @@ const Checkbox = ({
   checked,
   disabled,
   className,
-  onChange,
-  onClick,
+  onChange = noop,
+  onClick = noop,
   handleClick,
   children,
   span,

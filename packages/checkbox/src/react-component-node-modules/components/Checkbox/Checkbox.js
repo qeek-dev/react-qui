@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { compose, withState, withHandlers, mapProps } from 'recompose'
+import { compose, withStateHandlers } from 'recompose'
 import styled from 'styled-components'
 import btn_checkbox_presseddisable from './assets/checkbox_light_transparent/btn_checkbox_presseddisable.svg'
 import btn_checkbox_disable from './assets/checkbox_light_transparent/btn_checkbox_disable.svg'
@@ -63,14 +63,18 @@ const Input = styled.input.attrs({
 `
 
 const enhancer = compose(
-  withState('checked', 'setChecked', props => props.checked),
-  withHandlers({
-    handleClick: ({ setChecked, disabled }) => props => {
-      if (disabled) return
+  withStateHandlers(
+    props => ({
+      checked: props.checked,
+    }),
+    {
+      handleClick: ({ checked, disabled }) => event => {
+        if (disabled) return
 
-      setChecked(checked => !checked)
+        return { checked: !checked }
+      },
     },
-  }),
+  ),
 )
 
 const Checkbox = ({

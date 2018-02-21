@@ -35,7 +35,16 @@ const Img = styled.img.attrs({
           ? btn_checkbox_presseddisable_black
           : btn_checkbox_disable_black
         : checked ? btn_checkbox_pressed_black : btn_checkbox_black,
-  alt: 'Src Error',
+  alt: ({ theme, disabled, checked }) =>
+    theme === 'light'
+      ? disabled
+        ? checked ? 'btn_checkbox_presseddisable' : 'btn_checkbox_disable'
+        : checked ? 'btn_checkbox_pressed' : 'btn_checkbox'
+      : disabled
+        ? checked
+          ? 'btn_checkbox_presseddisable_black'
+          : 'btn_checkbox_disable_black'
+        : checked ? 'btn_checkbox_pressed_black' : 'btn_checkbox_black',
 })`
   margin-right: 10px;
   vertical-align: middle;
@@ -47,17 +56,7 @@ const Input = styled.input.attrs({
   display: none;
 `
 
-const withContainer = compose(
-  mapProps(props => ({
-    onChange: props.onChange,
-    children: props.children,
-    disabled: props.disabled,
-    checked: props.checked,
-    className: props.className,
-    span: props.span,
-    theme: props.theme,
-    direction: props.direction,
-  })),
+const enhancer = compose(
   withState('checked', 'setChecked', props => props.checked),
   withHandlers({
     handleClick: ({ setChecked, disabled }) => props => {
@@ -134,4 +133,4 @@ Checkbox.defaultProps = {
   theme: 'light',
 }
 
-export default withContainer(Checkbox)
+export default enhancer(Checkbox)

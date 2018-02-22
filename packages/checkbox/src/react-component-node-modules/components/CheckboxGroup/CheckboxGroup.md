@@ -1,20 +1,29 @@
 ### Row
+
 ```js
 <div>
   <CheckboxGroup
-    options={['SUB', 'MNR', 'ICX']}
+    options={[{ value: 'SUB' }, { value: 'MNR' }, { value: 'ICX' }]}
     span={30}
     theme="light"
     direction="row"
+    onChange={e => {
+      console.log(`checked: ${e.target.checked}, value: ${e.target.value}`)
+    }}
   />
 </div>
 ```
 
 ### Column
+
 ```js
 <div>
   <CheckboxGroup
-    options={['ADA', 'NEO', 'EOS']}
+    options={[
+      { value: 'ADA', checked: true },
+      { value: 'NEO', checked: true },
+      { value: 'EOS', checked: true },
+    ]}
     span={30}
     theme="light"
     direction="col"
@@ -22,12 +31,16 @@
 </div>
 ```
 
+### Manually Checked
 
 ```js
 <div>
   <CheckboxGroup
-    checked
-    options={['QSP', 'UTK', 'TNC']}
+    options={[
+      { value: 'QSP', checked: false },
+      { value: 'UTK', checked: true },
+      { value: 'TNC', checked: false },
+    ]}
     span={30}
     theme="light"
     direction="row"
@@ -35,24 +48,16 @@
 </div>
 ```
 
-```js
-<div>
-  <CheckboxGroup
-    disabled
-    options={['ETHOS', 'CVC', 'BDG']}
-    span={30}
-    theme="light"
-    direction="row"
-  />
-</div>
-```
+### Manually Disabled
 
 ```js
 <div>
   <CheckboxGroup
-    disabled
-    checked
-    options={['KNC', 'POWR', 'WANCHAIN']}
+    options={[
+      { value: 'ETHOS', checked: true, disabled: true },
+      { value: 'CVC', checked: false, disabled: false },
+      { value: 'INK', checked: true, disabled: true },
+    ]}
     span={30}
     theme="light"
     direction="row"

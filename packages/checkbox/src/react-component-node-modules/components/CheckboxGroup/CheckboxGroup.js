@@ -9,23 +9,25 @@ const CheckboxGroup = props => {
     span,
     theme,
     direction,
-    checked,
+    // checked,
     disabled,
     className,
+    onChange,
   } = props
 
   const children = options.map(option => {
     return (
       <Checkbox
-        key={option}
+        key={option.value}
         span={span}
         theme={theme}
         direction={direction}
-        checked={checked}
-        disabled={disabled}
+        checked={option.checked}
+        disabled={option.disabled}
         className={className}
+        onChange={onChange}
       >
-        {option}
+        {option.value}
       </Checkbox>
     )
   })

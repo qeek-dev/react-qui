@@ -101,6 +101,7 @@ const Checkbox = ({
         onChange={onChange}
         onClick={handleClick}
         className={className}
+        value={children}
       />
       <Span>{children}</Span>
     </Label>

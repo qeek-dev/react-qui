@@ -3,34 +3,28 @@
 exports[`render <CheckboxGroup> component 1`] = `
 <styled.div>
   <withStateHandlers(Checkbox)
-    checked={false}
     direction="row"
-    disabled={false}
-    key="Apple"
+    key="SUB"
     span={30}
     theme="light"
   >
-    Apple
+    SUB
   </withStateHandlers(Checkbox)>
   <withStateHandlers(Checkbox)
-    checked={false}
     direction="row"
-    disabled={false}
-    key="Banana"
+    key="MNR"
     span={30}
     theme="light"
   >
-    Banana
+    MNR
   </withStateHandlers(Checkbox)>
   <withStateHandlers(Checkbox)
-    checked={false}
     direction="row"
-    disabled={false}
-    key="Cat"
+    key="ICX"
     span={30}
     theme="light"
   >
-    Cat
+    ICX
   </withStateHandlers(Checkbox)>
 </styled.div>
 `;

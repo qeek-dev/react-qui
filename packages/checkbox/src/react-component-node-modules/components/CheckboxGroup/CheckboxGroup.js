@@ -4,16 +4,9 @@ import Checkbox from '../Checkbox/Checkbox'
 import PropTypes from 'prop-types'
 
 const CheckboxGroup = props => {
-  const {
-    options,
-    span,
-    theme,
-    direction,
-    className,
-    onChange,
-  } = props
+  const { options, span, theme, direction, className, onChange } = props
 
-  const children = options['map'](option => {
+  const children = options.map(option => {
     return (
       <Checkbox
         key={option.value}

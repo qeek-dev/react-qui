@@ -27,28 +27,7 @@ const Label = styled.label`
   line-height: 0px;
 `
 
-const Img = styled.img.attrs({
-  src: ({ theme, disabled, checked }) =>
-    theme === 'light'
-      ? disabled
-        ? checked ? btn_checkbox_presseddisable : btn_checkbox_disable
-        : checked ? btn_checkbox_pressed : btn_checkbox
-      : disabled
-        ? checked
-          ? btn_checkbox_presseddisable_black
-          : btn_checkbox_disable_black
-        : checked ? btn_checkbox_pressed_black : btn_checkbox_black,
-  alt: ({ theme, disabled, checked }) =>
-    theme === 'light'
-      ? disabled
-        ? checked ? 'btn_checkbox_presseddisable' : 'btn_checkbox_disable'
-        : checked ? 'btn_checkbox_pressed' : 'btn_checkbox'
-      : disabled
-        ? checked
-          ? 'btn_checkbox_presseddisable_black'
-          : 'btn_checkbox_disable_black'
-        : checked ? 'btn_checkbox_pressed_black' : 'btn_checkbox_black',
-})`
+const Img = styled.img`
   margin-right: 10px;
   vertical-align: middle;
 `
@@ -91,9 +70,65 @@ const Checkbox = ({
   theme,
   direction,
 }) => {
+  const checkBoxState = {
+    light: {
+      0: btn_checkbox, // no checked, no disabled
+      1: btn_checkbox_disable, // no checked, disabled
+      2: btn_checkbox_pressed, // checked, no disabled
+      3: btn_checkbox_presseddisable, // checked, disabled
+    },
+    dark: {
+      0: btn_checkbox_black, // no checked, no disabled
+      1: btn_checkbox_disable_black, // no checked, disabled
+      2: btn_checkbox_pressed_black, // checked, no disabled
+      3: btn_checkbox_presseddisable_black, // checked, disabled
+    },
+  }
+
+  const checkBoxAltState = {
+    light: {
+      0: 'btn_checkbox', // no checked, no disabled
+      1: 'btn_checkbox_disable', // no checked, disabled
+      2: 'btn_checkbox_pressed', // checked, no disabled
+      3: 'btn_checkbox_presseddisable', // checked, disabled
+    },
+    dark: {
+      0: 'btn_checkbox_black', // no checked, no disabled
+      1: 'btn_checkbox_disable_black', // no checked, disabled
+      2: 'btn_checkbox_pressed_black', // checked, no disabled
+      3: 'btn_checkbox_presseddisable_black', // checked, disabled
+    },
+  }
+
+  const getCheckboxStatus = (checked, disabled) =>
+    parseInt(checked << 1, 10) + parseInt(disabled, 10)
+
+  const getCheckboxAltStatus = (checked, disabled) =>
+    parseInt(checked << 1, 10) + parseInt(disabled, 10)
+
   return (
     <Label theme={theme} disabled={disabled} span={span} direction={direction}>
-      <Img theme={theme} disabled={disabled} checked={checked} />
+      <Img
+        src={
+          checkBoxState[theme][
+            getCheckboxStatus(
+              checked === true ? 1 : 0,
+              disabled === true ? 1 : 0,
+            )
+          ]
+        }
+        alt={
+          checkBoxAltState[theme][
+            getCheckboxAltStatus(
+              checked === true ? 1 : 0,
+              disabled === true ? 1 : 0,
+            )
+          ]
+        }
+        theme={theme}
+        disabled={disabled}
+        checked={checked}
+      />
       <Input
         id={shortid.generate()}
         defaultChecked={checked}

@@ -9,7 +9,7 @@ const Input = styled.input.attrs({
   border: 1px solid #848484;
   padding: 0px;
   min-height: 24px;
-  padding: 0 10px;
+  padding: 0px 0px 0px 10px;
   &:focus {
     font-size: 12px;
     color: #000000;

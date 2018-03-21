@@ -52,7 +52,6 @@ const Title = styled.div`
 const InputText = ({
   className,
   onChange,
-  onClick,
   children,
   placeholder,
   value,
@@ -88,14 +87,17 @@ const InputText = ({
 
 InputText.propTypes = {
   className: PropTypes.string,
-  onClick: PropTypes.func,
   onChange: PropTypes.func,
-  children: PropTypes.string,
-  placeholder: PropTypes.string,
+  /** Title name */
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  placeholder: PropTypes.string,
   disabled: PropTypes.bool,
+  /** The right-width of the title */
   titleSpanR: PropTypes.number,
+  /** The left-width of the title */
   titleSpanL: PropTypes.number,
+  /** The max width of the title */
   titleMaxWidth: PropTypes.number,
 }
 

@@ -1,20 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { BLACK, DARKGRAY, LIGHTGRAY } from './colors'
 
 const Input = styled.input.attrs({
   type: 'text',
 })`
   outline: none;
-  border: 1px solid #848484;
+  border: 1px solid ${DARKGRAY};
   padding: 0px;
   min-height: 24px;
   padding: 0px 0px 0px 10px;
   &:focus {
     font-size: 12px;
-    color: #000000;
-    border: 1px solid #000000;
-    caret-color: #000000;
+    color: ${BLACK};
+    border: 1px solid ${BLACK};
+    caret-color: ${BLACK};
 
     &::placeholder {
       color: transparent;
@@ -23,8 +24,8 @@ const Input = styled.input.attrs({
   }
 
   &:disabled {
-    border: 1px solid #aeaeae;
-    color: #aeaeae;
+    border: 1px solid ${LIGHTGRAY};
+    color: ${LIGHTGRAY};
     cursor: not-allowed;
   }
 

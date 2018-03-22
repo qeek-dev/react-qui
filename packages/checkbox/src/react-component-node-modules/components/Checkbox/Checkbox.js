@@ -12,12 +12,13 @@ import btn_checkbox_presseddisable_black from './assets/checkbox_dark/btn_checkb
 import btn_checkbox_disable_black from './assets/checkbox_dark/btn_checkbox_disable_black.svg'
 import btn_checkbox_pressed_black from './assets/checkbox_dark/btn_checkbox_pressed_black.svg'
 import btn_checkbox_black from './assets/checkbox_dark/btn_checkbox_black.svg'
+import { BLACK, WHITE, LIGHTGRAY } from './colors'
 
 const Label = styled.label`
   color: ${props =>
     props.theme === 'light'
-      ? props.disabled ? '#aeaeae' : '#000000'
-      : props.disabled ? '#aeaeae' : '#ffffff'};
+      ? props.disabled ? LIGHTGRAY : BLACK
+      : props.disabled ? LIGHTGRAY : WHITE};
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   margin-bottom: ${props =>
     props.direction === 'column' || props.direction === 'col'

@@ -2,14 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import Checkbox from '../Checkbox/Checkbox'
 import PropTypes from 'prop-types'
+import shortid from 'shortid'
+import noop from 'lodash/fp/noop'
 
 const CheckboxGroup = props => {
-  const { options, span, theme, direction, className, onChange } = props
+  const { options, span, theme, direction, className, onChange = noop } = props
 
   const children = options.map(option => {
     return (
       <Checkbox
-        key={option.value}
+        key={shortid.generate()}
         span={span}
         theme={theme}
         direction={direction}
@@ -17,8 +19,9 @@ const CheckboxGroup = props => {
         disabled={option.disabled}
         className={className}
         onChange={onChange}
+        value={option.value || ''}
       >
-        {option.value}
+        {option.label}
       </Checkbox>
     )
   })
@@ -47,6 +50,8 @@ CheckboxGroup.propTypes = {
   direction: PropTypes.string,
   /** Add addition className for Checkbox element */
   className: PropTypes.string,
+  /** Options for checkboxGroup */
+  options: PropTypes.array,
 }
 
 CheckboxGroup.defaultProps = {

@@ -69,6 +69,7 @@ const Checkbox = ({
   span,
   theme,
   direction,
+  value,
 }) => {
   const checkBoxState = {
     light: {
@@ -136,7 +137,7 @@ const Checkbox = ({
         onChange={onChange}
         onClick={handleClick}
         className={className}
-        value={children}
+        value={value}
       />
       <Span>{children}</Span>
     </Label>
@@ -165,6 +166,7 @@ Checkbox.propTypes = {
   ]),
   /** Add addition className for Checkbox element */
   className: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   onClick: PropTypes.func,
 }

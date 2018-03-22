@@ -1,8 +1,16 @@
 ### Light Theme
+
 ```js
 <div>
   <div>
-    <Checkbox onChange={() => alert('hello')}>normal</Checkbox>
+    <Checkbox
+      value="123"
+      onChange={e => {
+        console.log(`checked: ${e.target.checked}, value: ${e.target.value}`)
+      }}
+    >
+      normal
+    </Checkbox>
   </div>
   <div>
     <Checkbox disabled onChange={() => console.log('hello')}>
@@ -23,6 +31,7 @@
 ```
 
 ### Dark Theme
+
 ```js
 <div style={{ backgroundColor: 'black', padding: '10px' }}>
   <div>

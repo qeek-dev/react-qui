@@ -1,26 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
 
-import { Example } from './react-component-node-modules/';
+import { InputText } from './react-component-node-modules/'
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: '',
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(e) {
+    this.setState({ value: e.target.value })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Component Demo Page</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div className="content">
-          <Example name="My first react component" />
-        </div>
+        <InputText
+          titleMaxWidth={200}
+          value={this.state.value}
+          onChange={this.handleChange}
+        >
+          Title
+        </InputText>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

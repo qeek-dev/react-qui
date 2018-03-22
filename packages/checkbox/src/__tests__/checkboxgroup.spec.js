@@ -10,7 +10,11 @@ configure({ adapter: new Adapter() })
 it('render <CheckboxGroup> component', () => {
   const checkboxGroup = shallow(
     <CheckboxGroup
-      options={[{ value: 'SUB' }, { value: 'MNR' }, { value: 'ICX' }]}
+      options={[
+        { label: 'ADA', value: 'ada', checked: true },
+        { label: 'NEO', value: 'neo', checked: true },
+        { label: 'EOS', value: 'eos', checked: true },
+      ]}
       span={30}
       theme="light"
       direction="row"
@@ -23,7 +27,11 @@ it('renders without crashing', () => {
   const div = document.createElement('div')
   ReactDOM.render(
     <CheckboxGroup
-      options={[{ value: 'SUB' }, { value: 'MNR' }, { value: 'ICX' }]}
+      options={[
+        { label: 'ADA', value: 'ada', checked: true },
+        { label: 'NEO', value: 'neo', checked: true },
+        { label: 'EOS', value: 'eos', checked: true },
+      ]}
       span={30}
       theme="light"
       direction="row"
@@ -35,12 +43,16 @@ it('renders without crashing', () => {
 it('render CheckboxGroup correctly', () => {
   const checkboxGroup = mount(
     <CheckboxGroup
-      options={[{ value: 'SUB' }, { value: 'MNR' }, { value: 'ICX' }]}
+      options={[
+        { label: 'ADA', value: 'ada', checked: true },
+        { label: 'NEO', value: 'neo', checked: true },
+        { label: 'EOS', value: 'eos', checked: true },
+      ]}
       span={30}
       theme="light"
       direction="row"
     />,
   )
   expect(checkboxGroup.find('span').length).toEqual(3)
-  expect(checkboxGroup.children().text()).toEqual('SUBMNRICX')
+  expect(checkboxGroup.children().text()).toEqual('ADANEOEOS')
 })

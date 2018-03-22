@@ -11,7 +11,7 @@ const CheckboxGroup = props => {
   const children = options.map(option => {
     return (
       <Checkbox
-        key={shortid.generate()}
+        key={option.value}
         span={span}
         theme={theme}
         direction={direction}

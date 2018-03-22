@@ -3,7 +3,11 @@
 ```js
 <div>
   <CheckboxGroup
-    options={[{ label: 'SUB' }, { label: 'MNR' }, { label: 'ICX' }]}
+    options={[
+      { label: 'SUB', value: 'sub' },
+      { label: 'MNR', value: 'mnr' },
+      { label: 'ICX', value: 'icx' },
+    ]}
     span={30}
     theme="light"
     direction="row"

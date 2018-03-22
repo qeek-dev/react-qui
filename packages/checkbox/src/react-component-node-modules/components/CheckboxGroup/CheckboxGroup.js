@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Checkbox from '../Checkbox/Checkbox'
 import PropTypes from 'prop-types'
-import shortid from 'shortid'
 import noop from 'lodash/fp/noop'
 
 const CheckboxGroup = props => {

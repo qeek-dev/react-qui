@@ -1,3 +1,3 @@
-const BLACK = '#000000'
-const WHITE = '#ffffff'
-const LIGHTGRAY = '#aeaeae'
+export const BLACK = '#000000'
+export const WHITE = '#ffffff'
+export const LIGHTGRAY = '#aeaeae'

@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "akiya-react-component-scripts": "3.2.0",
+    "polished": "^1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-select": "^1.2.1",

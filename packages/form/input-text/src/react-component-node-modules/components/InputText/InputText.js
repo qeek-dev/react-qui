@@ -30,10 +30,12 @@ const Input = styled.input`
   }
 `
 
+const noop = () => {}
+
 const InputText = ({
   className,
   type,
-  onChange,
+  onChange = noop,
   placeholder,
   value,
   id,

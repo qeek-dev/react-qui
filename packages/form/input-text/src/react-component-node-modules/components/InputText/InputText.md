@@ -11,10 +11,10 @@ initialState = { value: '' }
 </div>
 ```
 
-
 ### Work with label
 
 ```js
+initialState = { value: '123' }
 ;<div>
   <label htmlFor="test">Type Something </label>
 

@@ -23,6 +23,10 @@ const StyledSelect = styled(Select)`
     .Select-value {
       height: ${rem('22px')};
       line-height: ${rem('22px')};
+      
+      &&&.Select-value-label{
+        padding: 0;
+      }
     }
 
     .Select-placeholder {
@@ -89,7 +93,7 @@ const StyledSelect = styled(Select)`
 
 const noop = () => {}
 
-class Dropdown extends Component {
+class Qselect extends Component {
   render() {
     const {
       name,
@@ -115,4 +119,4 @@ class Dropdown extends Component {
   }
 }
 
-export default Dropdown
+export default Qselect

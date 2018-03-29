@@ -3,7 +3,7 @@ initialState = { selectedOption: '' }
 
 value = state.selectedOption
 ;<div>
-  <Select
+  <Qselect
     value={state.selectedOption}
     onChange={selectedOption => setState({ selectedOption })}
     options={[{ value: 'one', label: 'One' }, { value: 'two', label: 'Two' }]}
@@ -16,7 +16,7 @@ value = state.selectedOption
 ```js
 initialState = { selectedOption: '' }
 ;<div>
-  <Select
+  <Qselect
     multi={true}
     value={state.selectedOption}
     onChange={selectedOption => setState({ selectedOption })}

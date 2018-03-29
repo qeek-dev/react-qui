@@ -9,6 +9,8 @@ const Input = styled.input`
   outline: none;
   border: ${rem('1px')} solid ${DARKGRAY};
   min-height: ${rem('24px')};
+  height: ${props => (props.height ? rem(`${props.height}px`) : rem('24px'))};
+  width: ${props => (props.width ? rem(`${props.width}px`) : rem('150px'))};
   font-size: ${rem('12px')};
   color: ${BLACK};
   border: ${rem('1px')} solid ${BLACK};
@@ -40,8 +42,11 @@ const InputText = ({
   value,
   id,
   disabled,
+  height,
+  width,
   ...restProps
 }) => {
+  console.log(height)
   return (
     <Input
       className={className}
@@ -51,6 +56,8 @@ const InputText = ({
       onChange={onChange}
       placeholder={placeholder}
       disabled={disabled}
+      height={height}
+      width={width}
       {...restProps}
     />
   )
@@ -64,6 +71,8 @@ InputText.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
+  height: PropTypes.number,
+  width: PropTypes.number,
 }
 
 InputText.defaultProps = {

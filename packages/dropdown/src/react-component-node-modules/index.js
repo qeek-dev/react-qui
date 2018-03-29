@@ -1,1 +1,1 @@
-export { default as Dropdown } from './components/Dropdown/Dropdown';
+export { default as Select } from './components/Select/Select';

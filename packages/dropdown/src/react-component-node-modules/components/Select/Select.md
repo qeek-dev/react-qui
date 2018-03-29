@@ -3,7 +3,7 @@ initialState = { selectedOption: '' }
 
 value = state.selectedOption
 ;<div>
-  <Dropdown
+  <Select
     value={state.selectedOption}
     onChange={selectedOption => setState({ selectedOption })}
     options={[{ value: 'one', label: 'One' }, { value: 'two', label: 'Two' }]}
@@ -14,7 +14,13 @@ value = state.selectedOption
 ### disabled
 
 ```js
-<div>
-  <Dropdown disabled />
+initialState = { selectedOption: '' }
+;<div>
+  <Select
+    multi={true}
+    value={state.selectedOption}
+    onChange={selectedOption => setState({ selectedOption })}
+    options={[{ value: 'one', label: 'One' }, { value: 'two', label: 'Two' }]}
+  />
 </div>
 ```

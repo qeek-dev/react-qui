@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Select from 'react-select'
-import './styles/OriginalDropdown.css'
+import './styles/React-select.css'
 import styled from 'styled-components'
 import { rem } from 'polished'
 
@@ -87,29 +87,29 @@ const StyledSelect = styled(Select)`
   }
 `
 
+const noop = () => {}
+
 class Dropdown extends Component {
-  state = {
-    selectedOption: '',
-  }
-  handleChange = selectedOption => {
-    this.setState({ selectedOption })
-  }
   render() {
-    const { selectedOption } = this.state
-    const value = selectedOption && selectedOption.value
-    const { className, disabled } = this.props
+    const {
+      name,
+      value,
+      onChange = noop,
+      options,
+      className,
+      disabled,
+      ...restProps
+    } = this.props
 
     return (
       <StyledSelect
-        name="form-field-name"
+        name={name}
         className={className}
         value={value}
         disabled={disabled}
-        onChange={this.handleChange}
-        options={[
-          { value: 'one', label: 'One' },
-          { value: 'two', label: 'Two' },
-        ]}
+        onChange={onChange}
+        options={options}
+        {...restProps}
       />
     )
   }

@@ -6,6 +6,7 @@ import { BLACK, DARKGRAY, LIGHTGRAY } from './colors'
 
 const Input = styled.input`
   ${padding(rem('0px'), rem('10px'), rem('0px'), rem('10px'))};
+  box-sizing: border-box;
   outline: none;
   border: ${rem('1px')} solid ${DARKGRAY};
   min-height: ${rem('24px')};

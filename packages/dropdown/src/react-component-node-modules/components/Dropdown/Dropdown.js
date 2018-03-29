@@ -9,10 +9,29 @@ const StyledSelect = styled(Select)`
     border-radius: 0;
     border: ${rem('1px')} solid #848484;
     color: #2f2f2f;
-  }
+    height: ${rem('22px')};
 
-  .Select-control:hover {
-    box-shadow: none;
+    .Select-input {
+      height: ${rem('22px')};
+      line-height: ${rem('22px')};
+    }
+
+    .Select-input > input {
+      padding: 0;
+    }
+
+    .Select-value {
+      height: ${rem('22px')};
+      line-height: ${rem('22px')};
+    }
+
+    .Select-placeholder {
+      line-height: ${rem('22px')};
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
   }
 
   &&&.Select.is-open > .Select-control {
@@ -50,6 +69,17 @@ const StyledSelect = styled(Select)`
     border-bottom-left-radius: 0px;
     border: ${rem('1px')} solid #000000;
     box-shadow: none;
+
+    .Select-option {
+      height: ${rem('22px')};
+      color: #2f2f2f;
+      line-height: ${rem('6px')};
+    }
+
+    .Select-option.is-focused {
+      background-color: #defefd;
+      color: #2f2f2f;
+    }
   }
 
   .Select-clear-zone {

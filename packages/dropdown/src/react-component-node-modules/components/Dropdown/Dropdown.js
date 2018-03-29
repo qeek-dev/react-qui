@@ -22,6 +22,17 @@ const StyledSelect = styled(Select)`
     border-color: #000000;
   }
 
+  &&&.Select.is-focused:not(.is-open) > .Select-control {
+    border-color: #000000;
+    box-shadow: none;
+  }
+
+  &&&.Select.is-disabled > .Select-control {
+    background-color: #ffffff;
+    border: ${rem('1px')} solid #aeaeae;
+    cursor: not-allowed;
+  }
+
   .Select-arrow {
     border-color: #2f2f2f transparent transparent;
   }
@@ -56,12 +67,14 @@ class Dropdown extends Component {
   render() {
     const { selectedOption } = this.state
     const value = selectedOption && selectedOption.value
+    const { className, disabled } = this.props
 
     return (
       <StyledSelect
         name="form-field-name"
-        className={this.props.className}
+        className={className}
         value={value}
+        disabled={disabled}
         onChange={this.handleChange}
         options={[
           { value: 'one', label: 'One' },

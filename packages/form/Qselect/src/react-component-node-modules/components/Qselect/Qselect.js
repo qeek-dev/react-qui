@@ -123,6 +123,11 @@ const StyledSelect = styled(Select)`
       background-color: #defefd;
       color: #2f2f2f;
     }
+
+    .Select-option.is-disabled {
+      color: #aeaeae;
+      cursor: not-allowed;
+    }
   }
 
   .Select-clear-zone {

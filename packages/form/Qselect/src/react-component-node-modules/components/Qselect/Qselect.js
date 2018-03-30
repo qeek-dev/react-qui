@@ -2,13 +2,20 @@ import React, { Component } from 'react'
 import Select from 'react-select'
 import './styles/React-select.css'
 import styled from 'styled-components'
-import { rem, margin } from 'polished'
+import { rem, margin, padding } from 'polished'
+
+const BLACK = '#000000'
+const LIGHTBLACK = '#2f2f2f'
+const DARKGRAY = '#848484'
+const LIGHTGRAY = '#aeaeae'
+const WHITE = '#ffffff'
+const LIGHTBLUE = '#defefd'
 
 const StyledSelect = styled(Select)`
   .Select-control {
     border-radius: 0;
-    border: ${rem('1px')} solid #848484;
-    color: #2f2f2f;
+    border: ${rem('1px')} solid ${DARKGRAY};
+    color: ${LIGHTBLACK};
     height: ${rem('22px')};
     font-size: ${rem('12px')};
     margin-left: 0;
@@ -65,30 +72,30 @@ const StyledSelect = styled(Select)`
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     background: transparent;
-    border-color: #000000;
+    border-color: ${BLACK};
   }
 
   &&&.Select.is-focused:not(.is-open) > .Select-control {
-    border-color: #000000;
+    border-color: ${BLACK};
     box-shadow: none;
   }
 
   &&&.Select.is-disabled > .Select-control {
-    background-color: #ffffff;
-    border: ${rem('1px')} solid #aeaeae;
+    background-color: ${WHITE};
+    border: ${rem('1px')} solid ${LIGHTGRAY};
     cursor: not-allowed;
   }
 
   .Select-arrow {
-    border-color: #2f2f2f transparent transparent;
+    border-color: ${LIGHTBLACK} transparent transparent;
   }
 
   &&&.Select .Select-arrow-zone:hover > .Select-arrow {
-    border-top-color: #2f2f2f;
+    border-top-color: ${LIGHTBLACK};
   }
 
   &&&.Select.is-open > .Select-control .Select-arrow {
-    border-color: transparent transparent #2f2f2f;
+    border-color: transparent transparent ${LIGHTBLACK};
   }
 
   .Select.has-value.is-clearable.Select--single
@@ -98,34 +105,34 @@ const StyledSelect = styled(Select)`
   }
 
   .Select-menu-outer {
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border: ${rem('1px')} solid #000000;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border: ${rem('1px')} solid ${BLACK};
     box-shadow: none;
 
     .Select-option,
     .Select-noresults {
-      padding: 0 10px;
+      ${padding('0px', '10px')};
       height: ${rem('22px')};
       line-height: ${rem('22px')};
-      font-size: 12px;
+      font-size: ${rem('12px')};
     }
 
     .Select-option {
-      color: #2f2f2f;
+      color: ${LIGHTBLACK};
     }
 
     .Select-noresults {
-      color: #aeaeae;
+      color: ${LIGHTGRAY};
     }
 
     .Select-option.is-focused {
-      background-color: #defefd;
-      color: #2f2f2f;
+      background-color: ${LIGHTBLUE};
+      color: ${LIGHTBLACK};
     }
 
     .Select-option.is-disabled {
-      color: #aeaeae;
+      color: ${LIGHTGRAY};
       cursor: not-allowed;
     }
   }
@@ -140,7 +147,6 @@ const noop = () => {}
 class Qselect extends Component {
   render() {
     const {
-      name,
       value,
       onChange = noop,
       options,
@@ -151,7 +157,6 @@ class Qselect extends Component {
 
     return (
       <StyledSelect
-        name={name}
         className={className}
         value={value}
         disabled={disabled}

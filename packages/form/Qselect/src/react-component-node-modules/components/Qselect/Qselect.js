@@ -16,14 +16,15 @@ const StyledSelect = styled(Select)`
     border-radius: 0;
     border: ${rem('1px')} solid ${DARKGRAY};
     color: ${LIGHTBLACK};
-    height: ${rem('22px')};
-    font-size: ${rem('12px')};
+    height: ${props => (props.height ? rem(props.height) : rem('22px'))};
+    width: ${props => rem(props.width)};
+    font-size: ${props => (props.fontSize ? rem(props.fontSize) : rem('12px'))};
     margin-left: 0;
     padding-left: ${rem('10px')};
 
     .Select-input {
-      height: ${rem('22px')};
-      line-height: ${rem('22px')};
+      height: ${props => (props.height ? rem(props.height) : rem('22px'))};
+      line-height: ${props => (props.height ? rem(props.height) : rem('22px'))};
 
       /* cursor horizon position */
       padding: 0;
@@ -39,15 +40,15 @@ const StyledSelect = styled(Select)`
     }
 
     .Select-value {
-      height: ${rem('22px')};
-      line-height: ${rem('22px')};
+      height: ${props => (props.height ? rem(props.height) : rem('22px'))};
+      line-height: ${props => (props.height ? rem(props.height) : rem('22px'))};
 
       /* mutli-select gap between values*/
       ${margin('0px', '5px', '0px', '0px')};
     }
 
     .Select-placeholder {
-      line-height: ${rem('22px')};
+      line-height: ${props => (props.height ? rem(props.height) : rem('22px'))};
     }
 
     &:hover {
@@ -56,8 +57,8 @@ const StyledSelect = styled(Select)`
 
     /* multi-select */
     .Select-multi-value-wrapper {
-      height: ${rem('22px')};
-      line-height: ${rem('22px')};
+      height: ${props => (props.height ? rem(props.height) : rem('22px'))};
+      line-height: ${props => (props.height ? rem(props.height) : rem('22px'))};
 
       .Select-value-label,
       .Select-value-icon {
@@ -104,7 +105,9 @@ const StyledSelect = styled(Select)`
     margin-left: 0;
   }
 
+  /* options' styles */
   .Select-menu-outer {
+    width: ${props => rem(props.width)}
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     border: ${rem('1px')} solid ${BLACK};
@@ -113,9 +116,9 @@ const StyledSelect = styled(Select)`
     .Select-option,
     .Select-noresults {
       ${padding('0px', '10px')};
-      height: ${rem('22px')};
-      line-height: ${rem('22px')};
-      font-size: ${rem('12px')};
+      height: ${props => (props.height ? rem(props.height) : rem('22px'))};
+      line-height: ${props => (props.height ? rem(props.height) : rem('22px'))};
+      font-size: ${props => (props.fontSize ? rem(props.fontSize) : rem('12px'))};
     }
 
     .Select-option {
@@ -147,10 +150,12 @@ const noop = () => {}
 class Qselect extends Component {
   render() {
     const {
+      className,
+      height,
+      width,
       value,
       onChange = noop,
       options,
-      className,
       disabled,
       ...restProps
     } = this.props
@@ -158,6 +163,8 @@ class Qselect extends Component {
     return (
       <StyledSelect
         className={className}
+        height={height}
+        width={width}
         value={value}
         disabled={disabled}
         onChange={onChange}

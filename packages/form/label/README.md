@@ -1,4 +1,4 @@
-# This is a react component based on QUI-Guidline
+# This is a react component based on QUI-Guideline
 
 You can see the demo follow below steps:
 ### Instructions

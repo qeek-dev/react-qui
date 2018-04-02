@@ -1,35 +1,35 @@
 ### Light Theme
 
 ```js
-<div>
+initialState = { checked: false }
+;<div>
   <div>
     <Checkbox
       value="normal"
-      onChange={e => {
-        console.log(`checked: ${e.target.checked}, value: ${e.target.value}`)
-      }}
+      checked={state.checked}
+      onClick={e => setState({ checked: !e.target.checked })}
     >
-      normal
-    </Checkbox>
-  </div>
-  <div>
-    <Checkbox value="disabled" disabled onChange={() => console.log('hello')}>
-      disabled
-    </Checkbox>
-  </div>
-  <div>
-    <Checkbox value="checked" checked onChange={() => console.log('hello')}>
-      checked
+      test
     </Checkbox>
   </div>
   <div>
     <Checkbox
-      value="checked-disabled"
-      checked
+      value="disabled"
       disabled
-      onChange={() => console.log('hello')}
+      checked={false}
+      onClick={e => setState({ checked: !e.target.checked })}
     >
-      checked disabled
+      test
+    </Checkbox>
+  </div>
+  <div>
+    <Checkbox
+      value="disabled-checked"
+      disabled
+      checked={true}
+      onClick={e => setState({ checked: !e.target.checked })}
+    >
+      test
     </Checkbox>
   </div>
 </div>
@@ -38,10 +38,16 @@
 ### Dark Theme
 
 ```js
-<div style={{ backgroundColor: 'black', padding: '10px' }}>
+initialState = { checked: false }
+;<div style={{ backgroundColor: 'black', padding: '10px' }}>
   <div>
-    <Checkbox value="dark-normal" theme="dark" onChange={() => alert('hello')}>
-      dark normal
+    <Checkbox
+      value="dark-checked"
+      theme="dark"
+      checked={state.checked}
+      onClick={e => setState({ checked: !e.target.checked })}
+    >
+      dark checked
     </Checkbox>
   </div>
   <div>
@@ -49,30 +55,21 @@
       value="dark-disabled"
       theme="dark"
       disabled
-      onChange={() => console.log('hello')}
-    >
-      dark disabled
-    </Checkbox>
-  </div>
-  <div>
-    <Checkbox
-      value="dark-checked"
-      theme="dark"
-      checked
-      onChange={() => console.log('hello')}
+      checked={false}
+      onClick={e => setState({ checked: !e.target.checked })}
     >
       dark checked
     </Checkbox>
   </div>
   <div>
     <Checkbox
-      value="dark-checked-disabled"
+      value="dark-disabled-checked"
       theme="dark"
-      checked
       disabled
-      onChange={() => console.log('hello')}
+      checked={true}
+      onClick={e => setState({ checked: !e.target.checked })}
     >
-      dark checked disabled
+      dark checked
     </Checkbox>
   </div>
 </div>

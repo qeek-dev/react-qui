@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { compose, withStateHandlers } from 'recompose'
 import styled from 'styled-components'
 import noop from 'lodash/fp/noop'
-import shortid from 'shortid'
 import btn_checkbox_presseddisable from './assets/checkbox_light_transparent/btn_checkbox_presseddisable.svg'
 import btn_checkbox_disable from './assets/checkbox_light_transparent/btn_checkbox_disable.svg'
 import btn_checkbox_pressed from './assets/checkbox_light_transparent/btn_checkbox_pressed.svg'
@@ -44,28 +42,13 @@ const Input = styled.input.attrs({
   display: none;
 `
 
-const enhancer = compose(
-  withStateHandlers(
-    props => ({
-      checked: props.checked,
-    }),
-    {
-      handleClick: ({ checked, disabled }) => event => {
-        if (disabled) return
-
-        return { checked: !checked }
-      },
-    },
-  ),
-)
-
 const Checkbox = ({
+  id,
   checked,
   disabled,
   className,
   onChange = noop,
   onClick = noop,
-  handleClick,
   children,
   span,
   theme,
@@ -109,7 +92,13 @@ const Checkbox = ({
     parseInt(checked << 1, 10) + parseInt(disabled, 10)
 
   return (
-    <Label theme={theme} disabled={disabled} span={span} direction={direction}>
+    <Label
+      className={className}
+      theme={theme}
+      disabled={disabled}
+      span={span}
+      direction={direction}
+    >
       <Img
         src={
           checkBoxState[theme][
@@ -132,12 +121,11 @@ const Checkbox = ({
         checked={checked}
       />
       <Input
-        id={shortid.generate()}
-        defaultChecked={checked}
+        id={id}
+        Checked={checked}
         disabled={disabled}
         onChange={onChange}
-        onClick={handleClick}
-        className={className}
+        onClick={onClick}
         value={value}
       />
       <Span>{children}</Span>
@@ -178,4 +166,4 @@ Checkbox.defaultProps = {
   theme: 'light',
 }
 
-export default enhancer(Checkbox)
+export default Checkbox

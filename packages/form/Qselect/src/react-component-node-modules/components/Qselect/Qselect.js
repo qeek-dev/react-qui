@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Select from 'react-select'
+import PropTypes from 'prop-types'
 import './styles/React-select.css'
 import styled from 'styled-components'
 import { rem, margin, padding } from 'polished'
@@ -118,7 +119,8 @@ const StyledSelect = styled(Select)`
       ${padding('0px', '10px')};
       height: ${props => (props.height ? rem(props.height) : rem('22px'))};
       line-height: ${props => (props.height ? rem(props.height) : rem('22px'))};
-      font-size: ${props => (props.fontSize ? rem(props.fontSize) : rem('12px'))};
+      font-size: ${props =>
+        props.fontSize ? rem(props.fontSize) : rem('12px')};
     }
 
     .Select-option {
@@ -173,6 +175,16 @@ class Qselect extends Component {
       />
     )
   }
+}
+
+Qselect.propTypes = {
+  className: PropTypes.string,
+  height: PropTypes.number,
+  width: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
+  options: PropTypes.array,
 }
 
 export default Qselect

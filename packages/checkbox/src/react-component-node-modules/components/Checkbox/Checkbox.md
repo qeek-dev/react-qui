@@ -7,7 +7,7 @@ initialState = { checked: false }
     <Checkbox
       value="normal"
       checked={state.checked}
-      onClick={e => setState({ checked: !e.target.checked })}
+      onClick={e => setState({ checked: !state.checked })}
     >
       test
     </Checkbox>
@@ -17,7 +17,7 @@ initialState = { checked: false }
       value="disabled"
       disabled
       checked={false}
-      onClick={e => setState({ checked: !e.target.checked })}
+      onClick={e => setState({ checked: !state.checked })}
     >
       test
     </Checkbox>
@@ -27,7 +27,7 @@ initialState = { checked: false }
       value="disabled-checked"
       disabled
       checked={true}
-      onClick={e => setState({ checked: !e.target.checked })}
+      onClick={e => setState({ checked: !state.checked })}
     >
       test
     </Checkbox>
@@ -45,7 +45,7 @@ initialState = { checked: false }
       value="dark-checked"
       theme="dark"
       checked={state.checked}
-      onClick={e => setState({ checked: !e.target.checked })}
+      onClick={e => setState({ checked: !state.checked })}
     >
       dark checked
     </Checkbox>
@@ -56,7 +56,7 @@ initialState = { checked: false }
       theme="dark"
       disabled
       checked={false}
-      onClick={e => setState({ checked: !e.target.checked })}
+      onClick={e => setState({ checked: !state.checked })}
     >
       dark checked
     </Checkbox>
@@ -67,7 +67,7 @@ initialState = { checked: false }
       theme="dark"
       disabled
       checked={true}
-      onClick={e => setState({ checked: !e.target.checked })}
+      onClick={e => setState({ checked: !state.checked })}
     >
       dark checked
     </Checkbox>

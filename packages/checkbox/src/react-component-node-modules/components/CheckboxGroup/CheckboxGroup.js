@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { rem } from 'polished'
 
-const CheckboxGroup = ({ children, direction, span }) => {
+const CheckboxGroup = ({ children, direction, span, className }) => {
   const StyledCheckboxGroup = styled.div`
     /* CheckboxGroup Direction */
     display: flex;
@@ -21,30 +21,27 @@ const CheckboxGroup = ({ children, direction, span }) => {
     }
   `
 
-  return <StyledCheckboxGroup>{children}</StyledCheckboxGroup>
+  return (
+    <StyledCheckboxGroup className={className}>{children}</StyledCheckboxGroup>
+  )
 }
 
 CheckboxGroup.propTypes = {
-  /** Checkbox checked or not */
-  checked: PropTypes.bool,
-  /** Checkbox disabled or not */
-  disabled: PropTypes.bool,
   /** The margin pixels between Checkboxes  */
   span: PropTypes.number,
-  /** The theme of Checkbox */
-  theme: PropTypes.string,
   /** The driection of Checkboxes. Can be Row or Column */
   direction: PropTypes.string,
   /** Add addition className for Checkbox element */
   className: PropTypes.string,
-  /** Options for checkboxGroup */
-  options: PropTypes.array,
+  /** Capability for adding multiple Checkbox inside CheckboxGroup */
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.element,
+  ]),
 }
 
 CheckboxGroup.defaultProps = {
-  checked: false,
-  disabled: false,
-  theme: 'light',
   direction: 'col',
   span: 30,
 }

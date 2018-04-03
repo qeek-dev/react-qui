@@ -49,8 +49,8 @@ const Checkbox = ({
   children,
   span,
   theme,
-  direction,
   value,
+  ...restProps
 }) => {
   const checkBoxState = {
     light: {
@@ -89,13 +89,7 @@ const Checkbox = ({
     parseInt(checked << 1, 10) + parseInt(disabled, 10)
 
   return (
-    <Label
-      className={className}
-      theme={theme}
-      disabled={disabled}
-      span={span}
-      direction={direction}
-    >
+    <Label className={className} theme={theme} disabled={disabled} span={span}>
       <Img
         src={
           checkBoxState[theme][
@@ -125,6 +119,7 @@ const Checkbox = ({
         onChange={onChange}
         onClick={onClick}
         value={value}
+        {...restProps}
       />
       <Span>{children}</Span>
     </Label>
@@ -132,19 +127,19 @@ const Checkbox = ({
 }
 
 Checkbox.propTypes = {
+  /** Checkbox id */
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Checkbox name */
+  name: PropTypes.string,
   /** Checkbox checked or not */
   checked: PropTypes.bool,
   /** Checkbox disabled or not */
   disabled: PropTypes.bool,
-  /** Handle the function after triggering click event */
-  handleClick: PropTypes.func,
-  /** Content of the checkbox. Can be a string, number, array or a react component.  */
   /** The margin pixels between Checkboxes  */
   span: PropTypes.number,
   /** The theme of Checkbox */
   theme: PropTypes.string,
-  /** The driection of Checkboxes. Can be Row or Column */
-  direction: PropTypes.string,
+  /** Content of the checkbox. Can be a string, number, array or a react component.  */
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,

@@ -31,26 +31,27 @@
     "coverage": "yarn run test --coverage"
   },
   "dependencies": {
+    "polished": "^1.9.2",
     "recompose": "^0.26.0"
   },
   "peerDependencies": {
     "lodash": "^4.17.5",
     "react": "16.x",
     "react-dom": "^16.2.0",
-    "styled-components": "^3.1.0",
-    "shortid": "^2.2.8"
+    "shortid": "^2.2.8",
+    "styled-components": "^3.1.0"
   },
   "devDependencies": {
     "akiya-react-component-scripts": "3.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.1",
-    "raf": "^3.4.0",
     "lodash": "^4.17.5",
+    "raf": "^3.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "styled-components": "^3.1.0",
-    "shortid": "^2.2.8"
+    "shortid": "^2.2.8",
+    "styled-components": "^3.1.0"
   },
   "jest": {
     "snapshotSerializers": [

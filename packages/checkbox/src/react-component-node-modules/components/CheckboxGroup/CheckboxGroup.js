@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Checkbox from '../Checkbox/Checkbox'
 import PropTypes from 'prop-types'
-import noop from 'lodash/fp/noop'
+import { rem } from 'polished'
 
 const CheckboxGroup = ({ children, direction, span }) => {
   const StyledCheckboxGroup = styled.div`
@@ -15,10 +14,10 @@ const CheckboxGroup = ({ children, direction, span }) => {
 
     /* Gap between checkboxes  */
     > * {
-      margin-bottom: ${direction === 'column' || direction === 'col'
-        ? span
-        : 0}px;
-      margin-right: ${direction === 'row' ? span : 0}px;
+      margin-bottom: ${rem(
+        direction === 'column' || direction === 'col' ? span : 0,
+      )};
+      margin-right: ${rem(direction === 'row' ? span : 0)};
     }
   `
 

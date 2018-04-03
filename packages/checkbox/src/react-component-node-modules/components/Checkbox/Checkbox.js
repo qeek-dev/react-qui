@@ -11,6 +11,7 @@ import btn_checkbox_disable_black from './assets/checkbox_dark/btn_checkbox_disa
 import btn_checkbox_pressed_black from './assets/checkbox_dark/btn_checkbox_pressed_black.svg'
 import btn_checkbox_black from './assets/checkbox_dark/btn_checkbox_black.svg'
 import { BLACK, WHITE, LIGHTGRAY } from './colors'
+import { rem } from 'polished'
 
 const Label = styled.label`
   color: ${props =>
@@ -18,16 +19,11 @@ const Label = styled.label`
       ? props.disabled ? LIGHTGRAY : BLACK
       : props.disabled ? LIGHTGRAY : WHITE};
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
-  margin-bottom: ${props =>
-    props.direction === 'column' || props.direction === 'col'
-      ? props.span
-      : 0}px;
-  margin-right: ${props => (props.direction === 'row' ? props.span : 0)}px;
-  line-height: 0px;
+  line-height: 0;
 `
 
 const Img = styled.img`
-  margin-right: 10px;
+  margin-right: ${rem('10px')};
   vertical-align: middle;
 `
 

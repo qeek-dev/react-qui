@@ -4,36 +4,25 @@ import Checkbox from '../Checkbox/Checkbox'
 import PropTypes from 'prop-types'
 import noop from 'lodash/fp/noop'
 
-const CheckboxGroup = props => {
-  const { options, span, theme, direction, className, onChange = noop } = props
-
-  const children = options.map(option => {
-    return (
-      <Checkbox
-        key={option.value}
-        span={span}
-        theme={theme}
-        direction={direction}
-        checked={option.checked}
-        disabled={option.disabled}
-        className={className}
-        onChange={onChange}
-        value={option.value || ''}
-      >
-        {option.label}
-      </Checkbox>
-    )
-  })
-
-  const Direction = styled.div`
+const CheckboxGroup = ({ children, direction, span }) => {
+  const StyledCheckboxGroup = styled.div`
+    /* CheckboxGroup Direction */
     display: flex;
     flex-flow: ${direction === 'column' || direction === 'col'
         ? 'column'
         : null}
       wrap;
+
+    /* Gap between checkboxes  */
+    > * {
+      margin-bottom: ${direction === 'column' || direction === 'col'
+        ? span
+        : 0}px;
+      margin-right: ${direction === 'row' ? span : 0}px;
+    }
   `
 
-  return <Direction>{children}</Direction>
+  return <StyledCheckboxGroup>{children}</StyledCheckboxGroup>
 }
 
 CheckboxGroup.propTypes = {

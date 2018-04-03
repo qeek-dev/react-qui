@@ -44,6 +44,7 @@ const Input = styled.input.attrs({
 
 const Checkbox = ({
   id,
+  name,
   checked,
   disabled,
   className,
@@ -122,6 +123,7 @@ const Checkbox = ({
       />
       <Input
         id={id}
+        name={name}
         Checked={checked}
         disabled={disabled}
         onChange={onChange}

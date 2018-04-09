@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { mount, shallow } from 'enzyme'
+import { mount,  } from 'enzyme'
 import { Checkbox } from '../react-component-node-modules/index'
 import { configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
@@ -8,10 +8,10 @@ import Adapter from 'enzyme-adapter-react-16'
 configure({ adapter: new Adapter() })
 
 it('render <Checkbox> component', () => {
-  const checkbox = shallow(<Checkbox>normal</Checkbox>)
-  const checkboxDisabled = shallow(<Checkbox disabled>disabled</Checkbox>)
-  const checkboxChecked = shallow(<Checkbox checked>checked</Checkbox>)
-  const checkboxCheckedDisabled = shallow(
+  const checkbox = mount(<Checkbox>normal</Checkbox>)
+  const checkboxDisabled = mount(<Checkbox disabled>disabled</Checkbox>)
+  const checkboxChecked = mount(<Checkbox checked>checked</Checkbox>)
+  const checkboxCheckedDisabled = mount(
     <Checkbox checked disabled>
       checked disabled
     </Checkbox>,

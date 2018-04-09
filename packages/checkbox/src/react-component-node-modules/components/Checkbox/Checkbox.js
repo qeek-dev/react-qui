@@ -89,28 +89,37 @@ const Checkbox = ({
     parseInt(checked << 1, 10) + parseInt(disabled, 10)
 
   return (
-    <Label className={className} theme={theme} disabled={disabled} span={span}>
-      <Img
-        src={
-          checkBoxState[theme][
-            getCheckboxStatus(
-              checked === true ? 1 : 0,
-              disabled === true ? 1 : 0,
-            )
-          ]
-        }
-        alt={
-          checkBoxAltState[theme][
-            getCheckboxAltStatus(
-              checked === true ? 1 : 0,
-              disabled === true ? 1 : 0,
-            )
-          ]
-        }
+    <React.Fragment>
+      <Label
+        className={className}
+        htmlFor={id}
         theme={theme}
         disabled={disabled}
-        checked={checked}
-      />
+        span={span}
+      >
+        <Img
+          src={
+            checkBoxState[theme][
+              getCheckboxStatus(
+                checked === true ? 1 : 0,
+                disabled === true ? 1 : 0,
+              )
+            ]
+          }
+          alt={
+            checkBoxAltState[theme][
+              getCheckboxAltStatus(
+                checked === true ? 1 : 0,
+                disabled === true ? 1 : 0,
+              )
+            ]
+          }
+          theme={theme}
+          disabled={disabled}
+          checked={checked}
+        />
+        <Span>{children}</Span>
+      </Label>
       <Input
         id={id}
         name={name}
@@ -121,8 +130,7 @@ const Checkbox = ({
         value={value}
         {...restProps}
       />
-      <Span>{children}</Span>
-    </Label>
+    </React.Fragment>
   )
 }
 

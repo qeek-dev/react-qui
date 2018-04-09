@@ -21,6 +21,7 @@ class App extends React.Component {
       <div>
         <CheckboxGroup direction="column">
           <Checkbox
+            id="ethos"
             name="ethos"
             value="ethos"
             checked={this.state.ethos}
@@ -29,6 +30,7 @@ class App extends React.Component {
             ETHOS
           </Checkbox>
           <Checkbox
+          id="cvc"
             name="cvc"
             value="cvc"
             checked={this.state.cvc}
@@ -37,6 +39,7 @@ class App extends React.Component {
             CVC
           </Checkbox>
           <Checkbox
+            id="ink"
             name="ink"
             value="ink"
             checked={this.state.ink}

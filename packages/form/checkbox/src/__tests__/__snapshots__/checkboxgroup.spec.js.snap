@@ -2,38 +2,35 @@
 
 exports[`render <CheckboxGroup> component 1`] = `
 <styled.div>
-  <withStateHandlers(Checkbox)
-    checked={true}
-    direction="row"
-    key="ada"
-    onChange={[Function]}
-    span={30}
+  <Checkbox
+    checked={false}
+    disabled={false}
+    id="ethos"
+    name="ethos"
     theme="light"
-    value="ada"
+    value="ethos"
   >
-    ADA
-  </withStateHandlers(Checkbox)>
-  <withStateHandlers(Checkbox)
-    checked={true}
-    direction="row"
-    key="neo"
-    onChange={[Function]}
-    span={30}
+    ETHOS
+  </Checkbox>
+  <Checkbox
+    checked={false}
+    disabled={false}
+    id="cvc"
+    name="cvc"
     theme="light"
-    value="neo"
+    value="cvc"
   >
-    NEO
-  </withStateHandlers(Checkbox)>
-  <withStateHandlers(Checkbox)
-    checked={true}
-    direction="row"
-    key="eos"
-    onChange={[Function]}
-    span={30}
+    CVC
+  </Checkbox>
+  <Checkbox
+    checked={false}
+    disabled={false}
+    id="ink"
+    name="ink"
     theme="light"
-    value="eos"
+    value="ink"
   >
-    EOS
-  </withStateHandlers(Checkbox)>
+    INK
+  </Checkbox>
 </styled.div>
 `;

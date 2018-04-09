@@ -123,7 +123,7 @@ const Checkbox = ({
       <Input
         id={id}
         name={name}
-        Checked={checked}
+        checked={checked}
         disabled={disabled}
         onChange={onChange}
         onClick={onClick}

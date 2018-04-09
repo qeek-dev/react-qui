@@ -27,14 +27,6 @@ it('renders without crashing', () => {
   ReactDOM.render(<Checkbox>Test</Checkbox>, div)
 })
 
-it('checkbox image changed after clicking label', () => {
-  const checkbox = mount(<Checkbox>Test</Checkbox>)
-
-  expect(checkbox.find('img').prop('src')).toEqual('btn_checkbox.svg')
-  checkbox.find('input').simulate('click')
-  expect(checkbox.find('img').prop('src')).toEqual('btn_checkbox_pressed.svg')
-})
-
 it('Checkbox text equal to children text', () => {
   const checkbox = mount(<Checkbox>normal</Checkbox>)
 

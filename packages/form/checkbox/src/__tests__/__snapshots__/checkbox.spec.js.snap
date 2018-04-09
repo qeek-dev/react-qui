@@ -1,45 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render <Checkbox> component 1`] = `
-<Checkbox
-  checked={false}
-  disabled={false}
-  handleClick={[Function]}
-  theme="light"
->
-  normal
-</Checkbox>
+<React.Fragment>
+  <styled.label
+    disabled={false}
+    theme="light"
+  >
+    <styled.img
+      alt="btn_checkbox"
+      checked={false}
+      disabled={false}
+      src="btn_checkbox.svg"
+      theme="light"
+    />
+    <styled.span>
+      normal
+    </styled.span>
+  </styled.label>
+  <styled.input
+    checked={false}
+    disabled={false}
+    onChange={[Function]}
+    onClick={[Function]}
+  />
+</React.Fragment>
 `;
 
 exports[`render <Checkbox> component 2`] = `
-<Checkbox
-  checked={false}
-  disabled={true}
-  handleClick={[Function]}
-  theme="light"
->
-  disabled
-</Checkbox>
+<React.Fragment>
+  <styled.label
+    disabled={true}
+    theme="light"
+  >
+    <styled.img
+      alt="btn_checkbox_disable"
+      checked={false}
+      disabled={true}
+      src="btn_checkbox_disable.svg"
+      theme="light"
+    />
+    <styled.span>
+      disabled
+    </styled.span>
+  </styled.label>
+  <styled.input
+    checked={false}
+    disabled={true}
+    onChange={[Function]}
+    onClick={[Function]}
+  />
+</React.Fragment>
 `;
 
 exports[`render <Checkbox> component 3`] = `
-<Checkbox
-  checked={true}
-  disabled={false}
-  handleClick={[Function]}
-  theme="light"
->
-  checked
-</Checkbox>
+<React.Fragment>
+  <styled.label
+    disabled={false}
+    theme="light"
+  >
+    <styled.img
+      alt="btn_checkbox_pressed"
+      checked={true}
+      disabled={false}
+      src="btn_checkbox_pressed.svg"
+      theme="light"
+    />
+    <styled.span>
+      checked
+    </styled.span>
+  </styled.label>
+  <styled.input
+    checked={true}
+    disabled={false}
+    onChange={[Function]}
+    onClick={[Function]}
+  />
+</React.Fragment>
 `;
 
 exports[`render <Checkbox> component 4`] = `
-<Checkbox
-  checked={true}
-  disabled={true}
-  handleClick={[Function]}
-  theme="light"
->
-  checked disabled
-</Checkbox>
+<React.Fragment>
+  <styled.label
+    disabled={true}
+    theme="light"
+  >
+    <styled.img
+      alt="btn_checkbox_presseddisable"
+      checked={true}
+      disabled={true}
+      src="btn_checkbox_presseddisable.svg"
+      theme="light"
+    />
+    <styled.span>
+      checked disabled
+    </styled.span>
+  </styled.label>
+  <styled.input
+    checked={true}
+    disabled={true}
+    onChange={[Function]}
+    onClick={[Function]}
+  />
+</React.Fragment>
 `;

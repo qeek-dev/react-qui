@@ -9,7 +9,7 @@ initialState = { checked: false }
       value="normal"
       checked={state.checked}
       onClick={e => {
-        console.log(`checked: ${e.target.checked}, value:${e.target.value}`)
+        console.log(`checked: ${e.target.checked}, value: ${e.target.value}`)
         setState({ checked: !state.checked })
       }}
     >

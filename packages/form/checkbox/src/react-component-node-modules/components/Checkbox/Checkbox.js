@@ -148,12 +148,7 @@ Checkbox.propTypes = {
   /** The theme of Checkbox */
   theme: PropTypes.string,
   /** Content of the checkbox. Can be a string, number, array or a react component.  */
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.element,
-    PropTypes.array,
-  ]),
+  children: PropTypes.node,
   /** Add addition className for Checkbox element */
   className: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

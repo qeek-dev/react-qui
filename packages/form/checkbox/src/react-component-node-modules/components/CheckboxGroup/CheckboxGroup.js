@@ -9,7 +9,7 @@ const CheckboxGroup = ({ children, direction, span, className }) => {
     display: flex;
     flex-flow: ${direction === 'column' || direction === 'col'
         ? 'column'
-        : null}
+        : 'row'}
       wrap;
 
     /* Gap between checkboxes  */
@@ -34,11 +34,7 @@ CheckboxGroup.propTypes = {
   /** Add addition className for Checkbox element */
   className: PropTypes.string,
   /** Capability for adding multiple Checkbox inside CheckboxGroup */
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.element,
-  ]),
+  children: PropTypes.node
 }
 
 CheckboxGroup.defaultProps = {

@@ -1,6 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render <Checkbox> component 1`] = `
+.c0 {
+  color: #000000;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.c1 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: none;
+}
+
 <Checkbox
   checked={false}
   disabled={false}
@@ -11,7 +31,7 @@ exports[`render <Checkbox> component 1`] = `
     theme="light"
   >
     <label
-      className="sc-bdVaJa kzWkTC"
+      className="c0"
       disabled={false}
     >
       <styled.img
@@ -24,14 +44,14 @@ exports[`render <Checkbox> component 1`] = `
         <img
           alt="btn_checkbox"
           checked={false}
-          className="sc-bwzfXH hFFjjY"
+          className="c1"
           disabled={false}
           src="btn_checkbox.svg"
         />
       </styled.img>
       <styled.span>
         <span
-          className="sc-htpNat cOIBOz"
+          className="c2"
         >
           normal
         </span>
@@ -46,7 +66,7 @@ exports[`render <Checkbox> component 1`] = `
   >
     <input
       checked={false}
-      className="sc-bxivhb cRvGhf"
+      className="c3"
       disabled={false}
       onChange={[Function]}
       onClick={[Function]}
@@ -57,6 +77,26 @@ exports[`render <Checkbox> component 1`] = `
 `;
 
 exports[`render <Checkbox> component 2`] = `
+.c0 {
+  color: #aeaeae;
+  cursor: not-allowed;
+  line-height: 0;
+}
+
+.c1 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: none;
+}
+
 <Checkbox
   checked={false}
   disabled={true}
@@ -67,7 +107,7 @@ exports[`render <Checkbox> component 2`] = `
     theme="light"
   >
     <label
-      className="sc-bdVaJa kKpDgL"
+      className="c0"
       disabled={true}
     >
       <styled.img
@@ -80,14 +120,14 @@ exports[`render <Checkbox> component 2`] = `
         <img
           alt="btn_checkbox_disable"
           checked={false}
-          className="sc-bwzfXH hFFjjY"
+          className="c1"
           disabled={true}
           src="btn_checkbox_disable.svg"
         />
       </styled.img>
       <styled.span>
         <span
-          className="sc-htpNat cOIBOz"
+          className="c2"
         >
           disabled
         </span>
@@ -102,7 +142,7 @@ exports[`render <Checkbox> component 2`] = `
   >
     <input
       checked={false}
-      className="sc-bxivhb cRvGhf"
+      className="c3"
       disabled={true}
       onChange={[Function]}
       onClick={[Function]}
@@ -113,6 +153,26 @@ exports[`render <Checkbox> component 2`] = `
 `;
 
 exports[`render <Checkbox> component 3`] = `
+.c0 {
+  color: #000000;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.c1 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: none;
+}
+
 <Checkbox
   checked={true}
   disabled={false}
@@ -123,7 +183,7 @@ exports[`render <Checkbox> component 3`] = `
     theme="light"
   >
     <label
-      className="sc-bdVaJa kzWkTC"
+      className="c0"
       disabled={false}
     >
       <styled.img
@@ -136,14 +196,14 @@ exports[`render <Checkbox> component 3`] = `
         <img
           alt="btn_checkbox_pressed"
           checked={true}
-          className="sc-bwzfXH hFFjjY"
+          className="c1"
           disabled={false}
           src="btn_checkbox_pressed.svg"
         />
       </styled.img>
       <styled.span>
         <span
-          className="sc-htpNat cOIBOz"
+          className="c2"
         >
           checked
         </span>
@@ -158,7 +218,7 @@ exports[`render <Checkbox> component 3`] = `
   >
     <input
       checked={true}
-      className="sc-bxivhb cRvGhf"
+      className="c3"
       disabled={false}
       onChange={[Function]}
       onClick={[Function]}
@@ -169,6 +229,26 @@ exports[`render <Checkbox> component 3`] = `
 `;
 
 exports[`render <Checkbox> component 4`] = `
+.c0 {
+  color: #aeaeae;
+  cursor: not-allowed;
+  line-height: 0;
+}
+
+.c1 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: none;
+}
+
 <Checkbox
   checked={true}
   disabled={true}
@@ -179,7 +259,7 @@ exports[`render <Checkbox> component 4`] = `
     theme="light"
   >
     <label
-      className="sc-bdVaJa kKpDgL"
+      className="c0"
       disabled={true}
     >
       <styled.img
@@ -192,14 +272,14 @@ exports[`render <Checkbox> component 4`] = `
         <img
           alt="btn_checkbox_presseddisable"
           checked={true}
-          className="sc-bwzfXH hFFjjY"
+          className="c1"
           disabled={true}
           src="btn_checkbox_presseddisable.svg"
         />
       </styled.img>
       <styled.span>
         <span
-          className="sc-htpNat cOIBOz"
+          className="c2"
         >
           checked disabled
         </span>
@@ -214,7 +294,7 @@ exports[`render <Checkbox> component 4`] = `
   >
     <input
       checked={true}
-      className="sc-bxivhb cRvGhf"
+      className="c3"
       disabled={true}
       onChange={[Function]}
       onClick={[Function]}

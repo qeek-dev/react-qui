@@ -1,13 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render <CheckboxGroup> component 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+.c0 > * {
+  margin-bottom: 1.875rem;
+  margin-right: 0rem;
+}
+
+.c1 {
+  color: #000000;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.c2 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 {
+  display: none;
+}
+
 <CheckboxGroup
   direction="column"
   span={30}
 >
   <styled.div>
     <div
-      className="sc-ifAKCX iTKavF"
+      className="c0"
     >
       <Checkbox
         checked={false}
@@ -23,7 +58,7 @@ exports[`render <CheckboxGroup> component 1`] = `
           theme="light"
         >
           <label
-            className="sc-bdVaJa kzWkTC"
+            className="c1"
             disabled={false}
             htmlFor="ethos"
           >
@@ -37,14 +72,14 @@ exports[`render <CheckboxGroup> component 1`] = `
               <img
                 alt="btn_checkbox"
                 checked={false}
-                className="sc-bwzfXH hFFjjY"
+                className="c2"
                 disabled={false}
                 src="btn_checkbox.svg"
               />
             </styled.img>
             <styled.span>
               <span
-                className="sc-htpNat cOIBOz"
+                className="c3"
               >
                 ETHOS
               </span>
@@ -62,7 +97,7 @@ exports[`render <CheckboxGroup> component 1`] = `
         >
           <input
             checked={false}
-            className="sc-bxivhb cRvGhf"
+            className="c4"
             disabled={false}
             id="ethos"
             name="ethos"
@@ -87,7 +122,7 @@ exports[`render <CheckboxGroup> component 1`] = `
           theme="light"
         >
           <label
-            className="sc-bdVaJa kzWkTC"
+            className="c1"
             disabled={false}
             htmlFor="cvc"
           >
@@ -101,14 +136,14 @@ exports[`render <CheckboxGroup> component 1`] = `
               <img
                 alt="btn_checkbox"
                 checked={false}
-                className="sc-bwzfXH hFFjjY"
+                className="c2"
                 disabled={false}
                 src="btn_checkbox.svg"
               />
             </styled.img>
             <styled.span>
               <span
-                className="sc-htpNat cOIBOz"
+                className="c3"
               >
                 CVC
               </span>
@@ -126,7 +161,7 @@ exports[`render <CheckboxGroup> component 1`] = `
         >
           <input
             checked={false}
-            className="sc-bxivhb cRvGhf"
+            className="c4"
             disabled={false}
             id="cvc"
             name="cvc"
@@ -151,7 +186,7 @@ exports[`render <CheckboxGroup> component 1`] = `
           theme="light"
         >
           <label
-            className="sc-bdVaJa kzWkTC"
+            className="c1"
             disabled={false}
             htmlFor="ink"
           >
@@ -165,14 +200,14 @@ exports[`render <CheckboxGroup> component 1`] = `
               <img
                 alt="btn_checkbox"
                 checked={false}
-                className="sc-bwzfXH hFFjjY"
+                className="c2"
                 disabled={false}
                 src="btn_checkbox.svg"
               />
             </styled.img>
             <styled.span>
               <span
-                className="sc-htpNat cOIBOz"
+                className="c3"
               >
                 INK
               </span>
@@ -190,7 +225,7 @@ exports[`render <CheckboxGroup> component 1`] = `
         >
           <input
             checked={false}
-            className="sc-bxivhb cRvGhf"
+            className="c4"
             disabled={false}
             id="ink"
             name="ink"

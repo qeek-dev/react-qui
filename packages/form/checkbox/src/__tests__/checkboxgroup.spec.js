@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { mount, shallow } from 'enzyme'
+import { mount, } from 'enzyme'
 import { Checkbox, CheckboxGroup } from '../react-component-node-modules/index'
 import { configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
@@ -8,7 +8,7 @@ import Adapter from 'enzyme-adapter-react-16'
 configure({ adapter: new Adapter() })
 
 it('render <CheckboxGroup> component', () => {
-  const checkboxGroup = shallow(
+  const checkboxGroup = mount(
     <CheckboxGroup direction="column">
       <Checkbox id="ethos" name="ethos" value="ethos">
         ETHOS

@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "react-app",
+    "react",
+    "es2015",
+    "stage-2",
+    "flow"
+  ],
+  "retainLines": true,
+  "plugins": [
+    ["babel-plugin-styled-components", {
+      "displayName": true,
+      "preprocess": true
+    }]
+  ]
+}

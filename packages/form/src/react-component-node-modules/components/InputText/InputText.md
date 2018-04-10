@@ -1,4 +1,4 @@
-### InputText Only
+#### InputText Only
 
 ```js
 initialState = { value: '' }
@@ -13,7 +13,7 @@ initialState = { value: '' }
 </div>
 ```
 
-### Work with label
+#### Work with label
 
 ```js
 initialState = { value: '123' }

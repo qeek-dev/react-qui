@@ -1,4 +1,4 @@
-### Light Theme
+#### Light Theme
 
 ```js
 initialState = { checked: false }
@@ -41,7 +41,7 @@ initialState = { checked: false }
 </div>
 ```
 
-### Dark Theme
+#### Dark Theme
 
 ```js
 initialState = { checked: false }

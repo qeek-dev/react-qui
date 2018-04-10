@@ -1,3 +1,5 @@
+#### Single-Select
+
 ```js
 initialState = { selectedOption: '' }
 
@@ -11,7 +13,7 @@ value = state.selectedOption
 </div>
 ```
 
-### Disabled
+#### Disabled
 
 ```js
 initialState = { selectedOption: '' }
@@ -25,7 +27,7 @@ initialState = { selectedOption: '' }
 </div>
 ```
 
-### Option Disabled
+#### Option Disabled
 ```js
 initialState = { selectedOption: '' }
 ;<div>
@@ -38,7 +40,7 @@ initialState = { selectedOption: '' }
 ```
 
 
-### Multi-Select
+#### Multi-Select
 
 ```js
 initialState = { selectedOption: '' }

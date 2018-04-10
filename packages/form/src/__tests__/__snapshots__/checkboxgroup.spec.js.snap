@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render <CheckboxGroup> component 1`] = `
+.c1 {
+  color: #000000;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.c2 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 {
+  display: none;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+.c0 > * {
+  margin-bottom: 1.875rem;
+  margin-right: 0rem;
+}
+
+<CheckboxGroup
+  direction="column"
+  span={30}
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      <Checkbox
+        checked={false}
+        disabled={false}
+        id="ethos"
+        name="ethos"
+        theme="light"
+        value="ethos"
+      >
+        <styled.label
+          disabled={false}
+          htmlFor="ethos"
+          theme="light"
+        >
+          <label
+            className="c1"
+            disabled={false}
+            htmlFor="ethos"
+          >
+            <styled.img
+              alt="btn_checkbox"
+              checked={false}
+              disabled={false}
+              src="btn_checkbox.svg"
+              theme="light"
+            >
+              <img
+                alt="btn_checkbox"
+                checked={false}
+                className="c2"
+                disabled={false}
+                src="btn_checkbox.svg"
+              />
+            </styled.img>
+            <styled.span>
+              <span
+                className="c3"
+              >
+                ETHOS
+              </span>
+            </styled.span>
+          </label>
+        </styled.label>
+        <styled.input
+          checked={false}
+          disabled={false}
+          id="ethos"
+          name="ethos"
+          onChange={[Function]}
+          onClick={[Function]}
+          value="ethos"
+        >
+          <input
+            checked={false}
+            className="c4"
+            disabled={false}
+            id="ethos"
+            name="ethos"
+            onChange={[Function]}
+            onClick={[Function]}
+            type="checkbox"
+            value="ethos"
+          />
+        </styled.input>
+      </Checkbox>
+      <Checkbox
+        checked={false}
+        disabled={false}
+        id="cvc"
+        name="cvc"
+        theme="light"
+        value="cvc"
+      >
+        <styled.label
+          disabled={false}
+          htmlFor="cvc"
+          theme="light"
+        >
+          <label
+            className="c1"
+            disabled={false}
+            htmlFor="cvc"
+          >
+            <styled.img
+              alt="btn_checkbox"
+              checked={false}
+              disabled={false}
+              src="btn_checkbox.svg"
+              theme="light"
+            >
+              <img
+                alt="btn_checkbox"
+                checked={false}
+                className="c2"
+                disabled={false}
+                src="btn_checkbox.svg"
+              />
+            </styled.img>
+            <styled.span>
+              <span
+                className="c3"
+              >
+                CVC
+              </span>
+            </styled.span>
+          </label>
+        </styled.label>
+        <styled.input
+          checked={false}
+          disabled={false}
+          id="cvc"
+          name="cvc"
+          onChange={[Function]}
+          onClick={[Function]}
+          value="cvc"
+        >
+          <input
+            checked={false}
+            className="c4"
+            disabled={false}
+            id="cvc"
+            name="cvc"
+            onChange={[Function]}
+            onClick={[Function]}
+            type="checkbox"
+            value="cvc"
+          />
+        </styled.input>
+      </Checkbox>
+      <Checkbox
+        checked={false}
+        disabled={false}
+        id="ink"
+        name="ink"
+        theme="light"
+        value="ink"
+      >
+        <styled.label
+          disabled={false}
+          htmlFor="ink"
+          theme="light"
+        >
+          <label
+            className="c1"
+            disabled={false}
+            htmlFor="ink"
+          >
+            <styled.img
+              alt="btn_checkbox"
+              checked={false}
+              disabled={false}
+              src="btn_checkbox.svg"
+              theme="light"
+            >
+              <img
+                alt="btn_checkbox"
+                checked={false}
+                className="c2"
+                disabled={false}
+                src="btn_checkbox.svg"
+              />
+            </styled.img>
+            <styled.span>
+              <span
+                className="c3"
+              >
+                INK
+              </span>
+            </styled.span>
+          </label>
+        </styled.label>
+        <styled.input
+          checked={false}
+          disabled={false}
+          id="ink"
+          name="ink"
+          onChange={[Function]}
+          onClick={[Function]}
+          value="ink"
+        >
+          <input
+            checked={false}
+            className="c4"
+            disabled={false}
+            id="ink"
+            name="ink"
+            onChange={[Function]}
+            onClick={[Function]}
+            type="checkbox"
+            value="ink"
+          />
+        </styled.input>
+      </Checkbox>
+    </div>
+  </styled.div>
+</CheckboxGroup>
+`;

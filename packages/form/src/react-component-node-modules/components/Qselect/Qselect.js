@@ -46,6 +46,10 @@ const StyledSelect = styled(Select)`
 
       /* mutli-select gap between values*/
       ${margin('0px', '5px', '0px', '0px')};
+
+      .Select-value-label{
+        line-height: ${props => (props.height ? rem(props.height) : rem('22px'))};
+      }
     }
 
     .Select-placeholder {
@@ -66,6 +70,7 @@ const StyledSelect = styled(Select)`
         padding-top: 0;
         padding-bottom: 0;
         vertical-align: top;
+        line-height: ${props => (props.height ? rem(props.height) : rem('22px'))};
       }
     }
   }
@@ -105,6 +110,8 @@ const StyledSelect = styled(Select)`
     .Select-value {
     margin-left: 0;
   }
+
+  
 
   /* options' styles */
   .Select-menu-outer {

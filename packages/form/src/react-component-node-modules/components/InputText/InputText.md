@@ -5,7 +5,7 @@ initialState = { value: '' }
 ;<div>
   <InputText
     type="text"
-    height={24}
+    // height={24}
     width={100}
     value={state.value}
     onChange={e => setState({ value: e.target.value })}

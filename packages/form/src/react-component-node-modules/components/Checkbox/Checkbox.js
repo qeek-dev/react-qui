@@ -54,38 +54,32 @@ const Checkbox = ({
 }) => {
   const checkBoxState = {
     light: {
-      0: btn_checkbox, // no checked, no disabled
-      1: btn_checkbox_disable, // no checked, disabled
-      2: btn_checkbox_pressed, // checked, no disabled
-      3: btn_checkbox_presseddisable, // checked, disabled
+      0: { imgSrc: btn_checkbox, imgAlt: 'btn_checkbox' }, // no checked, no disabled
+      1: { imgSrc: btn_checkbox_disable, imgAlt: 'btn_checkbox_disable' }, // no checked, disabled
+      2: { imgSrc: btn_checkbox_pressed, imgAlt: 'btn_checkbox_pressed' }, // checked, no disabled
+      3: {
+        imgSrc: btn_checkbox_presseddisable,
+        imgAlt: 'btn_checkbox_presseddisable',
+      }, // checked, disabled
     },
     dark: {
-      0: btn_checkbox_black, // no checked, no disabled
-      1: btn_checkbox_disable_black, // no checked, disabled
-      2: btn_checkbox_pressed_black, // checked, no disabled
-      3: btn_checkbox_presseddisable_black, // checked, disabled
-    },
-  }
-
-  const checkBoxAltState = {
-    light: {
-      0: 'btn_checkbox', // no checked, no disabled
-      1: 'btn_checkbox_disable', // no checked, disabled
-      2: 'btn_checkbox_pressed', // checked, no disabled
-      3: 'btn_checkbox_presseddisable', // checked, disabled
-    },
-    dark: {
-      0: 'btn_checkbox_black', // no checked, no disabled
-      1: 'btn_checkbox_disable_black', // no checked, disabled
-      2: 'btn_checkbox_pressed_black', // checked, no disabled
-      3: 'btn_checkbox_presseddisable_black', // checked, disabled
+      0: { imgSrc: btn_checkbox_black, imgAlt: 'btn_checkbox_black' }, // no checked, no disabled
+      1: {
+        imgSrc: btn_checkbox_disable_black,
+        imgAlt: 'btn_checkbox_disable_black',
+      }, // no checked, disabled
+      2: {
+        imgSrc: btn_checkbox_pressed_black,
+        imgAlt: 'btn_checkbox_pressed_black',
+      }, // checked, no disabled
+      3: {
+        imgSrc: btn_checkbox_presseddisable_black,
+        imgAlt: 'btn_checkbox_presseddisable_black',
+      }, // checked, disabled
     },
   }
 
   const getCheckboxStatus = (checked, disabled) =>
-    parseInt(checked << 1, 10) + parseInt(disabled, 10)
-
-  const getCheckboxAltStatus = (checked, disabled) =>
     parseInt(checked << 1, 10) + parseInt(disabled, 10)
 
   return (
@@ -98,9 +92,11 @@ const Checkbox = ({
         span={span}
       >
         <Img
-          src={checkBoxState[theme][getCheckboxStatus(+checked, +disabled)]}
+          src={
+            checkBoxState[theme][getCheckboxStatus(+checked, +disabled)].imgSrc
+          }
           alt={
-            checkBoxAltState[theme][getCheckboxAltStatus(+checked, +disabled)]
+            checkBoxState[theme][getCheckboxStatus(+checked, +disabled)].imgAlt
           }
           theme={theme}
           disabled={disabled}

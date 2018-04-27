@@ -11,12 +11,12 @@ const CheckboxGroup = ({ children, direction, span, className }) => {
         ? 'column'
         : 'row'}
       wrap;
+    justify-content: space-around;
+    align-items: flex-start;
 
     /* Gap between checkboxes  */
     > * {
-      margin-bottom: ${rem(
-        direction === 'column' || direction === 'col' ? span : 0,
-      )};
+      margin-bottom: ${rem(direction === / ^col$|^column$ / ? span : 0)};
       margin-right: ${rem(direction === 'row' ? span : 0)};
     }
   `
@@ -34,7 +34,7 @@ CheckboxGroup.propTypes = {
   /** Add addition className for Checkbox element */
   className: PropTypes.string,
   /** Capability for adding multiple Checkbox inside CheckboxGroup */
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 CheckboxGroup.defaultProps = {

@@ -47,7 +47,6 @@ const Checkbox = ({
   onChange = noop,
   onClick = noop,
   children,
-  span,
   theme,
   value,
   ...restProps
@@ -89,7 +88,6 @@ const Checkbox = ({
         htmlFor={id}
         theme={theme}
         disabled={disabled}
-        span={span}
       >
         <Img
           src={
@@ -127,8 +125,6 @@ Checkbox.propTypes = {
   checked: PropTypes.bool,
   /** Checkbox disabled or not */
   disabled: PropTypes.bool,
-  /** The margin pixels between Checkboxes  */
-  span: PropTypes.number,
   /** The theme of Checkbox */
   theme: PropTypes.string,
   /** Content of the checkbox. Can be a string, number, array or a react component.  */

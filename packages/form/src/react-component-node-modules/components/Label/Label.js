@@ -17,12 +17,7 @@ Label.propTypes = {
   className: PropTypes.string,
   htmlFor: PropTypes.string,
   form: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.element,
-    PropTypes.array,
-  ]),
+  children: PropTypes.node,
 }
 
 export default Label

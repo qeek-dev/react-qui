@@ -171,6 +171,7 @@ class Qselect extends Component {
 
     return (
       <StyledSelect
+        {...restProps}
         className={className}
         height={height}
         width={width}
@@ -178,7 +179,6 @@ class Qselect extends Component {
         disabled={disabled}
         onChange={onChange}
         options={options}
-        {...restProps}
       />
     )
   }

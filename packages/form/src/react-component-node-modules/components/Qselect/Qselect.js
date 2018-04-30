@@ -188,7 +188,7 @@ Qselect.propTypes = {
   className: PropTypes.string,
   height: PropTypes.number,
   width: PropTypes.number,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  value: PropTypes.any,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
   options: PropTypes.array,

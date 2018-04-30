@@ -29,10 +29,10 @@ exports[`render <CheckboxGroup> component 1`] = `
   -webkit-flex-flow: column wrap;
   -ms-flex-flow: column wrap;
   flex-flow: column wrap;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -40,8 +40,8 @@ exports[`render <CheckboxGroup> component 1`] = `
 }
 
 .c0 > * {
-  margin-bottom: 0rem;
-  margin-right: 0rem;
+  padding-bottom: 1.875rem;
+  padding-right: 0rem;
 }
 
 <CheckboxGroup

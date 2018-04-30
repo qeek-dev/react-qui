@@ -7,17 +7,17 @@ const CheckboxGroup = ({ children, direction, span, className }) => {
   const StyledCheckboxGroup = styled.div`
     /* CheckboxGroup Direction */
     display: flex;
-    flex-flow: ${direction === 'column' || direction === 'col'
+    flex-flow: ${/^col$|^column$/.test(direction)
         ? 'column'
         : 'row'}
       wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start;
 
     /* Gap between checkboxes  */
     > * {
-      margin-bottom: ${rem(direction === / ^col$|^column$ / ? span : 0)};
-      margin-right: ${rem(direction === 'row' ? span : 0)};
+      padding-bottom: ${rem(/^col$|^column$/.test(direction) ? span : 0)};
+      padding-right: ${rem(direction === 'row' ? span : 0)};
     }
   `
 

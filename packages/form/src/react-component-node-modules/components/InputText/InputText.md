@@ -9,6 +9,7 @@ initialState = { value: '' }
     width={100}
     value={state.value}
     onChange={e => setState({ value: e.target.value })}
+    placeholder="Type something"
   />
 </div>
 ```

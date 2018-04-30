@@ -20,6 +20,7 @@ const Input = styled.input`
   &::placeholder {
     color: transparent;
     background: transparent;
+    color: #aeaeae;
   }
 
   &:disabled {
@@ -28,9 +29,6 @@ const Input = styled.input`
     cursor: not-allowed;
   }
 
-  &::placeholder {
-    color: #aeaeae;
-  }
 `
 
 const noop = () => {}
@@ -47,9 +45,9 @@ const InputText = ({
   width,
   ...restProps
 }) => {
-  console.log(height)
   return (
     <Input
+      {...restProps}
       className={className}
       type={type}
       id={id}
@@ -59,7 +57,6 @@ const InputText = ({
       disabled={disabled}
       height={height}
       width={width}
-      {...restProps}
     />
   )
 }

@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render <Checkbox> component 1`] = `
+.c0 {
+  color: #000000;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.c1 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: none;
+}
+
+<Checkbox
+  checked={false}
+  disabled={false}
+  theme="light"
+>
+  <div>
+    <styled.label
+      disabled={false}
+      theme="light"
+    >
+      <label
+        className="c0"
+        disabled={false}
+      >
+        <styled.img
+          alt="btn_checkbox"
+          checked={false}
+          disabled={false}
+          src="btn_checkbox.svg"
+          theme="light"
+        >
+          <img
+            alt="btn_checkbox"
+            checked={false}
+            className="c1"
+            disabled={false}
+            src="btn_checkbox.svg"
+          />
+        </styled.img>
+        <styled.span>
+          <span
+            className="c2"
+          >
+            normal
+          </span>
+        </styled.span>
+      </label>
+    </styled.label>
+    <styled.input
+      checked={false}
+      disabled={false}
+      onChange={[Function]}
+      onClick={[Function]}
+    >
+      <input
+        checked={false}
+        className="c3"
+        disabled={false}
+        onChange={[Function]}
+        onClick={[Function]}
+        type="checkbox"
+      />
+    </styled.input>
+  </div>
+</Checkbox>
+`;
+
+exports[`render <Checkbox> component 2`] = `
+.c0 {
+  color: #aeaeae;
+  cursor: not-allowed;
+  line-height: 0;
+}
+
+.c1 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: none;
+}
+
+<Checkbox
+  checked={false}
+  disabled={true}
+  theme="light"
+>
+  <div>
+    <styled.label
+      disabled={true}
+      theme="light"
+    >
+      <label
+        className="c0"
+        disabled={true}
+      >
+        <styled.img
+          alt="btn_checkbox_disable"
+          checked={false}
+          disabled={true}
+          src="btn_checkbox_disable.svg"
+          theme="light"
+        >
+          <img
+            alt="btn_checkbox_disable"
+            checked={false}
+            className="c1"
+            disabled={true}
+            src="btn_checkbox_disable.svg"
+          />
+        </styled.img>
+        <styled.span>
+          <span
+            className="c2"
+          >
+            disabled
+          </span>
+        </styled.span>
+      </label>
+    </styled.label>
+    <styled.input
+      checked={false}
+      disabled={true}
+      onChange={[Function]}
+      onClick={[Function]}
+    >
+      <input
+        checked={false}
+        className="c3"
+        disabled={true}
+        onChange={[Function]}
+        onClick={[Function]}
+        type="checkbox"
+      />
+    </styled.input>
+  </div>
+</Checkbox>
+`;
+
+exports[`render <Checkbox> component 3`] = `
+.c0 {
+  color: #000000;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.c1 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: none;
+}
+
+<Checkbox
+  checked={true}
+  disabled={false}
+  theme="light"
+>
+  <div>
+    <styled.label
+      disabled={false}
+      theme="light"
+    >
+      <label
+        className="c0"
+        disabled={false}
+      >
+        <styled.img
+          alt="btn_checkbox_pressed"
+          checked={true}
+          disabled={false}
+          src="btn_checkbox_pressed.svg"
+          theme="light"
+        >
+          <img
+            alt="btn_checkbox_pressed"
+            checked={true}
+            className="c1"
+            disabled={false}
+            src="btn_checkbox_pressed.svg"
+          />
+        </styled.img>
+        <styled.span>
+          <span
+            className="c2"
+          >
+            checked
+          </span>
+        </styled.span>
+      </label>
+    </styled.label>
+    <styled.input
+      checked={true}
+      disabled={false}
+      onChange={[Function]}
+      onClick={[Function]}
+    >
+      <input
+        checked={true}
+        className="c3"
+        disabled={false}
+        onChange={[Function]}
+        onClick={[Function]}
+        type="checkbox"
+      />
+    </styled.input>
+  </div>
+</Checkbox>
+`;
+
+exports[`render <Checkbox> component 4`] = `
+.c0 {
+  color: #aeaeae;
+  cursor: not-allowed;
+  line-height: 0;
+}
+
+.c1 {
+  margin-right: 0.625rem;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 {
+  display: none;
+}
+
+<Checkbox
+  checked={true}
+  disabled={true}
+  theme="light"
+>
+  <div>
+    <styled.label
+      disabled={true}
+      theme="light"
+    >
+      <label
+        className="c0"
+        disabled={true}
+      >
+        <styled.img
+          alt="btn_checkbox_presseddisable"
+          checked={true}
+          disabled={true}
+          src="btn_checkbox_presseddisable.svg"
+          theme="light"
+        >
+          <img
+            alt="btn_checkbox_presseddisable"
+            checked={true}
+            className="c1"
+            disabled={true}
+            src="btn_checkbox_presseddisable.svg"
+          />
+        </styled.img>
+        <styled.span>
+          <span
+            className="c2"
+          >
+            checked disabled
+          </span>
+        </styled.span>
+      </label>
+    </styled.label>
+    <styled.input
+      checked={true}
+      disabled={true}
+      onChange={[Function]}
+      onClick={[Function]}
+    >
+      <input
+        checked={true}
+        className="c3"
+        disabled={true}
+        onChange={[Function]}
+        onClick={[Function]}
+        type="checkbox"
+      />
+    </styled.input>
+  </div>
+</Checkbox>
+`;
